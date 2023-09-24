@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<!-- coded by ncymrn! feel free to use. -->
+
+<html>
+<head>
+    <title>FICS</title>
+    <link rel="shortcut icon" href="/">
+    <style type="text/css">
+        /* CONTENT */
+        body {
+            background: #fff;
+            color: #000;
+            font-size: 10px;
+            font-family: Verdana, sans-serif;
+            position: relative;
+            text-align: left;
+            overflow: none;
+            margin: 0;
+            top: 0px;
+            left: 0px;
+            line-height: 150%;
+            height: 100%;
+            width: 100%;
+        }
+ 
+        #container {
+            position: relative;
+            padding-top: 50px;
+            margin: 0 auto;
+            width: 500px;
+            margin-bottom: 120px;
+        }
+ 
+        .boxy {
+            border: 1px dashed #000;
+            display: scroll;
+            border-collapse: collapse;
+            padding: 10px;
+            margin:10px;
+            width:500px;
+            transition: height 0.3s ease;
+            -webkit-scrollbar {
+                display: none;
+            }
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        
+ 
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        /* END CONTENT */
+ 
+        /* TEXT STYLING */
+        h1{
+            font-size:13px;
+        }
+
+        h2{
+            font-size:10px;
+            color:#ff0000;
+        }
+ 
+        a {
+        
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #00ff00;
+            letter-spacing: 1px;
+            cursor: help;
+            -webkit-transition: all 0.7s ease;
+            transition: all 0.7s ease;
+            -moz-transition: all 0.7s ease;
+            -o-transition: all 0.7s ease;
+        }
+ 
+        a:hover {
+            cursor: help;
+            letter-spacing: 1px;
+            color: #0000ff;
+        }
+ 
+        p {
+            margin: 10px 0 10px 0;
+        }
+        /* END TEXT STYLING */
+ 
+ 
+ 
+        /* SIDEBAR */ 
+        #sidebar {
+            position: fixed;
+            top: 0px;
+            width: 200px;
+            height: 100%;
+            left: 50%;
+            margin-left: -480px;
+        }
+ 
+        #sidebarinner {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: justify;
+            -moz-text-align-last: center;
+            text-align-last: center;
+        }
+ 
+        #nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+ 
+        #nav a {
+            margin: 0px 4px;
+        }
+        /* END SIDEBAR */
+ 
+        /* READ MORE */
+        .more {
+        display: none;
+        }
+ 
+        .read-more {
+        color: #00ff00; 
+        cursor: pointer;
+        }
+ 
+        .read-more:hover {
+        text-decoration: underline;
+        }
+        /* END READ MORE */
+
+		.credit {
+    	position:fixed;
+ 		right:15px;
+    	width:80px;
+    	bottom:15px;
+    	font-size: 16px;
+ 
+		}
+ 
+ 
+		.credit a {
+    	padding:10px;
+    	width:30px;
+    	margin-right:0px;
+    	font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+		}
+ 
+		.credit a:hover {
+   		-webkit-transition: all 0.6s ease-in-out;
+    	-moz-transition: all 0.6s ease-in-out;
+    	-o-transition: all 0.6s ease-in-out;
+    	-ms-transition: all 0.6s ease-in-out;
+    	transition: all 0.6s ease-in-out;
+		}
+/* END CREDIT  */
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <div id="sidebarinner">
+            <a href="/">home</a>
+                <a href="link">link</a><p>
+            Cupcake ipsum dolor sit amet jelly-o pie. Dessert brownie jelly beans sweet jelly fruitcake sesame snaps lemon drops. Macaroon powder I love toffee toffee cheesecake chupa chups tart.  <br>
+Marzipan macaroon macaroon macaroon pudding I love gingerbread apple pie. Muffin tiramisu chocolate bar jelly beans fruitcake I love. Tart marzipan jelly beans icing caramels.
+                <div id="nav">
+ 
+ 
+ 
+                <p class="filter option-set exclusive" data-filter-group="group1">
+                    
+                    <br>fandom <br>
+                    <a href="#" data-filter-value="" class="selected">All</a>
+                    <a href="#" data-filter-value=".fandom1">fandom1</a>
+                    <a href="#" data-filter-value=".fandom2">fandom2</a>
+                </p>
+ 
+ 
+                <p class="filter option-set " data-filter-group="group2">
+                    rating <br>
+                <a href="#" data-filter-value="" class="selected">All</a>
+                <a href="#" data-filter-value=".g">general</a>
+                <a href="#" data-filter-value=".t">teen</a>
+                <a href="#" data-filter-value=".m">mature</a>
+                <a href="#" data-filter-value=".e">explicit</a>
+                </p>
+ 
+                <p class="filter option-set " data-filter-group="group3">
+                    status<br>
+                <a href="#" data-filter-value="" class="selected">All</a>
+                <a href="#" data-filter-value=".completed">completed</a>
+                <a href="#" data-filter-value=".unfinished">unfinished</a>
+                </p>
+
+                <p class="filter option-set exclusive " data-filter-group="group3">
+                    year<br>
+                <a href="#" data-filter-value="" class="selected">All</a>
+                <a href="#" data-filter-value=".2023">2023</a>
+                <a href="#" data-filter-value=".2022">2022</a>
+                <a href="#" data-filter-value=".2021">2021</a>
+                <a href="#" data-filter-value=".2020">2020</a>
+                <a href="#" data-filter-value=".2019">2019</a>
+                <a href="#" data-filter-value=".2018">2018</a>
+                <a href="#" data-filter-value=".2017">2017</a>
+                <a href="#" data-filter-value=".2016">2016</a>
+                </p>
+ 
+ 
+            </div>
+        </div>
+    </div>
+ 
+ 
+    <div id="container">
+ 
+        <div class="grid">
+ 
+            
+            <div class="item fandom1 e completed 2023"> <div class="boxy">
+ 
+                <h1>title</h1>
+				<h2>important notice</h2>
+                <b>some info</b>
+                <span class="dots">...</span>
+                <span class="more"><br>Cupcake ipsum dolor sit amet jelly-o pie. Dessert brownie jelly beans sweet jelly fruitcake sesame snaps lemon drops. Macaroon powder I love toffee toffee cheesecake chupa chups tart.</span>
+                <span class="read-more" onclick="toggleText(1)">( read more ...)</span><br><br>
+                Marzipan macaroon macaroon macaroon pudding I love gingerbread apple pie. Muffin tiramisu chocolate bar jelly beans fruitcake I love. Tart marzipan jelly beans icing caramels.
+<br><br>
+Chupa chups sweet roll jelly chocolate cake icing. Chupa chups caramels candy canes donut sesame snaps chocolate I love I love. Dragée croissant chupa chups bonbon chocolate macaroon.
+                <br><br>
+                <i><a href="/">read on ao3</a></i> | download as epub
+            </div></div>
+
+<div class="item fandom2 g unfinished 2022"> <div class="boxy">
+ 
+                <h1>title</h1>
+				<h2>important notice</h2>
+                <b>some info</b>
+                <span class="dots">...</span>
+                <span class="more"><br>Cupcake ipsum dolor sit amet jelly-o pie. Dessert brownie jelly beans sweet jelly fruitcake sesame snaps lemon drops. Macaroon powder I love toffee toffee cheesecake chupa chups tart.</span>
+                <span class="read-more" onclick="toggleText(2)">( read more ...)</span><br><br> <!-- don't forget to change toggleText value when copypasting or it won't work -->
+                Marzipan macaroon macaroon macaroon pudding I love gingerbread apple pie. Muffin tiramisu chocolate bar jelly beans fruitcake I love. Tart marzipan jelly beans icing caramels.
+<br><br>
+Chupa chups sweet roll jelly chocolate cake icing. Chupa chups caramels candy canes donut sesame snaps chocolate I love I love. Dragée croissant chupa chups bonbon chocolate macaroon.
+                <br><br>
+                <i><a href="/">read on ao3</a></i> | download as epub
+            </div></div>
+            
+          
+ 
+           </div>
+ 
+
+           <!-- credit -->
+           <div class="credit">
+            <a href="https://ncymrn.neocities.org" title="coded by ncymrn!"><img src="https://i.imgur.com/B3Jtg3K.png"></a>
+            </div>
+            <!-- end credit -->
+    </div>
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="booksjson.nancyvalentine.repl.co/script.js"></script>
+    <script src="https://static.tumblr.com/p0knose/FpAp5c11c/magnusthemes.combofilters.js"></script>
+    <script>
+        $(document).ready(function() {
+         var $container = $(".grid"); // the container with all the elements to filter inside
+         var filters = {}; //should be outside the scope of the filtering function
+         /* --- read the documentation on isotope.metafizzy.co for more options --- */
+         var $grid = $container.isotope({
+           itemSelector: ".item", // the elements to filter
+           percentPosition: true // put true if you use percentage widths, otherwise put false
+         });
+         $(".option-set a").click(function(e) {
+           var $this = $(this); // cache the clicked link
+           var filterAttr = "data-filter-value";
+           var filterValue = $this.attr(filterAttr); // cache the filter
+           var $optionSet = $this.parents(".option-set"); // cache the parent element
+           var group = $optionSet.attr("data-filter-group"); // cache the parent filter group
+           var filterGroup = filters[group];
+           if (!filterGroup) {
+             filterGroup = filters[group] = [];
+           }
+           var $selectAll = $optionSet.find('a['+filterAttr+'=""]'); // the 'select all' button in the current group
+           var activeClass = "selected", // the class for active links
+             exclClass = "exclusive"; // the class for exclusive groups
+         comboFiltering($this,filters,filterAttr,filterValue,$optionSet,group,$selectAll,activeClass,exclClass);
+           var comboFilter = getComboFilter(filters);
+           $grid.isotope({
+             filter: comboFilter
+           });
+           $this.toggleClass(activeClass);
+           e.preventDefault();
+         });
+        });
+
+        
+        </script>
+ 
+    <script>
+function toggleText(id) {
+    var moreText = document.querySelectorAll(".more")[id - 1];
+    var readMoreLink = document.querySelectorAll(".read-more")[id - 1];
+ 
+    if (moreText.style.display === "none" || moreText.style.display === "") {
+        moreText.style.display = "inline";
+        readMoreLink.textContent = "( read less ... )";
+    } else {
+        moreText.style.display = "none";
+        readMoreLink.textContent = "( read  more ... )";
+    }
+}
+ 
+    </script>
+
+
+</body>
+</html>

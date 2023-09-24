@@ -1,0 +1,1156 @@
+<!-- coded by ncymrn
+my first site from scratch. 
+forgive my spaghetti code! 
+you should only need a basic
+knowledge of html to use this  
+code. if you have issues or
+questions, feel free to hit me
+up at ncymrn.neocities.com 
+ 
+special thanks to octomoosey,
+dimden, velvet blue, and 
+everyone else who inspired me
+to make this website! -->
+ 
+<!doctype html>
+<html>
+<head> <!-- this is the <head> tag.
+you can think of it as 
+everything that goes ABOVE
+the body of your website, the
+head. -->
+ 
+<!----- MUSIC PLAYER
+ 
+                                     ,
+              ,-.       _,---._ __  / \
+             /  )    .-'       `./ /   \
+            (  (   ,'            `/    /|
+             \  `-"             \'\   / |
+              `.              ,  \ \ /  |
+               /`.          ,'-`----Y   |
+              (            ;        |   '
+              |  ,-.    ,-'         |  /
+              |  | (   |            | /
+              )  |  \  `.___________|/
+              `--'   `--'
+ 
+    * original multiple song music player by adilene @ adilene.net. [https://pastebin.com/PiDgrv3J] 
+    * edited using 98 css [https://jdan.github.io/98.css/]
+    * stitched together by june @ loveberry.neocities.org / layercake.neocities.org
+ 	* source code: https://github.com/sayantanm19/js-music-player
+																	----->
+ 
+ 
+<!-- add fontawesome stylesheet to the head!! --> 
+<script src="https://kit.fontawesome.com/f936906ae0.js" crossorigin="anonymous"></script> <!-- add fontawesome stylesheet to the head!! --> 
+ 
+<!-- MUSIC PLAYER END --> 
+ 
+ 
+<!-- FAVICON -->
+  <link rel="shortcut icon" href="https://barok.crd.co/assets/images/gallery01/75a625d3.png?v=8cc45fd0">
+<!-- END FAVICON -->
+ 
+ <!-- SCROLL TAB TEXT START -->
+ <script type="text/javascript">
+    function tb8_makeArray(n){
+    this.length = n;
+    return this.length;
+    }
+    tb8_messages = new tb8_makeArray(3);
+    tb8_messages[0] = "december slides into january";
+    tb8_messages[1] = "which mutates into february";
+    tb8_messages[2] = "which creeps towards march";
+    tb8_rptType = 'infinite';
+    tb8_rptNbr = 5;
+    tb8_speed = 100;
+    tb8_delay = 2000;
+    var tb8_counter=1;
+    var tb8_currMsg=0;
+    var tb8_tekst ="";
+    var tb8_i=0;
+    var tb8_TID = null;
+    function tb8_pisi(){
+    tb8_tekst = tb8_tekst + tb8_messages[tb8_currMsg].substring(tb8_i, tb8_i+1);
+    document.title = tb8_tekst;
+    tb8_sp=tb8_speed;
+    tb8_i++;
+    if (tb8_i==tb8_messages[tb8_currMsg].length){
+    tb8_currMsg++; tb8_i=0; tb8_tekst="";tb8_sp=tb8_delay;
+    }
+    if (tb8_currMsg == tb8_messages.length){
+    if ((tb8_rptType == 'finite') && (tb8_counter==tb8_rptNbr)){
+    clearTimeout(tb8_TID);
+    return;
+    }
+    tb8_counter++;
+    tb8_currMsg = 0;
+    }
+    tb8_TID = setTimeout("tb8_pisi()", tb8_sp);
+    }
+    tb8_pisi()
+    </script><title>nancy's circus</title>
+    <!-- SCROLL TAB TEXT END -->
+ 
+    <!-- META DESCRIPTION-->
+<meta name="description" content="nancy's epic web page">
+    <!-- END META DESCRIPTION -->
+ 
+    <!--FONTS-->
+<link href="https://fonts.cdnfonts.com/css/nintendo-ds-bios" rel="stylesheet">
+    <!--END FONTS-->
+ 
+    <!-- STARS -->
+    <script type="text/javascript">
+      // <![CDATA[
+      var speed=40; // lower number for faster
+      var warp=3; // from 1 to 10
+      var stars=150; // number of stars
+      var colours=new Array("#ff99b6", "#9ba9ff", "#baebff"); // colours of stars
+      var position=0; // set to '0' for foreground and '-1' for stars to appear in the background, behind text on the page
+ 
+      /****************************
+      *      Star Warp Effect     *
+      *(c)2005-14 mf2fm web-design *
+      *  http://www.mf2fm.com/rv  *
+      * DON'T EDIT BELOW THIS BOX *
+      ****************************/
+ 
+      var strs=new Array();
+      var strx=new Array();
+      var stry=new Array();
+      var stdx=new Array();
+      var stdy=new Array();
+      var strz=new Array();
+      var swide=800;
+      var shigh=600;
+      warp=1+warp/125;
+ 
+ 
+      if (typeof('addRVLoadEvent')!='function') function addRVLoadEvent(funky) {
+        var oldonload=window.onload;
+        if (typeof(oldonload)!='function') window.onload=funky;
+        else window.onload=function() {
+          if (oldonload) oldonload();
+          funky();
+        }
+      }
+ 
+      addRVLoadEvent(initiate_hyperjump);
+ 
+      function initiate_hyperjump() { if (document.getElementById) {
+        var i, temp;
+        boddie=document.createElement("div");
+        boddie.style.position="fixed";
+        boddie.style.top="0px";
+        boddie.style.left="0px";
+        boddie.style.width="1px";
+        boddie.style.height="1px";
+        boddie.style.overflow="visible";
+        boddie.style.backgroundColor="#2c2a4a";
+        boddie.style.zIndex=position; 
+        i=document.body.style.backgroundColor;
+        if (document.body.parentNode) {
+          if (i) document.body.parentNode.style.backgroundColor=i;
+          document.body.style.backgroundColor="#2c2a4a";
+        }
+        document.body.insertBefore(boddie, document.body.firstChild);
+        set_width();
+        for (i=0; i<stars; i++) {
+          strs[i]=document.createElement("div");
+          strs[i].style.color=colours[i%colours.length];
+        strs[i].style.backgroundColor="transparent";
+          strs[i].style.position="absolute";
+        strs[i].appendChild(document.createTextNode("*"));
+        strs[i].style.font="13px monospace";
+          stdy[i]=Math.random()*6-3;
+          stdx[i]=Math.random()*8-4;
+          temp=Math.random()*100;
+          strx[i]=swide/2+temp*stdx[i];
+          stry[i]=shigh/2+temp*stdy[i];
+          if (Math.abs(stdx[i])+Math.abs(stdy[i])>5) strz[i]=13; 
+          else if (Math.abs(stdx[i])+Math.abs(stdy[i])>3) strz[i]=7;
+          else strz[i]=2;
+        strs[i].style.fontSize=strz[i]+"px";
+          boddie.appendChild(strs[i]);
+        }
+        setInterval("warp_drive()", speed);
+      }}
+ 
+      function warp_drive() {
+        var i;
+        for (i=0; i<stars; i++) {
+          stry[i]+=stdy[i];
+          strx[i]+=stdx[i];
+          stdx[i]*=warp;
+          stdy[i]*=warp;
+          if (stry[i]>0 && stry[i]<shigh && strx[i]>0 && strx[i]<swide) {
+          if (Math.abs(stdx[i])+Math.abs(stdy[i])>strz[i]) strs[i].style.fontSize=++strz[i]+"px";
+            strs[i].style.left=strx[i]+"px";
+            strs[i].style.top=stry[i]+"px"
+          }
+          else {
+            strx[i]=swide/2;
+            stry[i]=shigh/2;
+            strx[i]+=3*(stdx[i]=Math.random()*8-4);
+            stry[i]+=3*(stdy[i]=Math.random()*6-3);
+          if (Math.abs(stdx[i])+Math.abs(stdy[i])>5) strz[i]=13; 
+            else if (Math.abs(stdx[i])+Math.abs(stdy[i])>3) strz[i]=7;
+            else strz[i]=2;
+          strs[i].style.fontSize=strz[i]+"px";
+          }
+        }
+      }
+ 
+      window.onresize=set_width;
+      function set_width() {
+        var sw_min=999999;
+        var sh_min=999999;
+        if (document.documentElement && document.documentElement.clientWidth) {
+          if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
+          if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
+        }
+        if (typeof(self.innerWidth)!="undefined" && self.innerWidth) {
+          if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
+          if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
+        }
+        if (document.body.clientWidth) {
+          if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
+          if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
+        }
+        if (sw_min==999999 || sh_min==999999) {
+          sw_min=800;
+          sh_min=600;
+        }
+        swide=sw_min;
+        shigh=sh_min;
+      }
+      // ]]>
+      </script>
+    <!-- END STARS -->
+</head>
+ 
+<style type="text/css"> /* this is the
+<style> tag, which makes everything
+look pretty. you shouldn't need to 
+change anything but colours. */
+ 
+ 
+/* MUSIC */
+<style>
+    .title-bar {
+        background:linear-gradient(90deg, purple, orchid, pink);
+    }
+ 
+    .player {
+        width:fit-content;
+        border: black solid 1px;
+        border-width: 1px 0px 0px 1px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+ 
+    i.fas:hover {
+        cursor:help;
+    }
+ 
+    i.fas.fa-pause, i.fas.fa-play, i.fas.fa-forward, i.fas.fa-backward{
+        color:#000; /* color of controls */
+    }    
+</style>
+ 
+<!-- below is styling to get windows 98 effect. from 98.css [https://jdan.github.io/98.css/] --> 
+<style>
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+}
+ 
+input[type="range"]:focus {
+  outline: none;
+}
+ 
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 21px;
+  width: 11px;
+  background: svg-load("https://raw.githubusercontent.com/jdan/98.css/main/icon/indicator-horizontal.svg");
+  transform: translateY(-8px);
+  box-shadow: none;
+  border: none;
+}
+ 
+input[type="range"].has-box-indicator::-webkit-slider-thumb {
+  background: svg-load("https://raw.githubusercontent.com/jdan/98.css/main/icon/indicator-rectangle-horizontal.svg");
+  transform: translateY(-10px);
+}
+ 
+input[type="range"]::-moz-range-thumb {
+  height: 21px;
+  width: 11px;
+  border: 0;
+  border-radius: 0;
+  background: svg-load("https://raw.githubusercontent.com/jdan/98.css/main/icon/indicator-horizontal.svg");
+  transform: translateY(2px);
+}
+ 
+input[type="range"]::-moz-range-thumb {
+  background: url("https://raw.githubusercontent.com/jdan/98.css/main/icon/indicator-horizontal.svg");
+  border: 0;
+  border-radius: 0;
+  height: 21px;
+  transform: translateY(2px);
+  width: 11px;
+  }
+ 
+input[type="range"].has-box-indicator::-moz-range-thumb {
+  background: svg-load("https://raw.githubusercontent.com/jdan/98.css/main/icon/indicator-rectangle-horizontal.svg");
+  transform: translateY(0px);
+}
+ 
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2px;
+  box-sizing: border-box;
+  background: black;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
+    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+}
+ 
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  box-sizing: border-box;
+  background: black;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
+    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+}
+ 
+button,input,label,option,select,textarea,ul.tree-view{-webkit-font-smoothing:none;font-family:"Pixelated MS Sans Serif",Arial;font-size:11px}h1{font-size:5rem}h2{font-size:2.5rem}h3{font-size:2rem}h4{font-size:1.5rem}u{border-bottom:.5px solid #222;text-decoration:none}button,input[type=reset],input[type=submit]{border:none;border-radius:0;box-sizing:border-box;color:transparent;min-height:23px;min-width:75px;padding:0 12px;text-shadow:0 0 #222}.vertical-bar,button,input[type=reset],input[type=submit]{background:silver;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #fff,inset -2px -2px grey,inset 2px 2px #dfdfdf}.vertical-bar{height:20px;width:4px}button:not(:disabled):active,input[type=reset]:not(:disabled):active,input[type=submit]:not(:disabled):active{box-shadow:inset -1px -1px #fff,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px grey;text-shadow:1px 1px #222}@media (not(hover)){button:not(:disabled):hover,input[type=reset]:not(:disabled):hover,input[type=submit]:not(:disabled):hover{box-shadow:inset -1px -1px #fff,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px grey}}button:focus,input[type=reset]:focus,input[type=submit]:focus{outline:1px dotted #000;outline-offset:-4px}button::-moz-focus-inner,input[type=reset]::-moz-focus-inner,input[type=submit]::-moz-focus-inner{border:0}:disabled,:disabled+label,input[readonly],input[readonly]+label{color:grey}:disabled+label,button:disabled,input[type=reset]:disabled,input[type=submit]:disabled{text-shadow:1px 1px 0 #fff}
+ 
+.title-bar-controls button {border:none;border-radius:0;box-sizing:border-box;color:transparent;min-height:23px;min-width:75px;padding:0 12px;text-shadow:0 0 #222}
+ 
+.title-bar-controls button {background:silver;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #fff,inset -2px -2px grey,inset 2px 2px #dfdfdf}
+ 
+.title-bar-controls button:not(:disabled):active {box-shadow:inset -1px -1px #fff,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px grey;text-shadow:1px 1px #222}
+ 
+@media (not(hover)){
+	button:not(:disabled):hover {
+    box-shadow:inset -1px -1px #fff,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px grey}
+}
+ 
+.title-bar-controls button:focus {outline:1px dotted #000; outline-offset:-4px}
+.title-bar-controls button::-moz-focus-inner {border:0}
+ 
+ 
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("https://files.catbox.moe/1za99g.woff") format("woff");
+  src: url("https://files.catbox.moe/8fwbkl.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("https://files.catbox.moe/z7csle.woff") format("woff");
+  src: url("https://files.catbox.moe/moqhx6.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+ 
+ 
+.window, .title-bar {
+  font-family: "Pixelated MS Sans Serif", Arial;
+  -webkit-font-smoothing: none;
+  font-size: 11px;
+}
+ 
+.window {
+  box-shadow: inset -1px -1px #0a0a0a,
+    inset 1px 1px #dfdfdf, inset -2px -2px #808080,
+    inset 2px 2px #ffffff;
+  background: #c0c0c0;
+  padding: 3px;
+  width:200px;
+}
+ 
+.title-bar {
+  padding: 3px 2px 3px 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ 
+.title-bar-text {
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 0;
+  margin-right: 24px;
+}
+ 
+.title-bar-controls {
+  display: flex;
+}
+ 
+.title-bar-controls button {
+  padding: 0;
+  display: block;
+  min-width: 16px;
+  min-height: 14px;
+}
+ 
+.title-bar-controls button:active {
+  padding: 0;
+}
+ 
+.title-bar-controls button:focus {
+  outline: none;
+}
+ 
+.title-bar-controls button[aria-label=Minimize]{
+background-image:url("https://raw.githubusercontent.com/jdan/98.css/main/icon/minimize.svg");
+background-position:bottom 3px left 4px;
+background-repeat:no-repeat}
+ 
+.title-bar-controls button[aria-label=Maximize]{
+background-image:url("https://raw.githubusercontent.com/jdan/98.css/4a2282dd9170cabf730fb5803d1153d86b2e94e3/icon/maximize.svg");
+background-position:top 2px left 3px;
+background-repeat:no-repeat}
+ 
+.title-bar-controls button[aria-label=Close]{
+background-image:url("https://raw.githubusercontent.com/jdan/98.css/main/icon/close.svg");
+background-position:top 3px left 4px;
+background-repeat:no-repeat;
+margin-left:2px}
+ 
+.window-body { margin:0px; height:98px; }
+ 
+ 
+ 
+input[type=range] {
+        -webkit-appearance: none;
+        appearance:none;
+        width: 100%;
+    }
+ 
+    input[type=range]:focus {
+        outline: none;
+    }
+ 
+    /* settings for chrome browsers */
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 2px; /* thickness of seeking track */
+        cursor: help;
+    }
+ 
+ 
+    /* settings for firefox browsers */
+    input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 2px; /* thickness of seeking track */
+        cursor: help;
+    }
+ 
+    .flex {display: flex;}
+ 
+    .titlebaricon { height:14px; width:14px;}
+ 
+ 
+    .songtitlewindow {
+        background-color:#fff;
+        color:#000;
+        box-shadow:inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a;
+    }
+ 
+    #musicplayer {
+        border:2px solid silver; /* border around player */
+        border-width: 2px 0px 0px 0px;
+        width:200px; /* width of the player */
+    }
+ 
+ 
+ 
+    .ic {
+    	width:90px;
+        position:relative;
+        bottom:1px;
+        right:1px;
+        overflow:hidden;
+        padding:2px;
+        border:2px solid transparent;
+    }
+ 
+    .songtitlearrow {
+        background-size:100%;
+        background-repeat:no-repeat;
+        background-image:url(https://files.catbox.moe/f5e8np.png);
+        height:21px;
+        width:21px;
+        position:relative;
+        top:2px;
+        left:-2px;
+        border:0px solid transparent;
+        border-width:0px 0px 0px 0px;
+    }
+ 
+    .songtitle {
+        padding:5px; /* padding around song title */
+        border-bottom:0px; /* border under song title */
+        display:block;
+        font-family:"Pixelated MS Sans Serif", Arial;
+    }
+ 
+    .controls {
+        font-size:18px !important; /* size of controls */
+        text-align:center;
+        width:100%;
+        position:relative;
+        bottom:10px;
+    }
+ 
+    .controls td {
+        padding:8px 5px 0px 5px; /* padding around controls */
+    }
+ 
+    button {
+        min-width:40px;
+    }
+ 
+    .seeking {
+        background-color:#c0c0c0; /* background color of seeking bar */
+        display:flex;
+        justify-content: space-evenly;
+        padding:14px; /* padding around seeking bar */
+    }
+ 
+    .current-time {
+        padding-right:5px;
+    }
+ 
+    .total-duration {
+        padding-left:5px;
+    }
+    /* END MUSIC */
+ 
+    .sidebar {
+    display:block;
+    height: 500px;
+    width: 150px;
+    position: fixed;
+    left: 390px;
+    top: 50%;
+    margin-top:-275px;
+    background-color:#2c2a4a;
+    border:1px dashed ;
+    padding:10px;
+    }
+ 
+ 
+    body {
+    background:#2c2a4a;
+    color:#f4effa;
+    font-size: 10px;
+    font-family: 'Verdana', sans-serif;
+    font-weight:normal;
+    position: fixed;
+    text-align:left;
+    overflow:none;
+    margin-top:20px;
+    margin-left:20px;
+    }
+ 
+    img {
+    max-width:100%;
+    height:auto;}
+ 
+    a {
+    text-decoration:none;
+    color:#ff90b3;
+    cursor:help;
+     -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;}
+ 
+    a:hover {
+    cursor:help;
+    letter-spacing:1px;
+    color:#7fdeff;}
+ 
+    #container {
+    background:#2c2a4a;
+    border:1px dashed ;
+    height:500px;
+    width: 650px;
+    position:fixed;
+    top:50%;
+    margin-top:-275px;
+    left:30%;
+    padding:10px;
+    }
+ 
+ 
+    .boxy {
+   border: 1px dashed;
+   display:scroll;
+   flex-direction: column;
+   border-collapse: collapse;
+   background: #2c2a4a;
+   -webkit-scrollbar {
+   display: none; }
+   -ms-overflow-style: none;  /* IE and Edge */
+   scrollbar-width: none;  /* Firefox */
+    }
+ 
+ 
+ 
+.img-container {
+text-align: center;
+font-family: 'Nintendo DS Bios', sans-serif;
+overflow-x: hidden;
+}
+ 
+#floatleft {
+   float: left;
+   margin: 2px;
+ }
+ 
+ #floatright {
+   float: right;
+   margin: 2px;
+ }
+ 
+ .clock {
+  z-index: 567865;
+  position: absolute;
+  background-color: transparent;
+  margin-top: 160px;
+  top: -5%;
+  left: 370px;
+}
+ 
+.divider1 {
+ width: 100%;
+ height: 20x;
+ background: transparent;
+ border-top: 1px dashed white;
+ border-left: 1px dashed white;
+ border-right: 1px dashed white;
+  padding-top: 3px;
+ text-align: center;
+ font-size: 12px;
+}
+ 
+.divider2 {
+ width: 100%;
+ height: 20px;
+ background: transparent;
+ border-top: 1px dashed white;
+ border-left: 1px dashed white;
+ border-right: 1px dashed white;
+  padding-top: 3px;
+ text-align: center;
+ font-size: 12px;
+}
+ 
+.divider3 {
+ width: 100%;
+ height: 20px;
+ background: transparent;
+ border-top: 1px dashed white;
+ border-right: 1px dashed white;
+ border-left: 1px dashed white;
+ border-bottom: 1px dashed white;
+ margin-bottom: 5px;
+  padding-top: 3px;
+ text-align: center;
+ font-size: 12px;
+}
+ 
+/* TABLES */
+#ttable {
+              width: 650px;
+              height:500px;
+              border-width: 1px;
+                border-spacing: 2px;
+                border-style: dashed;
+                border-color: #d5dfe5;
+                border-collapse: separate;
+              margin: auto;
+                overflow: hidden;
+ 
+            }
+             td {
+                padding: 0px;
+                border-color: #d5dfe5;
+ 
+                vertical-align: top;
+            }
+ 
+            .tablebox {
+    position: relative;
+   border: 1px dashed #d5dfe5;
+   display: block;
+   width: 182px;
+   flex-direction: column; 
+   border-collapse: collapse;
+   border-spacing: 2px;
+   z-index: 2;   
+ 
+}
+/* END TABLES */
+ 
+ 
+/* ANIMATIONS */
+ 
+@keyframes bbounce{
+  0% {transform:translate(0px,0px);}
+  50% {transform:translate(0px,10px);}
+  100% {transform:translate(0px, 0px);}
+}
+ 
+@-moz-keyframes bbounce{
+  0% {-moz-transform:translate(0px,0px);}
+  50% {-moz-transform:translate(0px,10px);}
+  100% {-moz-transform:translate(0px,0px);}
+}
+ 
+@-webkit-keyframes bbounce {
+  0% {-webkit-transform:translate(0px,0px);}
+  50% {-webkit-transform:translate(0px,10px);}
+  100% {-webkit-transform:translate(0px,0px);}
+}
+ 
+@-o-keyframes bbounce {
+  0% {-o-transform:translate(0px,0px);}
+  50% {-o-transform:translate(0px,10px);}
+  100% {-o-transform:translate(0px,0px);}
+}
+ 
+@-ms-keyframes bbounce {
+  0% {-ms-transform:translate(0px,0px);}
+  50% {-ms-transform:translate(0px,10px);}
+  100% {-ms-transform:translate(0px,0px);}
+}
+ 
+.hover{
+position:relative;
+    animation: bbounce linear 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 50% 50%;
+ 
+/* Safari 4+, Android, Chrome */    
+-webkit-animation: bbounce linear 2.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform-origin: 50% 50%;
+ 
+/* Fx 5+ */    
+    -moz-animation: bbounce linear 2.5s;
+    -moz-animation-iteration-count: infinite;
+    -moz-transform-origin: 50% 50%;
+ 
+/* Opera 12+ */    
+    -o-animation: bbounce linear 2.5s;
+    -o-animation-iteration-count: infinite;
+    -o-transform-origin: 50% 50%;
+ 
+/* IE 10+, Fx 29+ */    
+    -ms-animation: bbounce linear 2.5s;
+    -ms-animation-iteration-count: infinite;
+    -ms-transform-origin: 50% 50%;}
+ 
+    .hover img {
+    background:transparent;
+}
+ 
+/* END ANIMATIONS */
+ 
+#credit{
+font-size: 12px;
+position: fixed;
+bottom: 0;
+right: 0;
+}
+ 
+.linkicon {
+ width: 100%;
+ height: 10px;
+margin-left: 5px;
+ 
+/** SCROLLBAR **/
+}
+::-webkit-scrollbar {
+width: 10px; /** width of total scrollbar **/
+background: #fff; /** background of scrollbar **/
+border: 1px solid #000; /** border around whole scrollbar **/
+}
+ 
+::-webkit-scrollbar-thumb {
+background: #ccc; /** color of the moving part of the scrollbar (thumb) **/
+border: 1px solid #000; /** border around moving part of scrollbar (overlaps with border of total scrollbar) **/
+}
+/** END SCROLLBAR **/
+ 
+</style>
+<body> <!-- now we're below the head  
+at the <body> tag. this is the content
+of your website. this is the part you
+will edit the most. -->
+ 
+<!-- CLOCK START -->
+<div class="clock">
+<iframe src="https://free.timeanddate.com/clock/i90dzcc2/n305/tluk/fn17/fcfff/tct/pct/bat2/bacfff/ta1" frameborder="0" width="103" height="21" allowtransparency="true"></iframe>
+</div>
+<!-- CLOCK END -->
+ 
+<!-- SIDEBAR START-->
+    <div class="sidebar" style="text-align: center;">
+ 
+      <!-- NAV LINKS-->
+      <div class="divider1"><div class=imgcontainer>
+        <b>navigation</b></div>
+      <div class="divider2"><a href="https://ncymrn.neocities.org/">home</a></div>
+      <div class="divider2"><a href="link">about me</a></div>
+      <div class="divider2"><a href="link">art</a></div>
+      <div class="divider2"><a href="link">writing</a></div>
+      <div class="divider2"><a href="link">resources</a></div>
+      <div class="divider2"><a href="link">links</a></div>
+      <div class="divider3"><a href="link">diary</a></div> 
+    </div>
+         <!-- BUTTONS -->
+ 
+        <i>check out my friends!</i> <br><br>
+        <marquee scrollamount="3" loop="infinite" onmouseover="this.stop();" onmouseout="this.start();">
+            <img src="https://picsum.photos/88/33" style="opacity:0.9;"> 
+            <img src="https://picsum.photos/88/33" style="opacity:0.9;"> 
+            <img src="https://picsum.photos/88/33" style="opacity:0.9;">
+          </marquee>
+        <!-- BUTTONS END -->  
+ 
+        <!-- UPDATES START-->
+        <br><br>
+        <div class="boxy" style="height:50px; padding:10px; overflow-y: scroll;">11.09.23 update for scroll <br> 05.09.23: added animations, css grid, music player <br> 04.09.23: new site created 
+        <br></div><br>
+        <!-- UPDATES  END-->
+ 
+        <!-- DIMDEN'S NAVLINK-->
+       <div class="img-container"><iframe width="100" height="100" style="border:none" src="https://dimden.neocities.org/navlink/" name="neolink"></iframe></div>
+        <!-- NAVLINK END -->
+ 
+       <br> 
+ 
+       <!-- BLINKIES -->   
+       <marquee scrollamount="3" loop="infinite" onmouseover="this.stop();" onmouseout="this.start();" id="buttons-misc">
+          <img src="https://cdn.discordapp.com/attachments/519510988173869071/1100018631473102918/IMG_3580.gif" style="opacity:0.9;" width="130" height="20">
+          <img src="https://cdn.discordapp.com/attachments/968710024845209661/1100021966683000922/IMG_3581.gif" style="opacity:0.9;" width="130" height="20">
+          <img src="https://cdn.discordapp.com/attachments/865697796224319500/1100081718842621992/IMG_3607.gif" style="opacity:0.9;" width="130" >
+          <img src="https://cdn.discordapp.com/attachments/865697796224319500/1100081719291416629/IMG_3608.gif" style="opacity:0.9;" width="130" >
+          <img src="https://cdn.discordapp.com/attachments/519510988173869071/1100126876443353298/IMG_3626.gif" style="opacity:0.9;" width="130" >
+       </marquee>
+      <!-- BLINKIES END -->  
+              <!-- BLINKIES -->   
+              <marquee scrollamount="3" marquee direction="right" loop="infinite" onmouseover="this.stop();" onmouseout="this.start();" id="buttons-misc">
+                <img src="https://media.tenor.com/2_VovstsoFMAAAAM/blinkies-blinkie.gif" style="opacity:0.9;" width="130" height="20">
+                <img src="https://i9.glitter-graphics.org/pub/224/224039m0idzoqdwu.gif" style="opacity:0.9;" width="130" height="20">
+                <img src="https://i10.glitter-graphics.org/pub/1563/1563142e9rtyaq3qb.gif" style="opacity:0.9;" width="130" >
+                <img src="https://y2k.neocities.org/blinkiez/newbatch/pinhead.gif" style="opacity:0.9;" width="130" >
+                <img src="https://y2k.neocities.org/blinkiez/newbatch/rightclickWWA.gif" style="opacity:0.9;" width="130" >
+             </marquee>
+            <!-- BLINKIES END -->  
+ 
+    </div>
+<!-- SIDEBAR END -->  
+ 
+<!-- MAIN BOX START -->
+    <div id="container">
+ 
+            <table style="border:none">
+                <tbody>
+                 <tr>
+                  <td> <!-- LEFT BOXES-->
+ 
+                    <div class="tablebox" style="overflow: hidden; height: 210px;  margin:5px; padding:5px; width:195px;">
+                    <img src="https://cdn.discordapp.com/attachments/704939728927195186/1148947392729731102/IMG_4919.png" style="  margin:5px; float:left; height:80px; width:80px;">
+                    <div class=imgcontainer>
+                        <img src="https://ncymrn.neocities.org/images/online.png" style="opacity:0.9; margin-top:5px;" width="auto" ></div>
+                nancy <br> 20+ | he/him <br> software dev student
+                <br><br> <center><i>it's just me and michael, solid as they come... me and michael, it's not a question now...</i></center>
+                 <br><div class="img-container"><a href="https://ncymrn.123guestbook.com"> <img src="https://cdn.discordapp.com/attachments/519510988173869071/1100416557416456262/IMG_3659.gif" style="opacity:0.9;" width="auto"></a></div>
+                </div>
+                    </div> <br>
+                  <img src="https://y2k.neocities.org/stamps/tumblr_inline_pedksjWYF31vlugze_500.gif" style=" margin-top:5px; margin:2.5px;" >
+                    <img src="https://raining-starss.neocities.org/optimize%20(11).png" style=" margin:2.5px;">
+                    <br>
+                    <img src="https://y2k.neocities.org/stamps2/pantone_stardust_by_king_lulu_deer-dc6k468.gif" style=" margin:2.5px;">
+                    <img title="cod zombies megafan since 2009" src="https://64.media.tumblr.com/67ddea59ee9f430c2a02c1bff210f9f3/tumblr_inline_pqp2wy5nEC1vefsve_500.png" style=" margin:2.5px;">
+                    <br>
+                    <img src="https://64.media.tumblr.com/b1d2082b47a87d69d9813ee3aa0fabd5/tumblr_inline_p3jlp05NNJ1vtcax5_500.gif" style=" margin:2.5px;">
+                    <img src="https://64.media.tumblr.com/c9ed8a30766e16b676da066cf8ac6341/tumblr_inline_rc0e551jaG1vefsve_500.gif" style=" margin:2.5px;">
+                    <br>
+                    <img title="LMAO COULD YOU IMAGINE?!" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c1b3fa5b-9cef-456b-bbed-76b4a2eed716/d6bil29-86fed31c-3e8b-4352-800f-3e98d6dad4fd.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvYzFiM2ZhNWItOWNlZi00NTZiLWJiZWQtNzZiNGEyZWVkNzE2XC9kNmJpbDI5LTg2ZmVkMzFjLTNlOGItNDM1Mi04MDBmLTNlOThkNmRhZDRmZC5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.z15kNzoI3hDwtPNTRtSVnMQDFQ-YmRUye0elwVj8wmc" style=" margin:2.5px;">
+                    <img src="https://64.media.tumblr.com/cebe114b7566d34b3127041a2b019acc/tumblr_inline_rbjp70UntJ1vefsve_500.gif" style=" margin:2.5px;">
+                  </center>                   
+ 
+                  </td> <!-- CENTER BOXES -->
+                  <td colspan="2">
+ 
+                    welcome to my website! i'm an artist, writer and software development student from scotland. this is my personal site where i post about assorted projects and stuff. 
+i hope you enjoy your time here! i've been making websites for over five years now, but this is the first one i've coded from scratch. please let me know if you notice any bugs!
+<br> <br>there's no real theme or anything to my website, i just kind of put everything here. feel free to check it all out! i've been trying to move away from the typical 
+social media sites, so this is my attempt at that.
+ 
+       <br><br>
+                        <div class="tablebox" style="overflow: hidden; height: 100px;  margin:5px; padding:10px; width:182px;">
+ 
+                          <b>current fandom:</b> super into persona 2!<br>
+                         <b>blorbo of the week:</b> who else but jun kurosu? <br>
+                          <b>currently playing:</b> LISA: the painful<br>
+                          <b>currently reading:</b> trainspotting
+ 
+                          </div>  <br>
+                    i have lots of hobbies and interests! i love roleplaying, retro technology and gaming, and in my spare time i am a cosplayer and drag queen. you may 
+                    be able to tell, but i love clowns a lot! i collect clowns, cassettes, and records. i also love collecting fanzines!!          
+                   <br> <br> i have a particular love for old websites but especially old text based mmo games. please recommend me some if you know any!
+                    </td>
+              <td> <!-- RIGHT BOXES -->
+                <div class=imgcontainer>
+                    <img src="https://media.tenor.com/hA8Vv4w3QaAAAAAi/welcome-to-my-homepage-early-internet.gif" style="opacity:0.9; margin-top:5px;" width="auto" ></div>
+ 
+ 
+                    <center><div class="hover">
+                   <div class="moose-animation"><img src="https://i.imgur.com/t0Vi4GH.png">︎
+                      </div></div></center>
+ 
+              <br>
+                   <!-- MUSIC PLAYER -->
+                   <div class="player">
+                    <div class="window">
+                      <div class="title-bar">
+                        <div class="title-bar-text"><sub><img class="titlebaricon" src="https://files.catbox.moe/tg55zp.png" alt="cd player icon"></sub> CD player</div>
+                        <div class="title-bar-controls">
+                          <button aria-label="Minimize"></button>
+                          <button aria-label="Maximize"></button>
+                          <button aria-label="Close"></button>
+                        </div>
+                      </div>
+                      <div class="window-body">
+                        <div class="flex">
+ 
+                        <div id="musicplayer">
+                            <div class="songtitlewindow">
+                                <div class="flex"><marquee scrollamount="4" class="songtitle"></marquee><div class="songtitlearrow"></div></div>
+                            </div>
+ 
+                     <div class="seeking">
+                                <div class="current-time">00:00</div>
+ 
+                                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+ 
+                                <div class="total-duration">0:00</div>
+                            </div>
+ 
+                            <table class="controls" style="border:none">
+                                <tr>
+                                    <td>
+                                        <div class="prev-track" onclick="prevTrack()"><button><i class="fas fa-backward"></i></button></div>
+                                    </td>
+                                    <td>
+                                        <div class="playpause-track" onclick="playpauseTrack()" ><button><i class="fas fa-play"></i></button></div>
+                                    </td>
+                                    <td>
+                                        <div class="next-track" onclick="nextTrack()"><button><i class="fas fa-forward"></i></button></div>
+ 
+                                    </td>
+                                </tr>
+                            </table>
+ 
+                            <audio id="music" src=""></audio> 
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                        </div>
+                    </body>
+ 
+                    <script>
+                            // initiate variables
+                            let track_name = document.querySelector(".songtitle");
+ 
+                            let playpause_btn = document.querySelector(".playpause-track");
+                            let next_btn = document.querySelector(".next-track");
+                            let prev_btn = document.querySelector(".prev-track");
+ 
+                            let seek_slider = document.querySelector(".seek_slider");
+                            let curr_time = document.querySelector(".current-time");
+                            let total_duration = document.querySelector(".total-duration");
+ 
+                            let track_index = 0;
+                            let isPlaying = false;
+                            let updateTimer;
+ 
+                            // create new audio element
+                            let curr_track = document.getElementById("music");
+ 
+                            //
+                            // DEFINE YOUR SONGS HERE!!!!!
+                            // MORE THAN FOUR SONGS CAN BE ADDED!!
+                            // JUST ADD ANOTHER BRACKET WITH NAME AND PATH
+                            // CATBOX.MOE IS RECOMMENDED FOR UPLOADING MP3 FILES
+                            let track_list = [
+                                {
+                                    name:"One Shot One Kill - The Cat's Whiskers",
+                                    path:"https://files.catbox.moe/fegzmf.mp3"
+                                },
+                                {
+                                    name:"Shooting Arrows - The Cat's Whiskers",
+                                    path:"https://files.catbox.moe/zj81lr.mp3"
+                                },
+                                {
+                                    name:"4 REAL - The Cat's Whiskers",
+                                    path:"https://files.catbox.moe/fxd8fo.mp3"
+                                },
+                                {
+                                    name:"My Sweetest Love - The Cat's Whiskers ft. Kazuma Mitchell",
+                                    path:"https://files.catbox.moe/qe4he5.mp3"
+                                },
+                                {
+                                    name:"Mercy On Me - The Cat's Whiskers",
+                                    path:"https://files.catbox.moe/w7nnf9.mp3"
+                                }
+                            ];
+                            //
+                            //
+                            //
+                            //
+                            //
+ 
+                            function loadTrack(track_index) {
+                                clearInterval(updateTimer);
+                                resetValues();
+ 
+                                // load a new track
+                                curr_track.src = track_list[track_index].path;
+                                curr_track.load();
+ 
+                                // update details of the track
+                                track_name.textContent = "playing " + (track_index + 1) + " of " + track_list.length + ": " + track_list[track_index].name;
+ 
+                                // set an interval of 1000 milliseconds for updating the seek slider
+                                updateTimer = setInterval(seekUpdate, 1000);
+ 
+                                // move to the next track if the current one finishes playing 
+                                curr_track.addEventListener("ended", nextTrack);
+                            }
+ 
+                            // reset values
+                            function resetValues() {
+                                curr_time.textContent = "0:00";
+                                total_duration.textContent = "0:00";
+                                seek_slider.value = 0;
+                            }
+ 
+                            // checks if song is playing
+                            function playpauseTrack() {
+                                if (!isPlaying) playTrack();
+                                else pauseTrack();
+                            }
+ 
+                            // plays track when play button is pressed
+                            function playTrack() {
+                                curr_track.play();
+                                isPlaying = true;
+ 
+                                // replace icon with the pause icon
+                                playpause_btn.innerHTML = '<button><i class="fas fa-pause"></i></button>';
+                            }
+ 
+                            // pauses track when pause button is pressed
+                            function pauseTrack() {
+                                curr_track.pause();
+                                isPlaying = false;
+ 
+                                // replace icon with the play icon
+                                playpause_btn.innerHTML = '<button><i class="fas fa-play"></i></button>';
+                            }
+ 
+                            // moves to the next track
+                            function nextTrack() {
+                                if (track_index < track_list.length - 1)
+                                    track_index += 1;
+                                else track_index = 0;
+                                loadTrack(track_index);
+                                playTrack();
+                            }
+ 
+                            // moves to the previous track
+                            function prevTrack() {
+                                if (track_index > 0)
+                                    track_index -= 1;
+                                else track_index = track_list.length;
+                                loadTrack(track_index);
+                                playTrack();
+                            }
+ 
+                            // seeker slider
+                            function seekTo() {
+                                seekto = curr_track.duration * (seek_slider.value / 100);
+                                curr_track.currentTime = seekto;
+                            }
+ 
+                            function seekUpdate() {
+                                let seekPosition = 0;
+ 
+                                // check if the current track duration is a legible number
+                                if (!isNaN(curr_track.duration)) {
+                                    seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+                                    seek_slider.value = seekPosition;
+ 
+                                // calculate the time left and the total duration
+                                let currentMinutes = Math.floor(curr_track.currentTime / 60);
+                                let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+                                let durationMinutes = Math.floor(curr_track.duration / 60);
+                                let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+ 
+                                // adding a zero to the single digit time values
+                                if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
+                                if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+                                if (currentMinutes < 10) { currentMinutes = currentMinutes; }
+                                if (durationMinutes < 10) { durationMinutes = durationMinutes; }
+ 
+                                curr_time.textContent = currentMinutes + ":" + currentSeconds;
+                                total_duration.textContent = durationMinutes + ":" + durationSeconds;
+                              }
+                            }
+ 
+                            // load the first track in the tracklist
+                            loadTrack(track_index);
+                        </script>
+           <!-- END MUSIC PLAYER -->
+ 
+                        <div class="tablebox" style="overflow: hidden; height: 200px;  margin:5px;  padding:5px; width:195px;">
+                            <iframe src="https://www5.cbox.ws/box/?boxid=943132&boxtag=8zSCoz" width="100%" height="190" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="50px"  marginwidth="0" scrolling="auto"></iframe>	
+ 
+                            </div> 
+                   </td>
+ 
+                 </tr>
+                </tbody>
+            </table>
+        </div>
+<!-- MAIN BOX END -->
+ 
+ 
+ 
+<div id="credit"><a href="https://ncymrn.neocities.org/">★</a></div>
+ 
+</body>
+</html>

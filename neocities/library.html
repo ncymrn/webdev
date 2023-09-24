@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: #AFD0D6;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        .bookshelf {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+  width: 1225px;
+    height: auto;
+    margin-left: 500px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  
+        }
+ 
+     
+ 
+        .book {
+            width: 120px;
+            height: 180px;
+            margin: 5px; 
+            background-color: #36393B;
+ 
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+ 
+        .book:hover {
+            transform: scale(1.1);
+        }
+ 
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+            align-items: center;
+            justify-content: center;
+        }
+ 
+        .popup-container {
+            background-color: #BFB6BB;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            height:530px;
+            max-width: 800px;
+            animation: fadein 0.5s;
+            display: flex;
+        }
+ 
+        .book-image-popup {
+            flex: 1;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+ 
+        .book-info {
+            flex: 1;
+            padding: 20px;
+        }
+ 
+        .book-info h2 {
+            font-size: 24px;
+            margin-top: 0;
+        }
+ 
+        .popup button {
+            background-color: #C49799;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+ 
+        .popup button:hover {
+            background-color: #C49799;
+        }
+ 
+        @keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        .sidebar{
+            position: fixed;
+    margin-left: 50px;
+  top: 40px;
+  padding: 20px;
+
+}
+
+.sidebar a{
+  display: flex;
+  align-items: center;
+}
+ 
+    </style>
+    <title>Bookshelf</title>
+</head>
+<body>
+ 
+    <!-- FILTER BY MAGNUSTHEMES -->
+    <div class = "sidebar">
+        YEAR
+    <u1 class="filter option-set exclusive" data-filter-group="group1">
+        <a href="#" data-filter-value="" class="selected">All</a>
+        <a href="#" data-filter-value=".2023">2023</a>
+        <a href="#" data-filter-value=".2022">2022</a>
+        <a href="#" data-filter-value=".2021">2021</a>
+        <a href="#" data-filter-value=".2020">2020</a>
+        <a href="#" data-filter-value=".2019">2019</a>
+   </u1>
+
+
+ <BR>
+    FANDOM
+      <u1 class="filter option-set exclusive" data-filter-group="group3">
+        <a href="#" data-filter-value="" class="selected">All</a>
+      <a href="#" data-filter-value=".dr">danganronpa</a>
+        <a href="#" data-filter-value=".mcr">my chemical romance</a>
+        <a href="#" data-filter-value=".hxh">hunter x hunter</a>
+        <a href="#" data-filter-value=".persona">persona</a>
+        <a href="#" data-filter-value=".tmm">tokyo mew mew</a>
+        <a href="#" data-filter-value=".bratz">bratz</a>
+        <a href="#" data-filter-value=".nonfandom">original</a>
+      </u1>
+<br>
+      MINE
+      <u1 class="filter option-set exclusive" data-filter-group="group2">
+    
+        <a href="#" data-filter-value=".mod">mod</a>
+        <a href="#" data-filter-value=".contrib">contributor</a>
+    </u1>
+   
+    </div>
+
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script src="https://static.tumblr.com/p0knose/FpAp5c11c/magnusthemes.combofilters.js"></script>
+<script>
+    let JSONbooks = [];
+function displayBook(currentBook) {
+  console.log("Start of displayQuestion");
+    console.log(currentBook);
+    console.log(JSONbooks);
+    // Clear existing input fields
+    
+    let book = JSONbooks[currentBook];
+    console.log(book);
+    
+    let bookshelf = document.getElementById("bookshelf");
+    
+    //bookshelf.innerHTML = '';
+        
+//    for (let i = 0; i < 8; i++) {
+    // <div class="item 2021 dr mod contrib"><div class="book" style="background-image: url('https://i.imgur.com/qT8zaKs.png');" id="book1"></div></div>
+    // <div class="item 2021 dr mod contrib"><div class="book" id="book1" style="background-image: url(&quot;https://i.imgur.com/qT8zaKs.png&quot;);"></div></div>
+
+      let newDiv = document.createElement("div");
+      let bookDiv = document.createElement("div");
+      newDiv.className = book.class;
+      bookDiv.className = "book";
+      bookDiv.style = decodeURI(book.style);
+      bookDiv.id = book.id;
+      newDiv.appendChild(bookDiv);
+      bookshelf.appendChild(newDiv);
+
+//    }
+  console.log("End of displayQuestion");
+  }
+
+    fetch('https://booksjson--nancyvalentine.repl.co/books.json')
+        .then(response => response.json())
+        .then(data => {
+        console.log("3");
+        JSONbooks = data;
+        console.log(JSONbooks);
+        console.log("4");
+        for (let i = 0; i < JSONbooks.length; i++) {
+            displayBook(i);
+        }
+        console.log("5");
+        });
+
+    $(document).ready(function() {
+     var $container = $(".bookshelf"); // the container with all the elements to filter inside
+     var filters = {}; //should be outside the scope of the filtering function
+     /* --- read the documentation on isotope.metafizzy.co for more options --- */
+     var $grid = $container.isotope({
+       itemSelector: ".item", // the elements to filter
+       percentPosition: true // put true if you use percentage widths, otherwise put false
+     });
+     $(".option-set a").click(function(e) {
+       var $this = $(this); // cache the clicked link
+       var filterAttr = "data-filter-value";
+       var filterValue = $this.attr(filterAttr); // cache the filter
+       var $optionSet = $this.parents(".option-set"); // cache the parent element
+       var group = $optionSet.attr("data-filter-group"); // cache the parent filter group
+       var filterGroup = filters[group];
+       if (!filterGroup) {
+         filterGroup = filters[group] = [];
+       }
+       var $selectAll = $optionSet.find('a['+filterAttr+'=""]'); // the 'select all' button in the current group
+       var activeClass = "selected", // the class for active links
+         exclClass = "exclusive"; // the class for exclusive groups
+     comboFiltering($this,filters,filterAttr,filterValue,$optionSet,group,$selectAll,activeClass,exclClass);
+       var comboFilter = getComboFilter(filters);
+       $grid.isotope({
+
+         filter: comboFilter
+       });
+       $this.toggleClass(activeClass);
+       e.preventDefault();
+     });
+    });
+    </script>
+ 
+    <!-- END FILTER SCRIPT -->
+ 
+    <div id = "bookshelf" class="bookshelf">
+      
+           <!--
+            <div class="item 2021 dr mod contrib"><div class="book" style="background-image: url('https://i.imgur.com/qT8zaKs.png');" id="book1"></div></div>
+            <div class="item 2022 dr"><div class="book" style="background-image: url('https://i.imgur.com/y1nr8OU.png');" id="book2"></div></div>
+            <div class="item 2021 mcr"><div class="book" style="background-image: url('https://i.imgur.com/dCY1nM3.png');" id="book3"></div></div>
+            <div class="item 2021 mcr"><div class="book" style="background-image: url('https://i.imgur.com/hl2Mifk.png');" id="book4"></div></div>
+            <div class="item 2022 dr"><div class="book" style="background-image: url('https://i.imgur.com/RSpWYIV.png');" id="book5"></div></div>
+            <div class="item 2021 nonfandom"><div class="book" style="background-image: url('https://i.imgur.com/CAn9EGU.png');" id="book6"></div></div>
+            <div class="item 2021 mcr"><div class="book" style="background-image: url('https://i.imgur.com/ONzMK6K.png');" id="book7"></div></div>
+            <div class="item 2021 dr"><div class="book" style="background-image: url('https://i.imgur.com/u4GgZlY.png');" id="book8"></div></div>
+           -->
+ 
+    <br><br>
+    
+ 
+    <div class="popup" id="book1Popup">
+        <div class="popup-container">
+            <div class="book-image-popup" style="background-image: url('https://i.imgur.com/qT8zaKs.png');"></div>
+            <div class="book-info">
+                <h2>Book 1 - Title</h2>
+                <p>Author: John Doe</p>
+                <p>Published: 2020</p>
+                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <img src="https://i.imgur.com/npoeodU.gif"><br>
+                <button id="closeBook1" class="close-button">Close</button>
+                <br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="popup" id="book2Popup">
+        <div class="popup-container">
+            <div class="book-image-popup" style="background-image: url('https://i.imgur.com/y1nr8OU.png');"></div>
+            <div class="book-info">
+                <h2>Book 1 - Title</h2>
+                <p>Author: John Doe</p>
+                <p>Published: 2020</p>
+                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <img src="https://i.imgur.com/npoeodU.gif"><br>
+                <button id="closeBook1" class="close-button">Close</button>
+    
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Repeat the popup code for other books -->
+ 
+    <script>
+
+
+
+        const books = document.querySelectorAll('.book');
+        const closeButtons = document.querySelectorAll('.close-button');
+        const popups = document.querySelectorAll('.popup');
+ 
+        books.forEach((book, index) => {
+            book.addEventListener('click', () => {
+                popups[index].style.display = 'flex';
+            });
+ 
+            closeButtons[index].addEventListener('click', () => {
+                popups[index].style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

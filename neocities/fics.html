@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FICS</title>
+    <link rel="shortcut icon" href="https://img.freepik.com/premium-vector/pixel-art-book-bit-game-icon_360488-73.jpg">
+    <style type="text/css">
+        /* CONTENT */
+        body {
+            background: #E9ECF5;
+            color: #051923;
+            font-size: 10px;
+            font-family: Verdana, sans-serif;
+            position: relative;
+            text-align: left;
+            overflow: none;
+            margin: 0;
+            top: 0px;
+            left: 0px;
+            line-height: 150%;
+            height: 100%;
+            width: 100%;
+        }
+ 
+        #container {
+            position: relative;
+            padding-top: 50px;
+            margin: 0 auto;
+            width: 500px;
+            margin-bottom: 120px;
+        }
+ 
+        .boxy {
+            border: 1px dashed #586F6B;
+            display: scroll;
+            border-collapse: collapse;
+            padding: 10px;
+            margin:10px;
+            width:500px;
+            transition: height 0.3s ease;
+            -webkit-scrollbar {
+                display: none;
+            }
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        
+ 
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        /* END CONTENT */
+ 
+        /* TEXT STYLING */
+        h1{
+            font-size:13px;
+        }
+
+        h2{
+            font-size:10px;
+            color:#ff0000;
+        }
+ 
+        a {
+        
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #0C6291;
+            letter-spacing: 1px;
+            cursor: help;
+            -webkit-transition: all 0.7s ease;
+            transition: all 0.7s ease;
+            -moz-transition: all 0.7s ease;
+            -o-transition: all 0.7s ease;
+        }
+ 
+        a:hover {
+            cursor: help;
+            letter-spacing: 1px;
+            color: #D66853;
+        }
+ 
+        p {
+            margin: 10px 0 10px 0;
+        }
+        /* END TEXT STYLING */
+ 
+ 
+ 
+        /* SIDEBAR */ 
+        #sidebar {
+            position: fixed;
+            top: 0px;
+            width: 200px;
+            height: 100%;
+            left: 50%;
+            margin-left: -480px;
+        }
+ 
+        #sidebarinner {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: justify;
+            -moz-text-align-last: center;
+            text-align-last: center;
+        }
+ 
+        #nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+ 
+        #nav a {
+            margin: 0px 4px;
+        }
+        /* END SIDEBAR */
+ 
+        /* READ MORE */
+        .more {
+        display: none;
+        }
+ 
+        .read-more {
+        color: #0078d4; 
+        cursor: pointer;
+        }
+ 
+        .read-more:hover {
+        text-decoration: underline;
+        }
+        /* END READ MORE */
+
+ * {cursor: url(https://cur.cursors-4u.net/symbols/sym-6/sym597.cur), auto !important;} 
+
+ .credit {
+    color: #cdb2a7;
+    position:fixed;
+ 
+    right:15px;
+    width:80px;
+    bottom:15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+ 
+}
+ 
+ 
+.credit a {
+    padding:10px;
+    width:30px;
+    margin-right:0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+ 
+.credit a:hover {
+   -webkit-transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+    -ms-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+ 
+}
+
+
+
+/* END CREDIT  */
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <div id="sidebarinner">
+            <a href="/">home</a> | 
+                <a href="https://archiveofourown.org/users/ncymrn">ao3</a><p>
+            here are all the fics i've written. i hope you enjoy them! please feel free to download them and keep them for your collection.
+            if you like them, please let me know! i love reading comments and constructive criticism.
+            <br><br><b>REQUESTS:</b> tentatively open
+                <div id="nav">
+ 
+ 
+ 
+                <p class="filter option-set exclusive" data-filter-group="group1">
+                    
+                    <br>fandom <br>
+                    <a href="#" data-filter-value="" class="selected">All</a>
+                    <a href="#" data-filter-value=".persona">persona</a>
+                    <a href="#" data-filter-value=".pathologic">pathologic</a>
+                    <a href="#" data-filter-value=".gorillaz">gorillaz</a>
+                    <a href="#" data-filter-value=".danganronpa">danganronpa</a>
+                    <a href="#" data-filter-value=".prototype">prototype</a>
+                </p>
+ 
+ 
+                <p class="filter option-set " data-filter-group="group2">
+                    rating <br>
+                <a href="#" data-filter-value="" class="selected">All</a>
+                <a href="#" data-filter-value=".g">general</a>
+                <a href="#" data-filter-value=".t">teen</a>
+                <a href="#" data-filter-value=".m">mature</a>
+                <a href="#" data-filter-value=".e">explicit</a>
+                </p>
+ 
+                <p class="filter option-set " data-filter-group="group3">
+                    status<br>
+                <a href="#" data-filter-value="" class="selected">All</a>
+                <a href="#" data-filter-value=".completed">completed</a>
+                <a href="#" data-filter-value=".unfinished">unfinished</a>
+                </p>
+
+                <p class="filter option-set exclusive " data-filter-group="group3">
+                    year<br>
+                <a href="#" data-filter-value="" class="selected">All</a>
+                <a href="#" data-filter-value=".2023">2023</a>
+                <a href="#" data-filter-value=".2022">2022</a>
+                <a href="#" data-filter-value=".2021">2021</a>
+                <a href="#" data-filter-value=".2020">2020</a>
+                <a href="#" data-filter-value=".2019">2019</a>
+                <a href="#" data-filter-value=".2018">2018</a>
+                <a href="#" data-filter-value=".2017">2017</a>
+                <a href="#" data-filter-value=".2016">2016</a>
+                </p>
+ 
+ 
+            </div>
+        </div>
+    </div>
+ 
+ 
+    <div id="container">
+ 
+        <div class="grid">
+ 
+            <!-- cut close -->
+            <div class="item persona e completed 2023"> <div class="boxy">
+ 
+                <h1>cut close</h1>
+                <b>persona 2, e, kurosu jun/suou tatsuya, request, 2375 words</b>
+                <span class="dots">...</span>
+                <span class="more"><br>kurosu jun, suou tatsuya, cannabis, knifeplay, trans male character, under-negotiated kink, blood drinking, 
+                blood kink, vaginal sex, cock warming</span>
+                <span class="read-more" onclick="toggleText(1)">( read more ...)</span><br><br>
+                "is it wrong i kind of want you to stab me?" he asks.
+                <br><br>jun's whole body reacts to that with excitement. he tries to mask it as best he can, but tatsuya knows him better than anyone.
+                "no," he says carefully, "i don't think so."
+                <br><br>"oh," tatsuya replies breathlessly. "oh, damn, okay."
+                <br><br>
+                <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+            
+            <!-- desiderium -->
+            <div class="item persona t completed 2023"> <div class="boxy">
+ 
+                <h1>desiderium</h1>
+                <b>persona 2, t, kurosu jun/suou tatsuya, request, 1014 words</b>
+                <span class="dots">...</span>
+                <span class="more"><br>kurosu jun, suou tatsuya, set during eternal punishment, crossdressing, angst, mutual pining, awkward flirting, maid jun</span>
+                <span class="read-more" onclick="toggleText(2)">( read more ...)</span><br><br>
+                maybe tatsuya had always known that one day he'd go insane. jun's voice in his head sounds as clear as day, memories taunting him
+                with what he can't have. is he really at the point of talking to himself? "god, jun, i don't think i can do it."
+                <br><br>
+                <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+            
+            <!-- wolf's clothing -->
+            <div class="item persona m completed 2023"> <div class="boxy">
+                <h1>wolf's  clothing</h1>
+                <b>persona 2, m, kurosu jun & sudou tatsuya, 5000 words</b>
+                <span class="dots">...</span>
+                <span class="more"><br>kurosu jun, sudou tatsuya, nyarlathotep, unreliable narrator,
+                religious cults, dehumanisation, implied/referenced child abuse, dissociation, implied/referenced 
+                torture, underage smoking, mentioned car accident, suicidal thoughts, literary references, 
+                delusions, panic attacks, nyctophobia, disturbing themes</span>
+                <span class="read-more" onclick="toggleText(3)">( read more ...)</span><br><br>
+                tatsuya's fingers twitch. he's more of a beast than a man, really. 
+                no matter how good he is at containing himself even on his best days, his mortal flesh just isn't enough to 
+                house his hatred.
+                <br><br>
+                <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+
+            <!-- oath -->
+            <div class="item persona m completed 2023"> <div class="boxy">
+                <h1>oath</h1>
+                <b>persona 2, m, kurosu jun & sudou tatsuya, request, 1229 words</b>
+                <span class="dots">...</span>
+                <span class="more"><br>kurosu jun, sudou tatsuya, stalking, unhealthy relationships, obsession, religious cults, implied/referenced child abuse, canon-typical behaviour, 
+                disturbing themes, self-harm</span>
+                <span class="read-more" onclick="toggleText(4)">( read more ...)</span><br><br>
+                sudou has only ever been loyal. he has only ever wanted to play his part. surely a reward is in order.
+                <br><br>
+                <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+ 
+            <!-- green room -->
+            <div class="item persona e completed 2023"> <div class="boxy">
+                <h1>green room</h1>
+                <b>persona 2, e, kurosu jun/suou tatsuya, request, 784 words</b>
+                <span class="dots">...</span>
+                <span class="more"><br>kurosu jun, suou tatsuya, mishina eikichi, set after innocent sin, trans male character, vaginal sex, creampie, quickies</span>
+                <span class="read-more" onclick="toggleText(5)">( read more ...)</span><br><br>
+                if you had told third year high school student suou tatsuya that at the age of twenty he would be touring the country as the guitarist of a semi-successful band 
+                he wouldn't have even humoured you with a chuckle, but life has taken him places he'd never expected to go.
+                <br><br>
+                <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+ 
+            <!-- roadside attraction -->
+            <div class="item persona e completed 2023"> <div class="boxy">
+            <h1>roadside attraction</h1>
+            <b>persona 2, e, kurosu jun/suou tatsuya, 6735 words</b>
+            <span class="dots">...</span>
+            <span class="more"><br>kurosu jun, suou tatsuya, set after eternal punishment, car sex, breathplay, bdsm, praise kink, uniform kink, impact play,
+            tooth-rotting fluff, romance, pwp, power dynamics, cunnilingus, vaginal sex, butt plugs, awkward flirting, choking, possessive sex, love bites, double penetration, 
+            power play, edgeplay, come swallowing, dirty talk, friendship/love, nude photos, teasing, nipple play, comfort, insecurity, hair-pulling, handcuffs. vaginal fingering, 
+            self hatred, pre-negotiated kink, disabled character </span>
+            <span class="read-more" onclick="toggleText(6)">( read more ...)</span><br><br>
+            if you had told third year high school student suou tatsuya that at the age of twenty he would be touring the country as the guitarist of a semi-successful band 
+            he wouldn't have even humoured you with a chuckle, but life has taken him places he'd never expected to go.
+            <br><br>
+            <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+
+            <!-- absolution -->
+            <div class="item danganronpa e completed 2021"> <div class="boxy">
+                <h1>absolution</h1>
+                <b>cowritten by comfy3666</b><br>
+                <b>danganronpa, e, kamukura izuru/komaeda nagito, 52k words</b>
+                <span class="dots">...</span>
+                <span class="more"><br>kamukura izuru, komaeda nagito, enoshima junko (mentioned), matsuda yasuke (mentioned),
+                nanami chiaki (mentioned), hinata hajime and kamukura izuru are the same person, corpse desecration, theft,
+                surgery, canon compliant amputation, hurt/comfort, codependency, religious symbolism, nipple play, enemies 
+                to lovers speedrun, arson, anal sex, handjobs, delarations of love, fluff </span>
+                <span class="read-more" onclick="toggleText(7)">( read more ...)</span><br><br>
+                kamukura is frozen, unsure whether he should celebrate or mourn. he should be happy, so why isn’t he? 
+                it takes him a good long few minutes before he forces himself to stand up, only to turn around and find himself
+                staring at komaeda nagito of all people. it’s been months. he looks him up and down, and it feels like his heart 
+                stops when he sees <i>her</i> hand by his side.
+                <br><br>
+                <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+        
+            <!-- good girl -->
+            <div class="item danganronpa e completed 2022"> <div class="boxy">
+                <h1>good girl</h1>
+                <b>cowritten by comfy3666</b><br>
+                <b>danganronpa, e, matsuda yasuke/komaeda nagito, 6354 words</b>
+                <span class="dots">...</span>
+                <span class="more"><br>komaeda nagito, matsuda yasuke, kamukura izuru (mentioned), enoshima junko 
+                (mentioned), cinema date, substance abuse, hurt/comfort, nonbinary komaeda nagito, self deprecation, feminisation
+                kink, small penis humiliation, degradation, crossdressing, school uniform, top matsuda yasuke, bottom komaeda 
+                nagito, praise kink, canon compliant terminal illness, blackmail roleplay, premature ejaculation</span>
+                <span class="read-more" onclick="toggleText(8)">( read more ...)</span><br><br>
+                matsuda grabs komaeda's jaw. "that's so selfish." he tells him, voice barely above a whisper. 
+                "you could come to me."
+                <br><br>
+                <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+
+            <!-- truth or dare -->
+            <div class="item danganronpa e completed 2022"> <div class="boxy">
+                <h1>truth or dare</h1>
+                <b>cowritten by comfy3666</b><br>
+                <b>danganronpa, e, matsuda yasuke/komaeda nagito, 14k words</b>
+                <span class="dots">...</span>
+                <span class="more"><br>komaeda nagito, matsuda yasuke, murasame soshun (briefly), doctor/patient,
+                emotional manipulation, blowjobs, anal fingering, alcohol abuse, implied painkiller abuse
+                canon compliant terminal illness, alternate universe - college/university, overstimulation</span>
+                <span class="read-more" onclick="toggleText(9)">( read more ...)</span><br><br>
+                "i'm going to cure you, komaeda." matsuda moves in closer, absolutely serious. "so you have to do what 
+                i tell you. alright?"
+                <br><br>
+                <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+
+            <!-- unveiling -->
+            <div class="item danganronpa e completed 2020"> <div class="boxy">
+                <h1>unveiling</h1>
+                <b>cowritten by comfy3666</b><br>
+                <b>danganronpa, e, kamukura izuru/komaeda nagito, 43k words</b>
+                <span class="dots">...</span>
+                <span class="more"><br>kamukura izuru, komaeda nagito, enoshima junko(background), miscommunication,
+                slow burn, alternating pov, blowjobs, past sexual trauma, drug abuse, alcohol abuse, gun violence,
+                minor character death, strangulation, grand theft auto, arson, implied/referenced abuse, healing from 
+                trauma, komaeda has bpd truthers rise up, kamukura izuru's ongoing identity crisis, mild self harm,
+                unreliable narrators, canon compliant terminal illness, neurodivergent kamukura izuru, suicidal ideation,
+                </span>
+                <span class="read-more" onclick="toggleText(10)">( read more ...)</span><br><br>
+                "you are going to cooperate with me," the stranger whispers into his ear, "or i will blow your brains out 
+                right now and you won't see your plans come to fruition. nod once. do not struggle."
+                <br><br>
+                <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+
+            <!-- ziggy review -->
+            <div class="item gorillaz t completed 2018"> <div class="boxy">
+                <h1>the rise and fall of ziggy stardust and the spiders from mars, track by track with murdoc niccals</h1>
+                <b>gorillaz, gen, t, 1656 words</b>
+                <span class="dots">...</span>
+                <span class="more"><br></span>
+                <span class="read-more" onclick="toggleText(11)">( read more ...)</span><br><br>
+                "as i’m sure just about anyone who hasn’t been living under a rock since the 60s knows: water is wet, 
+                the earth is round, the sky is blue, and <i>ziggy played guitar.</i><br>
+                murdoc talks about one of his favourite albums.<br><br>
+                <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+
+            <!-- corpsing -->
+            <div class="item pathologic g completed 2020"><div class="boxy">
+                    <h1>corpsing</h1>
+                    <b>pathologic, g, artemy burakh/mark immortell, 1381 words</b>
+                    <span class="dots">...</span>
+                    <span class="more"><br>artemy burakh, mark immortell, dreams and nightmares, vignettes, not really character death</span>
+                    <span class="read-more" onclick="toggleText(12)">( read more ... )</span><br><br>
+                    the ringing of the bells. the sprinkling of salt. the light at the end.
+                    <br><br>
+                    <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+
+            <!-- in a material world -->
+            <div class="item gorillaz t completed 2019"><div class="boxy">
+                    <h1>in a material world</h1>
+                    <b>gorillaz, t, murdoc niccals & noodle, murdoc niccals & stuart "2D" pot, 948 words</b>
+                    <span class="dots">...</span>
+                    <span class="more"><br>murdoc niccals, noodle, stuart "2D" pot, phase 2, phase 3</span>
+                    <span class="read-more" onclick="toggleText(13)">( read more ... )</span><br><br>
+                    gorillaz had said their piece. the ogre had spoken.
+                    <br>
+                    2D and murdoc finally open that bakery they'd dreamed of.
+                    <br><br>
+                    <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+
+            <!-- mine and yours -->
+            <div class="item pathologic g completed 2020"><div class="boxy">
+                <h1>mine and yours</h1>
+                <b>pathologic, g, gen, 2786 words</b>
+                <span class="dots">...</span>
+                <span class="more"><br>artemy burakh, bad grief, lara ravell, maria kaina, simon kain,
+                victor kain, nina kaina, herb brides, worms, alternate universe - soulmates,
+                cultural differences, bad parenting, character study, mentioned animal abuse</span>
+                <span class="read-more" onclick="toggleText(14)">( read more ... )</span><br><br>
+                <i>he remembers, once, when he was maybe thirteen or so, proudly declaring to his father that he was unique, 
+                and he would never meet a so-called "true love."
+                </i>
+                <br><br>young artemy burakh learns about the world around him.
+                <br><br>
+                <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+
+            <!-- the selfish giant -->
+            <div class="item gorillaz t completed 2019"><div class="boxy">
+                <h1>the selfish giant</h1>
+                <b>gorillaz, t, murdoc niccals & hannibal niccals, 1851 words</b>
+                <span class="dots">...</span>
+                <span class="more"><br>murdoc niccals, hannibal niccals, mentions of the band, trans murdoc,
+                protective older brothers, implied/referenced child abuse, abusive relationships, pov second person</span>
+                <span class="read-more" onclick="toggleText(15)">( read more ... )</span><br><br>
+                YOU ARE MURDOC NICCALS, AND YOU ARE EMPTY.
+                no, no. don’t tell me you’re not. you’re empty, aren’t you? a vessel. but you aren’t the kind of vessel 
+                that wants to be filled, are you? no. you reach out to people and you touch their hearts and you 
+                burn them, because you want them to feel some of that burning emptiness too. that’s all you’re good for. 
+                (it’s like it’s all you’ve ever known.)
+                <br><br>
+                <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+
+            <!-- memories played out -->
+            <div class="item gorillaz t unfinished 2018"><div class="boxy">
+                <h1>memories played out</h1>
+                <h2>unfinished and abandoned.</h2>
+                <b>gorillaz, t, gorillaz & noodle, 7290 words</b>
+                <span class="dots">...</span>
+                <span class="more"><br>murdoc niccals, stuart "2D" pot, noodle, russel hobbs, del the ghost rapper,
+                satan, boogieman, evangelist, phase three, phase one, time travel fix-it, father-daughter relationship
+                deal with a devil, minor character death(but they come back don't worry), body dysmorphia, dissociation</span>
+                <span class="read-more" onclick="toggleText(16)">( read more ... )</span><br><br>
+                plastic beach: the end of days. the point of no return.
+                <br><br>murdoc's pvc paradise has fallen and it looks like the end for gorillaz. 
+                but then, murdoc and 2D are offered one more chance to save the one thing that is dearest to them.
+                <br><br>
+                <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+
+            <!-- replacement -->
+            <div class="item gorillaz g completed 2017"><div class="boxy">
+                <h1>replacement</h1>
+                <b>gorillaz, g, murdoc niccals & cyborg noodle, 602 words</b>
+                <span class="dots">...</span>
+                <span class="more"><br>murdoc niccals, cyborg noodle, noodle, grief/mourning, father-daughter relationship,
+                minor character death</span>
+                <span class="read-more" onclick="toggleText(17)">( read more ... )</span><br><br>
+                murdoc is grieving for cyborg and he knows nobody will understand.
+                
+                <br>she wasn't supposed to have become more than what she was: a replacement.
+                <br><br>
+                <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+
+            <!-- waiting for the world to start again -->
+            <div class="item gorillaz g completed 2017"><div class="boxy">
+                <h1>waiting for the world to start again</h1>
+                <b>gorillaz, g, murdoc niccals & hannibal niccals, 1316 words</b>
+                <span class="dots">...</span>
+                <span class="more"><br>murdoc niccals, hannibal niccals, implied/referenced child abuse</span>
+                <span class="read-more" onclick="toggleText(18)">( read more ... )</span><br><br>
+                the niccals brothers end up having a discussion.
+                <br><br>
+                <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+
+            <!-- midnight -->
+            <div class="item gorillaz g completed 2017"><div class="boxy">
+                <h1>waiting for the world to start again</h1>
+                <b>gorillaz, g, murdoc niccals & noodle, 489 words</b>
+                <span class="dots">...</span>
+                <span class="more"><br>murdoc niccals, noodle, phase one</span>
+                <span class="read-more" onclick="toggleText(19)">( read more ... )</span><br><br>
+                noodle waits until everyone else is asleep before she helps murdoc out of his drunken stupor.
+                <br><br>
+                <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+
+            <!-- stagnant -->
+            <div class="item prototype g completed 2016"><div class="boxy">
+                <h1>stagnant</h1>
+                <b>prototype, g, karen parker & alex mercer, 1112 words</b>
+                <span class="dots">...</span>
+                <span class="more"><br>karen parker, alex mercer, blacklight, pre-canon</span>
+                <span class="read-more" onclick="toggleText(20)">( read more ... )</span><br><br>
+                she shouldn't have to compete with a virus.
+                <br><br>
+                <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+
+            <!-- love is a broken door -->
+            <div class="item prototype g completed 2016"><div class="boxy">
+                <h1>love is a broken door</h1>
+                <b>prototype, g, gen, 1112 words</b>
+                <span class="dots">...</span>
+                <span class="more"><br>alex mercer, post-canon, crack?? taken somewhat seriously</span>
+                <span class="read-more" onclick="toggleText(21)">( read more ... )</span><br><br>
+                it's three months post-BLACKLIGHT, and alex has broken a door.
+                <br><br>
+                <i><a href="https://archiveofourown.org/users/ncymrn">read on ao3</a></i> | download as epub
+            </div></div>
+ 
+           </div><br><br><br>
+ 
+
+           <!-- credit -->
+           <div class="credit">
+            <a href="https://ncymrn.neocities.org" title="coded by ncymrn!"><img src="https://i.imgur.com/B3Jtg3K.png"></a>
+            </div>
+            <!-- end credit -->
+    </div>
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://booksjson--nancyvalentine.repl.co/script.js"></script>
+    <script src="https://static.tumblr.com/p0knose/FpAp5c11c/magnusthemes.combofilters.js"></script>
+    <script>
+        $(document).ready(function() {
+         var $container = $(".grid"); // the container with all the elements to filter inside
+         var filters = {}; //should be outside the scope of the filtering function
+         /* --- read the documentation on isotope.metafizzy.co for more options --- */
+         var $grid = $container.isotope({
+           itemSelector: ".item", // the elements to filter
+           percentPosition: true // put true if you use percentage widths, otherwise put false
+         });
+         $(".option-set a").click(function(e) {
+           var $this = $(this); // cache the clicked link
+           var filterAttr = "data-filter-value";
+           var filterValue = $this.attr(filterAttr); // cache the filter
+           var $optionSet = $this.parents(".option-set"); // cache the parent element
+           var group = $optionSet.attr("data-filter-group"); // cache the parent filter group
+           var filterGroup = filters[group];
+           if (!filterGroup) {
+             filterGroup = filters[group] = [];
+           }
+           var $selectAll = $optionSet.find('a['+filterAttr+'=""]'); // the 'select all' button in the current group
+           var activeClass = "selected", // the class for active links
+             exclClass = "exclusive"; // the class for exclusive groups
+         comboFiltering($this,filters,filterAttr,filterValue,$optionSet,group,$selectAll,activeClass,exclClass);
+           var comboFilter = getComboFilter(filters);
+           $grid.isotope({
+             filter: comboFilter
+           });
+           $this.toggleClass(activeClass);
+           e.preventDefault();
+         });
+        });
+
+        
+        </script>
+ 
+    <script>
+function toggleText(id) {
+    var moreText = document.querySelectorAll(".more")[id - 1];
+    var readMoreLink = document.querySelectorAll(".read-more")[id - 1];
+ 
+    if (moreText.style.display === "none" || moreText.style.display === "") {
+        moreText.style.display = "inline";
+        readMoreLink.textContent = "( read less ... )";
+    } else {
+        moreText.style.display = "none";
+        readMoreLink.textContent = "( read  more ... )";
+    }
+}
+ 
+    </script>
+
+
+</body>
+</html>
+ 
+ 
+ 
+ 
