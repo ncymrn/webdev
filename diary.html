@@ -1,184 +1,370 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
+<!-- 
+html and css resources: https://www.w3schools.com/
+---
+i have my own resource page with a ton of links so feel free to check that out if you're looking for more codes / graphics to decorate your page with / etc: https://doqmeat.neocities.org/other 
+---
+feel free to contact me for any questions! -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            font-family: Verdana, sans-serif;
-            font-size: 10px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TITLE</title>
+<link rel="icon" type="image/x-icon" href="IMG-URL-FOR-FAVICON">
+<style>
+	html{ /* feel free to delete this if you just want the normal cursor! */
+cursor:cell;} 
+    
+body{
+background:lightblue;
+margin:0px;
+word-wrap:break-word;
+font-size:19px;
+line-height:25px;
+word-spacing:4px;
+font-family:ms pgothic, arial; /* ms pgothic is not compatible with safari */
+color:black;}
 
-        .book {
-            width: 80%;
-            margin: 50px auto;
-            position: relative;
-            perspective: 2000px;
-            perspective-origin: center right;
-            transform-style: preserve-3d;
-            transition: transform 0.5s ease-in-out;
-        }
+mark{background:lightgoldenrodyellow;}
 
-        .page {
-            position: absolute;
-            margin-left: 50%;
-            width: 400px;
-            height: 550px;
-            background-color: white;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            transform-origin: left center;
-            transition: transform 0.5s ease-in-out;
-            box-sizing: border-box;
-        }
+#wrapper-index{ /* the notebook's cover */
+background:lightgrey; 
+position:relative;
+margin:auto;
+margin-top:30px;
+margin-bottom:35px;
+width:1108px;
+padding:20px 10px 15px 10px;
+border-radius:20px;
+border:1px solid black;
+}
 
-        .page p {
-            margin: 0;
-            padding: 0;
-        }
+/*this is my ugly binder spiral! feel free to remove itor change it. it wont mess the rest of the code! */
+#tab1-wrapper:after, #tab2-wrapper:after, #tab3-wrapper:after, #tab4-wrapper:after, #tab5-wrapper:after, #tab6-wrapper:after, #tab7-wrapper:after, #tab8-wrapper:after{
+content:url(https://doqmeat.neocities.org/!g/web/materials/spiral-test4.png);
+position:absolute;
+z-index:10;
+	 transform: translate(-50%, -50%);
+ -ms-transform: translate(-50%, -50%);
+top:50%;
+left:50%;
+pointer-events:none;
+}
 
-        .page-turn {
-            position: fixed;
-            width: 50px;
-            height: 100px;
-            background-color: #333;
-            color: white;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            cursor: pointer;
-            text-align: center;
-            line-height: 100px;
-        }
+/* PAGES CSS */
 
-        .page.turn {
-            transform: rotateY(-180deg);
-        }
+.paper{ /*the CSS of both "pages" boxes. you can choose the look of ALL pages here */
+background:url(https://doqmeat.neocities.org/!g/bg/whiteline.jpg);
+z-index:5;
+position:relative;
+display:inline-block;
+box-sizing:border-box;
+border:1px solid lightblue;
+height:600px;
+}
 
-        @media (max-width: 767px) {
-            .book {
-                width: 100%;
-            }
+.left{
+width:490px;
+margin-left:50px;
+margin-right:10px;
+border-radius:10px 0px 0px 10px;
+overflow:hidden;
+}
+.left-in{
+padding:15px 10px 15px 25px;
+height:100%;
+margin-right:15px;
+overflow:auto;
+}
 
-            .page {
-                width: 90%;
-                margin-left: 5%;
-            }
+.right{
+padding:15px 25px;
+width:490px;
+margin-left:10px;
+border-radius:0px 10px 10px 0px;
+overflow:auto;
+}
 
-            .page-turn {
-                width:100px;
-                height: 50px;
-                top:650px;
-                right: 150px;
-            }
+/* you can also customize the look of SPECIFIC TAB pages. take TAB 2 for example: */
 
-            
-            
-        }
-    </style>
+#tab2-p{
+font-family:consolas;
+font-size:14px;
+background:url(https://doqmeat.neocities.org/!g/bg/yellobg.png);
+border-color:lightcoral;
+}
+
+/* tab buttons CSS stuff */
+
+.tab { /* for the ones on the right */
+	 width:590px;
+	 height:50px;
+	 position:absolute;
+	 transform: translate(-50%, -50%);
+ -ms-transform: translate(-50%, -50%);
+	 rotate:-90deg;
+  top:-10px;
+	 left:-232px;
+}
+
+.tab2 { /* for the ones on the left */
+	 width:590px;
+	 height:50px;
+	 position:absolute;
+	 transform: translate(-50%, -50%);
+ -ms-transform: translate(-50%, -50%);
+	 rotate:90deg;
+  top:590px;
+	 right:-232px;
+}
+
+.tab button, .tab2 button{ /*this is the look of the TABS! */
+	z-index:1;
+	position:relative;
+	vertical-align:top;
+	width:120px;
+	margin:0px 8px;
+ padding: 10px 0px 30px 0px;
+	font-family:newpenji, ms pgothic;
+	border:none;
+ cursor: help;
+	font-size: 19px;
+	transition-duration:0.5s;
+	top:10px;
+	border-radius:10px 10px 0 0;
+	border:1px solid grey;
+}
+
+/* here you can change the color of each individual TAB button*/
+.tab1-b{
+background:#C5DCA0;
+}
+.tab2-b{
+background:#B6A7DC;
+}
+.tab3-b{
+background:#F9DAD0;
+}
+.tab4-b{
+background:#F5F2B8;
+}
+.tab5-b{
+background:#F1B46A;
+}
+
+/* hover effect of TAB*/
+.tab button:hover, .tab2 button:hover{
+top:0px;
+cursor: -webkit-grab;
+cursor: grab;
+}
+
+/* selected TAB effect */
+.tab button.active, .tab2 button.active{
+top:0px;
+cursor: -webkit-grabbing; 
+cursor: grabbing;
+box-shadow: 1px 1px 20px 1px grey;}
+
+/* so pages stay hidden */
+.tabcontent {
+  display: none;
+}
+
+/* custom scrollbar for chrome users, firefox users cant see this */
+  ::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+	background:white;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+	background:white;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background: transparent;
+}
+</style>
 </head>
 <body>
-    <div class="book">
-        <div class="page"> 
-            <p>this is a test</p>
-        </div>
-        <div class="page" > 
-            <b>25.04.23:</b> i genuinely have no idea what to write here but i guess this is like a longer version of my 
-            update log. i havent done any web stuff for yeaaaaaaaars so i'm honestly so glad that it's coming along 
-            nicely. something something like riding a bike......
-            <br><br>
-            <b>26.04.23:</b> skipped college today, too tired. we'll see how THAT goes... i'm totally failing again. 
-            i'm seriously considering getting a job and moving to sardinia for a year just so i don't have to do college 
-            anymore. it'd probably be difficult to get a job in sardinia considering i don't speak italian or sardinian, 
-            but idk. maybe now is the time to learn. i just need to get my passport which is a fucking PAIN... my mum has 
-            been hounding me about it for months. it's not that i'm putting it off, i really need to get it because i 
-            really want to see and one for my birthday... but unfortunately getting a passport is a BITCH when you're me!
-            <br><br>
-            three hour long phone conversation with my mother. you know its gonna be fucking good. 
-            she thinks moving to sardinia for a years is a really good idea, so i'm going to finish the semester, 
-            live with my aunt up north for a month, and then move to sardinia. granny just has a whole fucking one 
-            bedroom house over there on her property going unused?! i grew up in poverty and so did the rest of my 
-            family so it's so bizarre to me. granny bought her council house years and years ago and then my mother 
-            bought it from her and she used the money for land in sardinia. absolutely insane but hey if i can life rent 
-            free for a year...
-            <br><br>
-            mum and i were talking about how mediocre i am. yay! no but really. i was talking about how college obviously
-            isn't working for me and how i feel like i've hit a wall everywhere and dont have any other options... and 
-            she asked me if i really ever wanted to do art or if it was just what my dad expected of me and it honestly 
-            just hit me that i'm the med student child and i didnt even fucking realise it. i used to think this is what 
-            i wanted, but get real. i'm not good at art. i'm not good at writing. i'm definitely not good at coding 
-            lmaoooooo. i'm painfully mediocre and that's all i'll ever be. it's really hard to hear "yeah, you're 
-            completely mediocre" from my mother but it's true. the biggest compliment my dad ever gave me before he 
-            died was that my art was "okay" and fuck, it is! it's just okay! it's only ever going to BE okay! it's never 
-            going to be better than it is now! fuck! i plateaued! i fucking PEAKED! 
-        </div>
-        <div class="page"> 
-            and it's all i've set my life 
-            towards for the past ten years! i quit drag because my own mediocrity broke my fucking heart!! 
-            mum thinks me realising this is all very profound and she thinks it'll be really good for me to move 
-            away but fuck me, man.............. my life fucking sucks. it's just one of those things.
-            <br><br>
-            oooo i will never be anything exceptional. the one time i felt like i was actually competent at a job some 
-            cunt got really mad about it and tried to ruin my life over it i just cant win. sorry for being depresso but 
-            it's MY website
-            <br><br><b>03.05.23:</b> my new flatmate moved in the other day, she's very nice! she's from south india and we're 
-            going to cook for each other! i'm very very excited. the mouse problem feels like it's only gotten worse in 
-            the past week. i don't really know what could have triggered that, but i get the feeling that since i've cleaned up ophelia's mess, the lack of food is driving them out of hiding. like i cant even begin to tell you just how bad this has been for my mental health. i had to shoo an injured mouse out of the house the other day and last night i found one in my room. i managed to catch it and trap it under a pot. didn't really know what to do with it after that. i tried to tell myself i'd just let it starve to death but that's just childish.
-            <br><br>
-            so. i was a really big brave boy who got the mouse out of the house. i fucking hate it i hate it i haaaaaate 
-            ittttttt! like it literally is driving me insane! but. only one more month of college and then i can move 
-            home again. i might as well stay in my hometown when i finish college until i get my passport and then i'm 
-            off to sardinia. i'm feeling a lot more positive about it since one of my friends was a real fucking dick to 
-            me today. i'm fucking off to italy and i'm going to get myself a scooter and i'm going to go places and do 
-            shit. it's going to be great!
 
-            <br><br><b>09.06.23:</b> i'm fucked and i'm going to die. no sardinia for me. no and one for me. homeless in pride 
-            month. the world hates clowns. i don't really feel like expanding. what's the fucking point? i took my and 
-            one countdown off of the index page because the knowledge it was there was really fucking getting to me and 
-            so was that last diary entry. so. life update. it all went to shit.
+<!-- 	NOTEBOOK wrapper -->
+<div id="wrapper-index">
+	
+	<div class="tab">
+		<button class="tablinks tab4-b" onclick="openTab(event, 'tab4-wrapper')">tab 4</button>
+				<button class="tablinks tab3-b" onclick="openTab(event, 'tab3-wrapper')">tab 3</button>
+				<button class="tablinks tab2-b" onclick="openTab(event, 'tab2-wrapper')">tab 2</button>
+			<button class="tablinks tab1-b" onclick="openTab(event, 'tab1-wrapper')" id="defaultOpen">tab 1</button> <!-- 	id="defaultOpen" chooses which tab the notebook will have open when reloaded -->
+	</div>
+	
+	<div class="tab2">
+		<button class="tablinks tab5-b" onclick="openTab(event, 'tab5-wrapper')">tab 5</button>
+		<button class="tablinks tab6-b" onclick="openTab(event, 'tab6-wrapper')">tab 6</button>
+		<button class="tablinks tab7-b" onclick="openTab(event, 'tab7-wrapper')">tab 7</button>
+		<button class="tablinks tab8-b" onclick="openTab(event, 'tab8-wrapper')">tab 8</button>
+	</div>
+	
+<!-- 	TAB 1 wrapper -->
+	<div id="tab1-wrapper" class="tabcontent">
+	<div id="tab1-p" class="paper left">
+	<div class="left-in">
+		temporary diary while i work on coding an actual diary i don't hate :)
+	</div></div>
+		<div id="tab1-p" class="paper right">
+            
+	<!-- TAB 1 right paper end divs -->
+	</div> 
+<!-- 	TAB 1 wrapper end div -->
+	</div>
+	
+	<!-- TAB 2 wrapper -->
+	<div id="tab2-wrapper" class="tabcontent">
+	<div id="tab2-p" class="paper left">
+	<div class="left-in">
+	tab 2 pages
+			  
+<!-- TAB 2 left paper end divs -->
+		</div></div>
+<div id="tab2-p" class="paper right">
+text goes here
+	
+<!-- TAB 2 right paper end div -->
+		</div> 
+<!-- TAB 2 wrapper end div -->
+	 </div>
 
-        </div>
-        <div class="page"><b>28.08.23:</b> not so fucked after all! well, i was pretty fucked for a while. being homeless really 
-        sucked but now i've moved into a new place and i'm in college woohoo! ever since i moved it seems that things are 
-        looking up for me. i've been eating well taking care of myself and hopefully i'll manage to keep up with my work. 
-        now that my life is a little bit less precarious and i'm studying programming seriously, expect to see a lot more 
-        site updates. i'm planning on slowly getting through all the stuff i want to get done like a fic archive website, 
-        so get excited for that! it's not all doom and gloom, as much as it definitely seemed like it at the time. i'm 
-        still really gutted that i'm not going to germany but i suppose i'll just have to live with that. 
-        </div>
-    </div>
-    <div class="page-turn"></div>
-    <div class="back-button"></div>
+	<div id="tab3-wrapper" class="tabcontent">
+	<div id="tab3-p" class="paper left">
+	<div class="left-in">
+text goes here
+		
+		</div></div>
+	<div id="tab3-p" class="paper right">
+	 tab 3 pages
+		
+	</div></div>
 
-    <script>
-       document.addEventListener("DOMContentLoaded", function () {
-    const book = document.querySelector(".book");
-    const pages = document.querySelectorAll(".page");
-    const pageTurn = document.querySelector(".page-turn");
-    const backButton = document.querySelector(".back-button");
-    let currentPage = 0;
+	<div id="tab4-wrapper" class="tabcontent">
+	<div id="tab4-p" class="paper left">
+	<div class="left-in">
+	tab 4 pages
+		
+		</div></div>
+	<div id="tab4-p" class="paper right">
+		text goes here!
+		
 
-    pages.forEach((page, index) => page.style.zIndex = pages.length - index)
+	</div></div>
+	
 
-    pageTurn.addEventListener("click", function () {
-        if (currentPage < pages.length - 1) {
-            pages[currentPage].classList.add("turn");
-            currentPage++;
-        } else {
-            currentPage = 0;
-            pages.forEach((page) => page.classList.remove("turn"));
-        }
-    });
+	<div id="tab5-wrapper" class="tabcontent">
+	<div id="tab5-p" class="paper left">
+ <div class="left-in">
+	tab 5 pages
 
-    
-    });
+		</div></div>
+	<div id="tab5-p" class="paper right">
+		text goes here!
+		
+	</div></div>
+	
+	<div id="tab6-wrapper" class="tabcontent">
+	<div id="tab6-p" class="paper left">
+	<div class="left-in">
+		text goes here
 
+		</div></div>
+	<div id="tab6-p" class="paper right">
+		text goes here
 
-    </script>
+	</div></div>
+	
+		<div id="tab7-wrapper" class="tabcontent">
+	<div id="tab7-p" class="paper left">
+	<div class="left-in">
+		text goes here
+
+		</div></div>
+	<div id="tab7-p" class="paper right">
+		text goes here
+
+	</div></div>
+	
+		<div id="tab8-wrapper" class="tabcontent">
+	<div id="tab8-p" class="paper left">
+	<div class="left-in">
+		text goes here
+
+		</div></div>
+	<div id="tab8-p" class="paper right">
+		text goes here
+
+	</div></div>
+	
+	
+<!-- TEMPLATE for new set of TAB pages
+
+	<div id="tab[num]-wrapper" class="tabcontent">
+	<div id="tab[num]-p" class="paper left">
+ <div class="left-in">
+		text goes here
+
+		</div></div>
+	<div id="tab[num]-p" class="paper right">
+		text goes here
+
+	</div></div>
+
+-->
+
+	
+	
+	
+<!-- NOTEBOOK wrapper end div -->
+	</div>
+
+	
+<script>
+function download(){
+    var text = document.getElementById("my-textarea").value;
+    text = text.replace(/\n/g, "\r\n"); // To retain the Line breaks.
+    var blob = new Blob([text], { type: "text/plain"});
+    var anchor = document.createElement("a");
+    anchor.download = "notebook-page.txt";
+    anchor.href = window.URL.createObjectURL(blob);
+    anchor.target ="_blank";
+    anchor.style.display = "none"; // just to be safe!
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+ }
+	
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
 </body>
 </html>
-
-

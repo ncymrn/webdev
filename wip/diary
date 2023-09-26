@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .book {
+            width: 80%;
+            margin: 50px auto;
+            position: relative;
+            perspective: 2000px;
+            perspective-origin: center right;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .page {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            transform-origin: left center;
+            transform: rotateY(0deg);
+            transition: transform 0.5s ease-in-out;
+            box-sizing: border-box;
+        }
+
+        .page p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .page-turn {
+            position: fixed;
+            width: 50px;
+            height: 100px;
+            background-color: #333;
+            color: white;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .page.turn {
+            transform: rotateY(-180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="book">
+        <div class="page">
+            <p>Page 1 Content</p>
+        </div>
+        <div class="page">
+            <p>Page 2 Content</p>
+        </div>
+        <div class="page">
+            <p>Page 3 Content</p>
+        </div>
+        <!-- Add more pages as needed -->
+    </div>
+    <div class="page-turn"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const book = document.querySelector(".book");
+            const pages = document.querySelectorAll(".page");
+            const pageTurn = document.querySelector(".page-turn");
+            let currentPage = 0;
+
+            pageTurn.addEventListener("click", function () {
+                if (currentPage < pages.length - 1) {
+                    pages[currentPage].classList.add("turn");
+                    currentPage++;
+                } else {
+                    currentPage = 0;
+                    pages.forEach((page) => page.classList.remove("turn"));
+                }
+            });
+        });
+    </script>
+</body>
+</html>
