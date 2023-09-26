@@ -797,6 +797,36 @@ border: 1px solid #000; /** border around moving part of scrollbar (overlaps wit
 }
 /** END SCROLLBAR **/
 
+.credit {
+    color: #cdb2a7;
+    position:fixed;
+ 
+    right:15px;
+    width:80px;
+    bottom:15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+ 
+}
+ 
+ 
+.credit a {
+    padding:10px;
+    width:30px;
+    margin-right:0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+ 
+.credit a:hover {
+   -webkit-transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+    -ms-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+ 
+}
+
 </style>
 <body> <!-- now we're below the head  
 at the <body> tag. this is the content
@@ -805,7 +835,7 @@ will edit the most. -->
 
 <!-- CLOCK START -->
 <div class="clock">
-<iframe src="https://free.timeanddate.com/clock/i90dzcc2/n305/tluk/fn17/fcfff/tct/pct/bat2/bacfff/ta1" frameborder="0" width="103" height="21" allowtransparency="true"></iframe>
+  <iframe src="https://free.timeanddate.com/clock/i91iusm9/n305/tluk/fn17/tcccd6eb/pcccd6eb/bat2/ta1" frameborder="0" width="103" height="21"></iframe>
 </div>
 <!-- CLOCK END -->
 
@@ -816,11 +846,11 @@ will edit the most. -->
       <div class="divider1"><div class=imgcontainer>
         <b>navigation</b></div>
       <div class="divider2"><a href="https://ncymrn.neocities.org/">home</a></div>
-      <div class="divider2"><a href="/about.html">about me</a></div>
-      <div class="divider2"><a href="/art.html">art</a></div>
+      <div class="divider2"><a href="/about.html"><s>about me</s></a></div>
+      <div class="divider2"><a href="/art.html"><s>art</s></a></div>
       <div class="divider2"><a href="/fics.html">writing</a></div>
-      <div class="divider2"><a href="/resources.html">resources</a></div>
-      <div class="divider2"><a href="/links.html">links</a></div>
+      <div class="divider2"><a href="/resources.html"><s>resources</s></a></div>
+      <div class="divider2"><a href="/links.html"><s>links</s></a></div>
       <div class="divider3"><a href="/diary.html">diary</a></div> 
     </div>
          <!-- BUTTONS -->
@@ -835,7 +865,7 @@ will edit the most. -->
 
         <!-- UPDATES START-->
         <br><br>
-        <div class="boxy" style="height:50px; padding:10px; overflow-y: scroll;">24.09.23: site live with fics and library pages <br> 11.09.23 update for scroll <br> 05.09.23: added animations, css grid, music player <br> 04.09.23: new site created 
+        <div class="boxy" style="height:50px; padding:10px; overflow-y: scroll;">26.09.23: general updates <br> 24.09.23: site live with fics and library pages <br> 11.09.23 update for scroll <br> 05.09.23: added animations, css grid, music player <br> 04.09.23: new site created 
         <br></div><br>
         <!-- UPDATES  END-->
 
@@ -915,7 +945,7 @@ social media sites, so this is my attempt at that.
                        
                           </div>  <br>
                     i have lots of hobbies and interests! i love roleplaying, retro technology and gaming, and in my spare time i am a cosplayer and drag queen. you may 
-                    be able to tell, but i love clowns a lot! i collect clowns, cassettes, and records. i also love collecting fanzines!!          
+                    be able to tell, but i love clowns a lot! i collect clowns, cassettes, and records. <a href="/zines.html"><b>i also love collecting fanzines!!</b></a>   
                    <br> <br> i have a particular love for old websites but especially old text based mmo games. please recommend me some if you know any!
                     </td>
               <td> <!-- RIGHT BOXES -->
@@ -1004,25 +1034,10 @@ social media sites, so this is my attempt at that.
                             // CATBOX.MOE IS RECOMMENDED FOR UPLOADING MP3 FILES
                             let track_list = [
                                 {
-                                    name:"One Shot One Kill - The Cat's Whiskers",
-                                    path:"https://files.catbox.moe/fegzmf.mp3"
+                                    name:"MY SWEETHEART!!! -",
+                                    path:"https://files.catbox.moe/lhxswk.mp3"
                                 },
-                                {
-                                    name:"Shooting Arrows - The Cat's Whiskers",
-                                    path:"https://files.catbox.moe/zj81lr.mp3"
-                                },
-                                {
-                                    name:"4 REAL - The Cat's Whiskers",
-                                    path:"https://files.catbox.moe/fxd8fo.mp3"
-                                },
-                                {
-                                    name:"My Sweetest Love - The Cat's Whiskers ft. Kazuma Mitchell",
-                                    path:"https://files.catbox.moe/qe4he5.mp3"
-                                },
-                                {
-                                    name:"Mercy On Me - The Cat's Whiskers",
-                                    path:"https://files.catbox.moe/w7nnf9.mp3"
-                                }
+                          
                             ];
                             //
                             //
@@ -1147,7 +1162,11 @@ social media sites, so this is my attempt at that.
    
 
  
-<div id="credit"><a href="https://ncymrn.neocities.org/">★</a></div>
+<!-- credit -->
+<div class="credit">
+  <a href="https://harlequi.nz" title="coded by me!"><img src="https://www.spriters-resource.com/resources/sheet_icons/25/27748.png"></a>
+  </div>
+  <!-- end credit -->
 
 <script type="text/javascript">
   var sc_project=12925546; 
