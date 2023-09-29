@@ -72,6 +72,70 @@
                                         margin-bottom:10px;
         }
 
+        #big {
+          font-size: 50px;
+          
+        }
+
+        /* ANIMATIONS */
+ 
+@keyframes bbounce{
+  0% {transform:translate(0px,0px);}
+  50% {transform:translate(0px,10px);}
+  100% {transform:translate(0px, 0px);}
+}
+ 
+@-moz-keyframes bbounce{
+  0% {-moz-transform:translate(0px,0px);}
+  50% {-moz-transform:translate(0px,10px);}
+  100% {-moz-transform:translate(0px,0px);}
+}
+ 
+@-webkit-keyframes bbounce {
+  0% {-webkit-transform:translate(0px,0px);}
+  50% {-webkit-transform:translate(0px,10px);}
+  100% {-webkit-transform:translate(0px,0px);}
+}
+ 
+@-o-keyframes bbounce {
+  0% {-o-transform:translate(0px,0px);}
+  50% {-o-transform:translate(0px,10px);}
+  100% {-o-transform:translate(0px,0px);}
+}
+ 
+@-ms-keyframes bbounce {
+  0% {-ms-transform:translate(0px,0px);}
+  50% {-ms-transform:translate(0px,10px);}
+  100% {-ms-transform:translate(0px,0px);}
+}
+
+.hover{
+  z-index:5;
+position:relative;
+    animation: bbounce linear 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 50% 50%;
+       
+/* Safari 4+, Android, Chrome */    
+-webkit-animation: bbounce linear 2.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform-origin: 50% 50%;
+   
+/* Fx 5+ */    
+    -moz-animation: bbounce linear 2.5s;
+    -moz-animation-iteration-count: infinite;
+    -moz-transform-origin: 50% 50%;
+   
+/* Opera 12+ */    
+    -o-animation: bbounce linear 2.5s;
+    -o-animation-iteration-count: infinite;
+    -o-transform-origin: 50% 50%;
+   
+/* IE 10+, Fx 29+ */    
+    -ms-animation: bbounce linear 2.5s;
+    -ms-animation-iteration-count: infinite;
+    -ms-transform-origin: 50% 50%;}
+
         /** SCROLLBAR **/
 
 ::-webkit-scrollbar {
@@ -91,7 +155,6 @@ opacity: 0;
       </style>
   </head>
   <body>
-    <main>
         <div id="container"><center>
           <div class="myButton">
             <div><img src="https://picsum.photos/id/31/88" style="height:31px; width:88px"></div>
@@ -131,7 +194,9 @@ opacity: 0;
         </center>
         </div>
         <div id="portrait"><img src="https://files.catbox.moe/w837fo.png" style="height:197px"></div>
-    </main>
+        <div class="hover">
+          <div class="moose-animation"><div id="big">about</div>
+             </div></div>
 
   </body>
 </html>
