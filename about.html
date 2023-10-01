@@ -1,232 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="https://64.media.tumblr.com/93c0b10af0bf3d13b9d82dcc72eb8217/6883b74fe29d203c-0d/s75x75_c1/e2e4d2bc2caf5f45d49d5715aa6f4cbd881690e8.gifv" type="image/x-icon">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Website</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="https://64.media.tumblr.com/93c0b10af0bf3d13b9d82dcc72eb8217/6883b74fe29d203c-0d/s75x75_c1/e2e4d2bc2caf5f45d49d5715aa6f4cbd881690e8.gifv" type="image/x-icon">
+  <link rel="stylesheet" href="https://unpkg.com/98.css">
+  <style>
+    @font-face {
+      font-family: porkys;
+      src: url(https://dl.dropbox.com/s/7m63bv7puqb6y75/PORKYS_.TTF);
+    }
 
-    <style>
+    body {
+      background-image: url("https://files.catbox.moe/mtkzrs.png");
+      background-attachment: fixed;
+      background-position: left top;
+      background-repeat: no-repeat;
+      background-color: #8daaab;
+      color: #051923;
+      font-size: 10px;
+      font-family: 'Verdana', sans-serif;
+      font-weight: normal;
+      position: fixed;
+      text-align: left;
+      overflow: none;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
 
-@font-face {
-font-family: porkys;
-src: url(https://dl.dropbox.com/s/7m63bv7puqb6y75/PORKYS_.TTF);
-}
-        body {
-        background-image: url("https://files.catbox.moe/mtkzrs.png");
-        background-attachment:fixed;
-        background-position: left top;
-        background-repeat:no-repeat;
-        background-color:#8daaab;
-        color:#051923;
-        font-size: 10px;
-        font-family: 'Verdana', sans-serif;
-        font-weight:normal;
-        position: fixed;
-        text-align:left;
-        overflow:none;
-        margin-top:20px;
-        margin-left:20px;
-        }
-
-
-        #container {
-        height:500px;
-        width: 380px;
-        position:fixed;
-        margin-top:75px;
-        left: 140px;
-        padding:10px;
-        overflow-y:scroll;
-        overflow-x:hidden;
-        transform: rotate(-5deg);
-        -ms-transform: rotate(-5deg);
-        -webkit-transform: rotate(-5deg);
-        -o-transform: rotate(-5deg);
-        -moz-transform: rotate(-5deg);
-        -webkit-scrollbar {
-        display: none; }
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-        padding-bottom:5px;
-        -webkit-mask-image: -webkit-gradient(
+    #container {
+      height: 500px;
+      width: 380px;
+      position: fixed;
+      margin-top: 75px;
+      left: 140px;
+      padding: 10px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      transform: rotate(-5deg);
+      -ms-transform: rotate(-5deg);
+      -webkit-transform: rotate(-5deg);
+      -o-transform: rotate(-5deg);
+      -moz-transform: rotate(-5deg);
+      -webkit-mask-image: -webkit-gradient(
         linear, center 65%, center bottom,
         from(rgba(0,0,0,20)),
         to(rgba(20,0,0,0)));
-        }
+    }
 
-        #portrait {
-        height:100px;
-        width: 100px;
-        position:fixed;
-        margin-top:410px;
-        left: 566px;
-        padding:5px;
-        transform: rotate(15deg);
-        -ms-transform: rotate(15deg);
-        -webkit-transform: rotate(15deg);
-        -o-transform: rotate(15deg);
-        -moz-transform: rotate(15deg);
-        }
+    #portrait {
+      height: 100px;
+      width: 100px;
+      position: fixed;
+      margin-top: 410px;
+      left: 566px;
+      padding: 5px;
+      transform: rotate(15deg);
+      -ms-transform: rotate(15deg);
+      -webkit-transform: rotate(15deg);
+      -o-transform: rotate(15deg);
+      -moz-transform: rotate(15deg);
+    }
 
-        .copyButton {
-                                        width: 250px; /* this controls the width of the box */
-                                        height: 50px;
-                                        font-size: 10px; /* this controls the font size */
-                                        /* you can also set a background color and text color here */
-                                        
-                                        color: #051923;
-                                        height:21px;
-                                        margin-bottom:10px;
-        }
+    .copyButton {
+      width: 250px;
+      height: 50px;
+      font-size: 10px;
+      color: #051923;
+      height: 21px;
+      margin-bottom: 10px;
+    }
 
-        
+    #big {
+      font-family: porkys;
+      color: #a72f56;
+      font-size: 100px;
+      margin-left: 350px;
+      transform: rotate(10deg);
+      -ms-transform: rotate(10deg);
+      -webkit-transform: rotate(10deg);
+      -o-transform: rotate(10deg);
+      -moz-transform: rotate(10deg);
+    }
 
-        #big {
-          font-family: porkys;
-          color: #a72f56;
-          font-size: 100px;
-          margin-left:350px;
-          transform: rotate(10deg);
-         -ms-transform: rotate(10deg);
-          -webkit-transform: rotate(10deg);
-          -o-transform: rotate(10deg);
-          -moz-transform: rotate(10deg);
-        }
+    /* ANIMATIONS */
 
-        /* ANIMATIONS */
- 
-@keyframes bbounce{
-  0% {transform:translate(0px,0px);}
-  50% {transform:translate(0px,10px);}
-  100% {transform:translate(0px, 0px);}
-}
- 
-@-moz-keyframes bbounce{
-  0% {-moz-transform:translate(0px,0px);}
-  50% {-moz-transform:translate(0px,10px);}
-  100% {-moz-transform:translate(0px,0px);}
-}
- 
-@-webkit-keyframes bbounce {
-  0% {-webkit-transform:translate(0px,0px);}
-  50% {-webkit-transform:translate(0px,10px);}
-  100% {-webkit-transform:translate(0px,0px);}
-}
- 
-@-o-keyframes bbounce {
-  0% {-o-transform:translate(0px,0px);}
-  50% {-o-transform:translate(0px,10px);}
-  100% {-o-transform:translate(0px,0px);}
-}
- 
-@-ms-keyframes bbounce {
-  0% {-ms-transform:translate(0px,0px);}
-  50% {-ms-transform:translate(0px,10px);}
-  100% {-ms-transform:translate(0px,0px);}
-}
+    @keyframes bbounce {
+      0% {
+        transform: translate(0px, 0px);
+      }
 
-.hover{
-  z-index:5;
-position:relative;
-    animation: bbounce linear 2.5s;
-    animation-iteration-count: infinite;
-    transform-origin: 50% 50%;
-       
-/* Safari 4+, Android, Chrome */    
--webkit-animation: bbounce linear 2.5s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-transform-origin: 50% 50%;
+      50% {
+        transform: translate(0px, 10px);
+      }
+
+      100% {
+        transform: translate(0px, 0px);
+      }
+    }
+
+    @-moz-keyframes bbounce {
+      0% {
+        -moz-transform: translate(0px, 0px);
+      }
+
+      50% {
+        -moz-transform: translate(0px, 10px);
+      }
+
+      100% {
+        -moz-transform: translate(0px, 0px);
+      }
+    }
+
+    @-webkit-keyframes bbounce {
+      0% {
+        -webkit-transform: translate(0px, 0px);
+      }
+
+      50% {
+        -webkit-transform: translate(0px, 10px);
+      }
+
+      100% {
+        -webkit-transform: translate(0px, 0px);
+      }
+    }
+
+    @-o-keyframes bbounce {
+      0% {
+        -o-transform: translate(0px, 0px);
+      }
+
+      50% {
+        -o-transform: translate(0px, 10px);
+      }
+
+      100% {
+        -o-transform: translate(0px, 0px);
+      }
+    }
+
+    @-ms-keyframes bbounce {
+      0% {
+        -ms-transform: translate(0px, 0px);
+      }
+
+      50% {
+        -ms-transform: translate(0px, 10px);
+      }
+
+      100% {
+        -ms-transform: translate(0px, 0px);
+      }
+    }
+
+    .hover {
+      z-index: 5;
+      position: relative;
+      animation: bbounce linear 2.5s;
+      animation-iteration-count: infinite;
+      transform-origin: 50% 50%;
+
+      /* Safari 4+, Android, Chrome */
+      -webkit-animation: bbounce linear 2.5s;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-transform-origin: 50% 50%;
+
+      /* Fx 5+ */
+      -moz-animation: bbounce linear 2.5s;
+      -moz-animation-iteration-count: infinite;
+      -moz-transform-origin: 50% 50%;
+
+      /* Opera 12+ */
+      -o-animation: bbounce linear 2.5s;
+      -o-animation-iteration-count: infinite;
+      -o-transform-origin: 50% 50%;
+
+      /* IE 10+, Fx 29+ */
+      -ms-animation: bbounce linear 2.5s;
+      -ms-animation-iteration-count: infinite;
+      -ms-transform-origin: 50% 50%;
+    }
+
+    /** SCROLLBAR **/
+
+    ::-webkit-scrollbar {
+      width: 10px !important; 
+      background: #cac9c1 !important;
+      opacity: 0 !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      height: 10px !important;
+      background: #cac9c1 !important;
+      opacity: 0 !important;
+    }
+
+    /** END SCROLLBAR **/
+
+    .window {
+      width: 300px;
+      position: fixed;
+      right: 20px; /* Adjust this value to move the window to the right */
+      top: 20px;
    
-/* Fx 5+ */    
-    -moz-animation: bbounce linear 2.5s;
-    -moz-animation-iteration-count: infinite;
-    -moz-transform-origin: 50% 50%;
-   
-/* Opera 12+ */    
-    -o-animation: bbounce linear 2.5s;
-    -o-animation-iteration-count: infinite;
-    -o-transform-origin: 50% 50%;
-   
-/* IE 10+, Fx 29+ */    
-    -ms-animation: bbounce linear 2.5s;
-    -ms-animation-iteration-count: infinite;
-    -ms-transform-origin: 50% 50%;}
+    
+    }
 
-        /** SCROLLBAR **/
+    .title-bar {
+      background-color: #333;
+      color: white;
+      padding: 5px;
+      display: flex;
+      justify-content: space-between;
+    }
 
-::-webkit-scrollbar {
- 
-width: 10px; /** width of total scrollbar **/
-background: #cac9c1; /** background of scrollbar **/
-/** border around whole scrollbar **/
-opacity: 0;
-}
+    .title-bar-controls button {
+      background-color: transparent;
+      border: none;
+      color: white;
+      cursor: pointer;
+      margin-left: 5px;
+    }
 
-::-webkit-scrollbar-thumb {
-  height:10px;
-background: #cac9c1; /** color of the moving part of the scrollbar (thumb) **/
-opacity: 0;
-}
-/** END SCROLLBAR **/
+    .window-body {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+<div id="container">
+  <center><img src="https://64.media.tumblr.com/6847b143ed01da8160388af1cd81d923/85e0f5d14f85bcb6-18/s100x200/29d3367fc83ec2c717eb32dbcc73475e4a135a85.pnj" /><img
+      src="https://64.media.tumblr.com/d8604b3396f4451a3565ac9871314d7c/0855d29a81835367-60/s100x200/13a8eceb4ebfc8457816ee2b092bd30aaf71d36a.gifv"><img
+      src="https://64.media.tumblr.com/754b841290e51d40583bd52a66003731/85e0f5d14f85bcb6-6e/s100x200/fbd20499fea1fa289b28a1bec9219ce1de4c65d8.pnj" /></center><br>hey,
+  i'm the webmaster of this silly website! i'm michael, a creative from scotland. i currently study software development and in the long run
+  i'd like to do either game development or frontend development. i love the old web and think the internet is far too boring these days, so
+  i'd like to make things more interesting! i think that html literacy is the new punk, and i aim to help make website making more accessible
+  to the average netizen. please always feel free to contact me with any questions, and i'll help you where i can! i don't mind people right
+  clicking on my website to see how i did things. <br><br>my main hobby after web design is roleplaying! i've had a passion for writing all
+  my life and i've rped on pretty much anywhere you can post text. as you may be able to tell by the style of my website, i'm a tumblr rp
+  veteran... thank god i'm free of that now. now i mostly rp on discord, both in servers and one on one. <br><br>in my spare time, i am a
+  drag queen known as clootie dumpling! i've performed at various venues all around scotland, and i'd like to continue in future!
+  <center>
+    <div class="myButton">
+      <div><br><img src="https://picsum.photos/id/31/88" style="height:31px; width:88px"></div>
+      <textarea class="copyButton">&lt;a href="https://harlequi.nz/" target="_blank"&gt;&lt;img src="image"&gt;&lt;/a&gt;</textarea>
+    </div><br> fanlistings i'm part of<br><br>
+    <a href="http://hanabi.nu/bt/index.php"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101366405942743110/IMG_3739.png" /></a>
+    <a href="http://hanabi.nu/malicemizer/index.php">
+      <img src="https://cdn.discordapp.com/attachments/519510988173869071/1101368958885568512/IMG_3742.png" /></a>
+    <a href="http://www.marheavenj.net/akechi/">
+      <img src="https://cdn.discordapp.com/attachments/519510988173869071/1101371101122154586/IMG_3743.jpg" height="50px" width="50px" /></a>
+    <a href="http://www.marheavenj.net/dazai/"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101372239661772932/IMG_3744.jpg" height="50px" width="50" /></a>
+    <a href="http://www.marheavenj.net/kurapika/"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101373234387099748/IMG_3745.png" height="50px" width="50" /></a>
+    <a href="HTTPS://FAN.KIRAI.ORG/GRELL/"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101375114936856646/IMG_3746.png" height="50px" width="50" /></a>
+    <a href="http://www.marheavenj.net/godofduels/"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101376809246916668/IMG_3747.jpg" height="50px" width="50" /></a>
+    <a href="http://www.marheavenj.net/jono/"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101377614687510538/IMG_3748.jpg" height="50px" width="50" /></a>
+    <a href="http://pharaoh.ichigo.nu/"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101378351161159730/IMG_3749.gif" height="50px" width="50" /></a>
+    <a href="http://lister.oh-smeg.com/"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101379964743467038/IMG_3751.gif" height="50px" width="50" /></a>
+    <a href="http://rimmer.oh-smeg.com/"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101380897309204510/IMG_3752.jpg" height="50px" width="50" /></a>
+    <a href="https://hanabi.nu/cartman"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101390001108955266/IMG_3756.png" height="50px" width="50" /></a>
+    <a href="https://thewildrose.org/v/"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101382780253917204/IMG_3753.gif" height="50px" width="50" /></a>
+    <a href="https://www.boundless-realms.com/invaderzim/index.php"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101390677910245406/IMG_3757.gif" height="50px" width="50" /></a>
+    <a href="http://www.ladyrose.buruma.net/metamorphosis"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101390973017264178/IMG_3758.png" height="50px" width="50" /></a>
 
-      </style>
-  </head>
-  <body>
-        <div id="container"><center><img src="https://64.media.tumblr.com/6847b143ed01da8160388af1cd81d923/85e0f5d14f85bcb6-18/s100x200/29d3367fc83ec2c717eb32dbcc73475e4a135a85.pnj" /><img src="https://64.media.tumblr.com/d8604b3396f4451a3565ac9871314d7c/0855d29a81835367-60/s100x200/13a8eceb4ebfc8457816ee2b092bd30aaf71d36a.gifv"><img src="https://64.media.tumblr.com/754b841290e51d40583bd52a66003731/85e0f5d14f85bcb6-6e/s100x200/fbd20499fea1fa289b28a1bec9219ce1de4c65d8.pnj" /></center><br>hey, i'm the webmaster of this silly website! i'm michael, a creative from scotland. i currently study
-          software development and in the long run i'd like to do either game development or frontend development. i love the old web and 
-          think the internet is far too boring these days, so  i'd like to make things more interesting! i think that html literacy is the new 
-          punk, and i aim to help make website making more accessible to the average netizen. please always feel free to contact me with any 
-          questions, and i'll help you where i can! i don't mind people right clicking on my website to see how i did things. 
-          <br><br>my main hobby after web design is roleplaying! i've had a passion for writing all my life and i've rped on pretty much anywhere
-          you can post text. as you may be able to tell by the style of my website, i'm a tumblr rp veteran... thank god i'm free of that now.
-          now i mostly rp on discord, both in servers and one on one.
-          <br><br>in my spare time, i am a drag queen known as clootie dumpling! i've performed at various venues all around scotland, and i'd 
-          like to continue in future!
-          <center>
-          <div class="myButton">
-            <div><br><img src="https://picsum.photos/id/31/88" style="height:31px; width:88px"></div>
-            <textarea class="copyButton">&lt;a href="https://harlequi.nz/" target="_blank"&gt;&lt;img src="image"&gt;&lt;/a&gt;</textarea>
-            </div><br>
-           fanlistings i'm part of<br><br>
-          <a href="http://hanabi.nu/bt/index.php"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101366405942743110/IMG_3739.png" /></a>
-            <a href="http://hanabi.nu/malicemizer/index.php">
-            <img src="https://cdn.discordapp.com/attachments/519510988173869071/1101368958885568512/IMG_3742.png" /></a>
-              <a href="http://www.marheavenj.net/akechi/">
-            <img src="https://cdn.discordapp.com/attachments/519510988173869071/1101371101122154586/IMG_3743.jpg" height="50px" width="50px"/></a>
-              <a href="http://www.marheavenj.net/dazai/"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101372239661772932/IMG_3744.jpg" height="50px" width="50"/></a>
-               <a href="http://www.marheavenj.net/kurapika/"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101373234387099748/IMG_3745.png" height="50px" width="50"/></a>
-               <a href="HTTPS://FAN.KIRAI.ORG/GRELL/"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101375114936856646/IMG_3746.png" height="50px" width="50"/></a>
-                    <a href="http://www.marheavenj.net/godofduels/"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101376809246916668/IMG_3747.jpg" height="50px" width="50"/></a>
-          <a href="http://www.marheavenj.net/jono/"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101377614687510538/IMG_3748.jpg" height="50px" width="50"/></a>
-          <a href="http://pharaoh.ichigo.nu/"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101378351161159730/IMG_3749.gif" height="50px" width="50"/></a>
-          <a href="http://lister.oh-smeg.com/"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101379964743467038/IMG_3751.gif" height="50px" width="50"/></a>
-          <a href="http://rimmer.oh-smeg.com/"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101380897309204510/IMG_3752.jpg" height="50px" width="50"/></a>
-          <a href="https://hanabi.nu/cartman"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101390001108955266/IMG_3756.png" height="50px" width="50"/></a>
-          <a href="https://thewildrose.org/v/"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101382780253917204/IMG_3753.gif" height="50px" width="50"/></a>
-          <a href="https://www.boundless-realms.com/invaderzim/index.php"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101390677910245406/IMG_3757.gif" height="50px" width="50"/></a>
-          <a href="http://www.ladyrose.buruma.net/metamorphosis"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101390973017264178/IMG_3758.png" height="50px" width="50"/></a>
-          
-          <a href="http://get-fighted.net/zombaid/"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101391922679009330/IMG_3761.jpg" height="50px" width="50"/></a>
-          <a href="http://love.in-blue-rain.org/labyrinth/"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101392243849433098/IMG_3762.png" height="50px" width="50"/></a>
-          <a href="https://gryffindors.com/jessica/bueller/index.php"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101393280165482566/IMG_3765.png" height="50px" width="50"/></a>
-          <a href="https://gryffindors.com/lindy/clockwork/index.php"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101393603269509171/IMG_3766.png" height="50px" width="50"/></a>
-          <a href="HTTPS://MOUDOKU.COM/CHUCKY4"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101393943058456606/IMG_3767.png" height="50px" width="50"/></a>
-          <a href="http://fan.still-breathing.com/ashes/"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101394307098873936/IMG_3768.jpg" height="50px" width="50"/></a>
-          <a href="http://rhythm-emotion.net/sakurai"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101394706006556702/IMG_3769.png" height="50px" width="50"/></a>
-          <a href="http://eternal-hunt.pw/jareth"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101394999314239508/IMG_3770.png" height="50px" width="50"/></a>
-          <a href="http://fan.godgivemetruth.us/britneyspears/"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101395259616919582/IMG_3771.png" height="50px" width="50"/></a>
-          <a href="https://theatregirl.net/kylo/index.php"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101395498037940275/IMG_3772.png" height="50px" width="50"/></a>
-          <a href="https://theatregirl.net/lecter/"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101395794902405160/IMG_3773.png" height="50px" width="50"/></a>
-          <a href="http://bellatrix.avada-kedavra.net/clarice/buttons.php"><img src="https://cdn.discordapp.com/attachments/519510988173869071/1101396174151364688/IMG_3774.jpg" height="50px" width="50"/></a>
-        </center>
-        </div>
-        <div id="portrait"><img src="https://files.catbox.moe/w837fo.png" style="height:197px"></div>
-        <div class="hover">
-          <div class="moose-animation"><div id="big">about</div>
-             </div></div>
+    <a href="http://get-fighted.net/zombaid/"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101391922679009330/IMG_3761.jpg" height="50px" width="50" /></a>
+    <a href="http://love.in-blue-rain.org/labyrinth/"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101392243849433098/IMG_3762.png" height="50px" width="50" /></a>
+    <a href="https://gryffindors.com/jessica/bueller/index.php"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101393280165482566/IMG_3765.png" height="50px" width="50" /></a>
+    <a href="https://gryffindors.com/lindy/clockwork/index.php"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101393603269509171/IMG_3766.png" height="50px" width="50" /></a>
+    <a href="HTTPS://MOUDOKU.COM/CHUCKY4"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101393943058456606/IMG_3767.png" height="50px" width="50" /></a>
+    <a href="http://fan.still-breathing.com/ashes/"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101394307098873936/IMG_3768.jpg" height="50px" width="50" /></a>
+    <a href="http://rhythm-emotion.net/sakurai"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101394706006556702/IMG_3769.png" height="50px" width="50" /></a>
+    <a href="http://eternal-hunt.pw/jareth"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101394999314239508/IMG_3770.png" height="50px" width="50" /></a>
+    <a href="http://fan.godgivemetruth.us/britneyspears/"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101395259616919582/IMG_3771.png" height="50px" width="50" /></a>
+    <a href="https://theatregirl.net/kylo/index.php"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101395498037940275/IMG_3772.png" height="50px" width="50" /></a>
+    <a href="https://theatregirl.net/lecter/"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101395794902405160/IMG_3773.png" height="50px" width="50" /></a>
+    <a href="http://bellatrix.avada-kedavra.net/clarice/buttons.php"><img
+        src="https://cdn.discordapp.com/attachments/519510988173869071/1101396174151364688/IMG_3774.jpg" height="50px" width="50" /></a>
+  </center>
+</div>
+<div id="portrait"><img src="https://files.catbox.moe/w837fo.png" style="height:197px"></div>
+<div class="hover">
+  <div class="moose-animation">
+    <div id="big">about</div>
+  </div>
+</div>
 
-  </body>
+<div class="window" style="width: 300px; right: 400px; top:200px;"> 
+  <div class="title-bar">
+    <div class="title-bar-text">What I'm Working On</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <div class="field-row">
+      <input checked type="checkbox" id="1">
+      <label for="1">Skulduggery Pleasant shrine</label>
+    </div>
+    <div class="field-row">
+      <input checked type="checkbox" id="2">
+      <label for="2">Clown collection page</label>
+    </div>
+    <div class="field-row">
+      <input checked type="checkbox" id="3">
+      <label for="3">Art gallery</label>
+    </div>
+    
+    <!-- <div class="field-row">
+      <input disabled type="checkbox" id="example3">
+      <label for="example3">I am inactive</label>
+    </div> -->
+    
+    <br><br>
+   <center> <button>Okay</button></center>
+  </div>
+</div>
+
+<div class="window" style="width: 300px; right: 150px; top:275px;"> 
+  <div class="title-bar">
+    <div class="title-bar-text">To Do</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <div class="field-row">
+      <input type="checkbox" id="4">
+      <label for="4">Dress up game</label>
+    </div> 
+    <div class="field-row">
+      <input type="checkbox" id="5">
+      <label for="5">Resources page</label>
+    </div> 
+    <div class="field-row">
+      <input type="checkbox" id="6">
+      <label for="6">Links page</label>
+    </div> 
+    <div class="field-row">
+      <input type="checkbox" id="7">
+      <label for="7">Create efiction archive</label>
+    </div> 
+    <div class="field-row">
+      <input type="checkbox" id="8">
+      <label for="8">Revive dailyjun</label>
+    </div> <br><br>
+   <center> <button>Okay</button></center>
+  </div>
+</div>
+
+</body>
 </html>
