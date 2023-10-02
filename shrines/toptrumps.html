@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top Trumps Game</title>
+</head>
+<body>
+    <h1>Top Trumps Game</h1>
+    <button onclick="startGame()">Start Game</button>
+    <div id="game" style="display: none;">
+        <h2>Round <span id="round">1</span></h2>
+        <div id="player-card" class="card">
+            <h3>Your Card</h3>
+            <p id="player-name"></p>
+            <p id="player-attributes"></p>
+        </div>
+        <div id="computer-card" class="card">
+            <h3>Computer's Card</h3>
+            <p id="computer-name"></p>
+            <p id="computer-attributes"></p>
+        </div>
+        <button onclick="playRound()">Play Round</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        const cards = [
+        { name: "China Sorrows", attributes: [["Fighting Ability:", 7], ["Intelligence:", 9], ["Elemental Magic:", 0], ["Adept Magic:", 9]] },
+            { name: "Valkyrie Cain", attributes: [["Fighting Ability:", 4], ["Intelligence:", 8], ["Elemental Magic:", 5], ["Adept Magic:", 0]] },
+            { name: "Skulduggery Pleasant", attributes: [["Fighting Ability:", 8], ["Intelligence:", 10], ["Elemental Magic:", 9], ["Adept Magic:", 0]] },
+            { name: "Solomon Wreath", attributes: [["Fighting Ability:", 8], ["Intelligence:", 10], ["Elemental Magic:", 0], ["Adept Magic:", 10]] },
+            { name: "Hollow Man", attributes: [["Fighting Ability:", 6], ["Intelligence:", 0], ["Elemental Magic:", 0], ["Adept Magic:", 0]] },
+            { name: "The Torment", attributes: [["Fighting Ability:", 7], ["Intelligence:", 8], ["Elemental Magic:", 0], ["Adept Magic:", 8]] },
+            { name: "Springheeled Jack", attributes: [["Fighting Ability:", 7], ["Intelligence:", 6], ["Elemental Magic:", 0], ["Adept Magic:", 8]] },
+            { name: "The White Cleaver", attributes: [["Fighting Ability:", 9], ["Intelligence:", 5], ["Elemental Magic:", 0], ["Adept Magic:", 2]] },
+            { name: "Billy-Ray Sanguine", attributes: [["Fighting Ability:", 7], ["Intelligence:", 7], ["Elemental Magic:", 8], ["Adept Magic:", 0]] },
+            { name: "Ghastly Bespoke", attributes: [["Fighting Ability:", 8], ["Intelligence:", 8], ["Elemental Magic:", 9], ["Adept Magic:", 0]] },
+            { name: "Tanith Low", attributes: [["Fighting Ability:", 8], ["Intelligence:", 8], ["Elemental Magic:", 0], ["Adept Magic:", 9]] },
+            { name: "Nefarian Serpine", attributes: [["Fighting Ability:", 6], ["Intelligence:", 10], ["Elemental Magic:", 0], ["Adept Magic:", 10]] },
+            { name: "Mr Bliss", attributes: [["Fighting Ability:", 10], ["Intelligence:", 10], ["Elemental Magic:", 0], ["Adept Magic:", 10]] },
+            { name: "Fletcher Renn", attributes: [["Fighting Ability:", 2], ["Intelligence:", 7], ["Elemental Magic:", 0], ["Adept Magic:", 8]] },
+            { name: "Gordon Edgely", attributes: [["Fighting Ability:", 1], ["Intelligence:", 9], ["Elemental Magic:", 0], ["Adept Magic:", 0]] },
+            { name: "Kenspeckle Grouse", attributes: [["Fighting Ability:", 2], ["Intelligence:", 10], ["Elemental Magic:", 0], ["Adept Magic:", 9]] },
+            { name: "Dusk", attributes: [["Fighting Ability:", 8], ["Intelligence:", 7], ["Elemental Magic:", 0], ["Adept Magic:", 8]] },
+            { name: "Vaurien Scapegrace", attributes: [["Fighting Ability:", 4], ["Intelligence:", 4], ["Elemental Magic:", 0], ["Adept Magic:", 4]] },
+            { name: "Baron Vengeous", attributes: [["Fighting Ability:", 9], ["Intelligence:", 9], ["Elemental Magic:", 0], ["Adept Magic:", 8]] },
+            { name: "Cleaver", attributes: [["Fighting Ability:", 8], ["Intelligence:", 4], ["Elemental Magic:", 0], ["Adept Magic:", 1]] },
+            { name: "The Grotesquery", attributes: [["Fighting Ability:", 11], ["Intelligence:", 0], ["Elemental Magic:", 0], ["Adept Magic:", 10]] },
+            { name: "Vampire", attributes: [["Fighting Ability:", 9], ["Intelligence:", 3], ["Elemental Magic:", 0], ["Adept Magic:", 9]] }
+        ];
+
+        let round = 1;
+        let playerCard, computerCard;
+
+        function startGame() {
+            document.getElementById("game").style.display = "block";
+            document.getElementById("round").innerText = round;
+            playerCard = drawCard();
+            computerCard = drawCard();
+            document.getElementById("player-card").innerHTML = `<h3>Your Card</h3><p id="player-name">${playerCard.name}</p><p id="player-attributes"></p>`;
+            document.getElementById("computer-card").innerHTML = `<h3>Computer's Card</h3><p id="computer-name">${computerCard.name}</p><p id="computer-attributes"></p>`;
+            
+            // Display all attributes for the player's card
+            for (let i = 0; i < playerCard.attributes.length; i++) {
+                document.getElementById("player-attributes").innerHTML += `${playerCard.attributes[i][0]} ${playerCard.attributes[i][1]}<br>`;
+            }
+            
+            // Display only question marks for the computer's card attributes
+            for (let i = 0; i < computerCard.attributes.length; i++) {
+                document.getElementById("computer-attributes").innerHTML += `${computerCard.attributes[i][0]} ???<br>`;
+            }
+            
+            document.getElementById("result").innerText = "";
+        }
+
+        function drawCard() {
+            return cards[Math.floor(Math.random() * cards.length)];
+        }
+
+        function playRound() {
+            const playerAttributes = playerCard.attributes.map(attr => attr[1]);
+            const computerAttributes = computerCard.attributes.map(attr => attr[1]);
+            let playerWins = 0;
+            let computerWins = 0;
+
+            for (let i = 0; i < playerAttributes.length; i++) {
+                if (playerAttributes[i] > computerAttributes[i]) {
+                    playerWins++;
+                } else if (playerAttributes[i] < computerAttributes[i]) {
+                    computerWins++;
+                }
+            }
+
+            if (playerWins > computerWins) {
+                document.getElementById("result").innerText = "You win this round!";
+            } else if (playerWins < computerWins) {
+                document.getElementById("result").innerText = "Computer wins this round!";
+            } else {
+                document.getElementById("result").innerText = "It's a tie!";
+            }
+
+            round++;
+         
+        }
+    </script>
+
+    <style>
+        .card {
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+            float: left;
+        }
+    </style>
+</body>
+</html>
