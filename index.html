@@ -829,69 +829,18 @@ border: 1px solid #000; /** border around moving part of scrollbar (overlaps wit
     transition: all 0.6s ease-in-out;
  
 }
-
-#calendar-cell {
-    display: grid;
-    background: black !important;
-    gap: 1px;
-    border: 1px solid black;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: repeat(auto-fill, 1fr);
-
-
-    text-align: center;
+#statuscafe {
+    padding: .5em;
+    
+    border: 1px dashed #051923;
+    margin-bottom:30px;
 }
-
-#calendar-cell > * {
-    padding: 2px;
+#statuscafe-username {
+    margin-bottom: .5em;
 }
-
-#calendar-header {
-    grid-column-start: 1;
-    grid-column-end: 8;
-    font-size: 13px;
-
-    background-color: #c2c7c5;
+#statuscafe-content {
+    margin: 0 1em 0.5em 1em;
 }
-
-#calendar-cell .day-name {
-    background-color: #6D6D6D;
-    color: white;
-}
-
-#calendar-cell .day-name:nth-of-type(7n - 5) {
-    /* Color Sunday */
-    background-color: #ca6c6c;
-}
-
-#calendar-cell .day-name:nth-of-type(7n + 1) {
-    /* Color Saturday */
-    background-color: #657aa1;
-}
-
-#calendar-cell .day {
-    background-color: #c2c7c5;
-    padding: 2px;
-}
-
-#calendar-cell .day:nth-of-type(7n - 5){
-    /* Color Sundays */
-    background-color: #FFA6EF;
-    color: #7D0000;
-}
-
-#calendar-cell .day:nth-of-type(7n + 1){
-    /* Color Saturdays */
-    background-color: #86AEFF;
-    color: #000086;
-}
-
-#calendar-cell #today {
-    background-color: #D7DFE7;
-    outline: 1px solid #608FA5;
-    outline-offset: -2px;
-}
-
 
 </style>
 <body> <!-- now we're below the head  
@@ -931,7 +880,7 @@ will edit the most. -->
 
         <!-- UPDATES START-->
         <br>
-        <div class="boxy" style="height:100px; padding:5px; overflow-y: scroll;"><b>29.09.23:</b> added about page, calendar <br><b>27.09.23:</b> added background <br> <b>26.09.23:</b> general updates, added comments to fic page <br> <b>24.09.23:</b> site live with fics and library pages <br> <b>11.09.23</b> update for scroll <br> <b>05.09.23:</b> added animations, css grid, music player <br> <b>04.09.23:</b> new site created 
+        <div class="boxy" style="height:100px; padding:5px; overflow-y: scroll;"><b>03.10.23:</b> quit twitter added statuscafe <b>29.09.23:</b> added about page, calendar <br><b>27.09.23:</b> added background <br> <b>26.09.23:</b> general updates, added comments to fic page <br> <b>24.09.23:</b> site live with fics and library pages <br> <b>11.09.23</b> update for scroll <br> <b>05.09.23:</b> added animations, css grid, music player <br> <b>04.09.23:</b> new site created 
         <br></div><br>
         <!-- UPDATES  END-->
 
@@ -1021,12 +970,7 @@ social media sites, so this is my attempt at that.
                     </td>
               <td> <!-- RIGHT BOXES -->
 <br>
-               
-<div id="calendar-cell">
-  <div id="calendar-header">10/2023</div>
-  <div class="day-name">Su</div><div class="day-name">Mo</div><div class="day-name">Tu</div><div class="day-name">We</div><div class="day-name">Th</div><div class="day-name">Fr</div><div class="day-name">Sa</div>
-<div class='day'>1</div><div class='day'  id='today'>2</div><div class='day'>3</div><div class='day'>4</div><div class='day'>5</div><div class='day'>6</div><div class='day'>7</div><div class='day'>8</div><div class='day'>9</div><div class='day'>10</div><div class='day'>11</div><div class='day'>12</div><div class='day'>13</div><div class='day'>14</div><div class='day'>15</div><div class='day'>16</div><div class='day'>17</div><div class='day'>18</div><div class='day'>19</div><div class='day'>20</div><div class='day'>21</div><div class='day'>22</div><div class='day'>23</div><div class='day'>24</div><div class='day'>25</div><div class='day'>26</div><div class='day'>27</div><div class='day'>28</div><div class='day'>29</div><div class='day'>30</div><div class='day'>31</div><div class='day'>&nbsp</div><div class='day'>&nbsp</div><div class='day'>&nbsp</div><div class='day'>&nbsp</div></div>            </div>
-
+<div id="statuscafe"><a href="https://status.cafe/users/ncymrn"><img src="https://status.cafe/users/ncymrn/badge.png" alt="Status Cafe Profile"/></a><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=ncymrn" defer></script>
                <!-- <div class=imgcontainer>
                     <img src="https://media.tenor.com/hA8Vv4w3QaAAAAAi/welcome-to-my-homepage-early-internet.gif" style="opacity:0.9; margin-top:5px;" width="auto" ></div>
 
