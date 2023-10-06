@@ -1,0 +1,434 @@
+<!-- coded by ncymrn
+my first site from scratch. 
+forgive my spaghetti code! 
+you should only need a basic
+knowledge of html to use this  
+code. if you have issues or
+questions, feel free to hit me
+up at ncymrn.neocities.com 
+
+special thanks to octomoosey,
+dimden, velvet blue, and 
+everyone else who inspired me
+to make this website! -->
+
+<!doctype html>
+<html>
+<head> <!-- this is the <head> tag.
+you can think of it as 
+everything that goes ABOVE
+the body of your website, the
+head. -->
+
+<link href="https://db.onlinewebfonts.com/c/49b81d05de87e725a4159c129f88bba1?family=Pancetta+Serif+Pro+Light" rel="stylesheet">
+
+<!-- FAVICON -->
+  <link rel="shortcut icon" href="link">
+<!-- END FAVICON -->
+
+ <!-- SCROLL TAB TEXT START -->
+ <script type="text/javascript">
+    function tb8_makeArray(n){
+    this.length = n;
+    return this.length;
+    }
+    tb8_messages = new tb8_makeArray(3);
+    tb8_messages[0] = "write something here";
+    tb8_messages[1] = "isn't this cool";
+    tb8_messages[2] = "i love this script";
+    tb8_rptType = 'infinite';
+    tb8_rptNbr = 5;
+    tb8_speed = 100;
+    tb8_delay = 2000;
+    var tb8_counter=1;
+    var tb8_currMsg=0;
+    var tb8_tekst ="";
+    var tb8_i=0;
+    var tb8_TID = null;
+    function tb8_pisi(){
+    tb8_tekst = tb8_tekst + tb8_messages[tb8_currMsg].substring(tb8_i, tb8_i+1);
+    document.title = tb8_tekst;
+    tb8_sp=tb8_speed;
+    tb8_i++;
+    if (tb8_i==tb8_messages[tb8_currMsg].length){
+    tb8_currMsg++; tb8_i=0; tb8_tekst="";tb8_sp=tb8_delay;
+    }
+    if (tb8_currMsg == tb8_messages.length){
+    if ((tb8_rptType == 'finite') && (tb8_counter==tb8_rptNbr)){
+    clearTimeout(tb8_TID);
+    return;
+    }
+    tb8_counter++;
+    tb8_currMsg = 0;
+    }
+    tb8_TID = setTimeout("tb8_pisi()", tb8_sp);
+    }
+    tb8_pisi()
+    </script><title>title</title>
+    <!-- SCROLL TAB TEXT END -->
+
+    <!-- META DESCRIPTION-->
+<meta name="description" content="description">
+    <!-- END META DESCRIPTION -->
+
+
+
+   
+</head>
+
+<style type="text/css"> /* this is the
+<style> tag, which makes everything
+look pretty. you shouldn't need to 
+change anything but colours. */
+
+@media(max-width:1366px){
+
+}
+
+@import url(https://db.onlinewebfonts.com/c/49b81d05de87e725a4159c129f88bba1?family=Pancetta+Serif+Pro+Light);
+@font-face {
+    font-family: "Pancetta Serif Pro Light";
+    src: url("https://db.onlinewebfonts.com/t/49b81d05de87e725a4159c129f88bba1.eot");
+    src: url("https://db.onlinewebfonts.com/t/49b81d05de87e725a4159c129f88bba1.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/49b81d05de87e725a4159c129f88bba1.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/49b81d05de87e725a4159c129f88bba1.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/49b81d05de87e725a4159c129f88bba1.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/49b81d05de87e725a4159c129f88bba1.svg#Pancetta Serif Pro Light")format("svg");
+}
+
+
+    .sidebarleft {
+    display:block;
+    height: 440px;
+    width: 80px;
+    position: fixed;
+    top:52%;
+    left:27%;
+    margin-top:-275px;
+    z-index:2;
+    }
+    .sidebarright {
+    display:block;
+    height: 440px;
+    width: 80px;
+    position: fixed;
+    top:52%;
+    left:67.5%;
+    margin-top:-275px;
+    z-index:2;
+    }
+
+
+    body {
+    background-image: url("https://files.catbox.moe/960vx5.png");
+    color:#fff;
+    font-family: "Pancetta Serif Pro Light";
+    font-size:25px;
+    font-weight:normal;
+    position: fixed;
+    text-align:left;
+    overflow:none;
+    margin-top:20px;
+    margin-left:20px;
+    }
+
+    img {
+    max-width:100%;
+    height:auto;}
+
+    a {
+    text-decoration:none;
+    color:#ff90b3;
+    cursor:help;
+     -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;}
+ 
+    a:hover {
+    cursor:help;
+    letter-spacing:1px;
+    color:#7fdeff;}
+
+    .title {
+    
+    height:auto;
+    width: 600px;
+    position:fixed;
+    left:27%;
+    
+    }
+
+    .title img {
+    max-width:100%;
+    height:auto;
+    
+    }
+
+    #container {
+    
+    height:440px;
+    width: 460px;
+    position:fixed;
+    top:52%;
+    margin-top:-275px;
+    left:33%;
+    
+    }
+
+    
+    .boxy {
+       
+   border: 1px dashed;
+   display:scroll;
+   flex-direction: column;
+   border-collapse: collapse;
+   background: #000;
+   -webkit-scrollbar {
+   display: none; }
+   -ms-overflow-style: none;  /* IE and Edge */
+   scrollbar-width: none;  /* Firefox */
+    }
+
+
+ 
+.img-container {
+text-align: center;
+font-family: 'Nintendo DS Bios', sans-serif;
+overflow-x: hidden;
+}
+
+#floatleft {
+   float: left;
+   margin: 2px;
+ }
+ 
+ #floatright {
+   float: right;
+   margin: 2px;
+ }
+
+  
+/* TABLES */
+#ttable {
+              width: 460px;
+              height:440px;
+              
+                border-color: #d5dfe5;
+                border-collapse: separate;
+              
+                overflow: hidden;
+                
+            }
+             td {
+                padding: 0px;
+                border-color: #d5dfe5;
+                vertical-align: top;
+            }
+
+            .tablebox {
+                padding:15px;
+                background-image:url("https://files.catbox.moe/osaiar.png");
+                background-size:stretch;
+    position: relative;
+   display: block;
+   flex-direction: column; 
+   border-collapse: collapse;
+
+   z-index: 2;   
+
+}
+/* END TABLES */
+
+
+/* ANIMATIONS */
+ 
+@keyframes bbounce{
+  0% {transform:translate(0px,0px);}
+  50% {transform:translate(0px,10px);}
+  100% {transform:translate(0px, 0px);}
+}
+ 
+@-moz-keyframes bbounce{
+  0% {-moz-transform:translate(0px,0px);}
+  50% {-moz-transform:translate(0px,10px);}
+  100% {-moz-transform:translate(0px,0px);}
+}
+ 
+@-webkit-keyframes bbounce {
+  0% {-webkit-transform:translate(0px,0px);}
+  50% {-webkit-transform:translate(0px,10px);}
+  100% {-webkit-transform:translate(0px,0px);}
+}
+ 
+@-o-keyframes bbounce {
+  0% {-o-transform:translate(0px,0px);}
+  50% {-o-transform:translate(0px,10px);}
+  100% {-o-transform:translate(0px,0px);}
+}
+ 
+@-ms-keyframes bbounce {
+  0% {-ms-transform:translate(0px,0px);}
+  50% {-ms-transform:translate(0px,10px);}
+  100% {-ms-transform:translate(0px,0px);}
+}
+
+.hover{
+position:relative;
+    animation: bbounce linear 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 50% 50%;
+       
+/* Safari 4+, Android, Chrome */    
+-webkit-animation: bbounce linear 2.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform-origin: 50% 50%;
+   
+/* Fx 5+ */    
+    -moz-animation: bbounce linear 2.5s;
+    -moz-animation-iteration-count: infinite;
+    -moz-transform-origin: 50% 50%;
+   
+/* Opera 12+ */    
+    -o-animation: bbounce linear 2.5s;
+    -o-animation-iteration-count: infinite;
+    -o-transform-origin: 50% 50%;
+   
+/* IE 10+, Fx 29+ */    
+    -ms-animation: bbounce linear 2.5s;
+    -ms-animation-iteration-count: infinite;
+    -ms-transform-origin: 50% 50%;}
+   
+    .hover img {
+    background:transparent;
+}
+
+/* END ANIMATIONS */
+
+#credit{
+font-size: 12px;
+position: fixed;
+bottom: 0;
+right: 0;
+}
+
+.linkicon {
+ width: 100%;
+ height: 10px;
+margin-left: 5px;
+
+/** SCROLLBAR **/
+}
+::-webkit-scrollbar {
+width: 10px; /** width of total scrollbar **/
+background: #fff; /** background of scrollbar **/
+border: 1px solid #000; /** border around whole scrollbar **/
+}
+
+::-webkit-scrollbar-thumb {
+background: #ccc; /** color of the moving part of the scrollbar (thumb) **/
+border: 1px solid #000; /** border around moving part of scrollbar (overlaps with border of total scrollbar) **/
+}
+/** END SCROLLBAR **/
+
+</style>
+<body> <!-- now we're below the head  
+at the <body> tag. this is the content
+of your website. this is the part you
+will edit the most. -->
+
+<div class="sidebarleft">
+    <a href="link" onmouseover="mouseoversound.playclip()" onclick="clicksound.playclip()" ><img src="https://files.catbox.moe/3f4tfm.png" style="height:70px; margin-bottom:120px;" ></a>
+    <a href="link" onmouseover="mouseoversound.playclip()" onclick="clicksound.playclip()" ><img src="https://files.catbox.moe/dre4od.png"></a>
+    <a href="link" onmouseover="mouseoversound.playclip()" onclick="clicksound.playclip()" ><img src="https://files.catbox.moe/6fxx8j.png"></a>
+    <a href="link" onmouseover="mouseoversound.playclip()" onclick="clicksound.playclip()" ><img src="https://files.catbox.moe/eejaez.png"></a>
+</div>
+
+ 
+<div class="title"><img src="https://files.catbox.moe/gok3yw.png" style="width:600px;"></div><br>
+<!-- MAIN BOX START -->
+    <div id="container">
+        
+            <table style="border:none">
+                <tbody>
+                 <tr>
+                  <td style="width:160px;"> <!-- LEFT BOXES-->
+                    
+                   
+                    <img src="https://files.catbox.moe/dmwtjn.png" style="height:270px;">
+                      
+                  
+                  </td> <!-- CENTER BOXES -->
+                  <td colspan="2">
+                 
+                        <div class="tablebox" style="overflow: hidden; width:300px; height:242px; ">
+                
+                            Chocolate caramels cake carrot cake chupa chups cookie. Liquorice apple pie jelly-o cake icing. Cookie apple pie cheesecake jujubes macaroon cheesecake halvah.
+
+                            Jelly beans candy tootsie roll bear claw gummies icing cupcake chocolate chocolate. 
+                       
+                          </div>  <br>
+                         
+                        </td>
+             
+                  
+                 </tr>
+                </tbody>
+            </table>
+        </div>
+<!-- MAIN BOX END -->
+   
+<div class="sidebarright">
+    <a href="link" onmouseover="mouseoversound.playclip()" onclick="clicksound.playclip()" ><img src="https://files.catbox.moe/vkvqxf.png" style="height:70px; margin-bottom:120px;"></a>
+
+</div>
+ 
+<div id="credit"><a href="https://ncymrn.neocities.org/">★</a></div>
+
+<script>
+ 
+    // Mouseover/ Click sound effect- by JavaScript Kit (www.javascriptkit.com)
+    // Visit JavaScript Kit at http://www.javascriptkit.com/ for full source code
+     
+    //** Usage: Instantiate script by calling: var uniquevar=createsoundbite("soundfile1", "fallbackfile2", "fallebacksound3", etc)
+    //** Call: uniquevar.playclip() to play sound
+     
+    var html5_audiotypes={ //define list of audio file extensions and their associated audio types. Add to it if your specified audio file isn't on this list:
+    "mp3": "audio/mpeg",
+    "mp4": "audio/mp4",
+    "ogg": "audio/ogg",
+    "wav": "audio/wav"
+    }
+     
+    function createsoundbite(sound){
+    var html5audio=document.createElement('audio')
+    if (html5audio.canPlayType){ //check support for HTML5 audio
+    for (var i=0; i<arguments.length; i++){
+    var sourceel=document.createElement('source')
+    sourceel.setAttribute('src', arguments[i])
+    if (arguments[i].match(/\.(\w+)$/i))
+    sourceel.setAttribute('type', html5_audiotypes[RegExp.$1])
+    html5audio.appendChild(sourceel)
+    }
+    html5audio.load()
+    html5audio.playclip=function(){
+    html5audio.pause()
+    html5audio.currentTime=0
+    html5audio.play()
+    }
+    return html5audio
+    }
+    else{
+    return {playclip:function(){throw new Error("Your browser doesn't support HTML5 audio unfortunately")}}
+    }
+    }
+     
+    //Initialize two sound clips with 1 fallback file each:
+     
+    let mouseoversound=createsoundbite("https://files.catbox.moe/2li1hu.wav")
+    let clicksound=createsoundbite("https://files.catbox.moe/9s6fr4.wav")
+     
+    </script>
+ 
+</body>
+</html>
