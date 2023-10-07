@@ -102,7 +102,7 @@ change anything but colours. */
     height: 440px;
     width: 80px;
     position: fixed;
-    top:52%;
+    top:59%;
     left:27%;
     margin-top:-275px;
     z-index:2;
@@ -112,7 +112,7 @@ change anything but colours. */
     height: 440px;
     width: 80px;
     position: fixed;
-    top:52%;
+    top:59%;
     left:67.5%;
     margin-top:-275px;
     z-index:2;
@@ -121,6 +121,9 @@ change anything but colours. */
 
     body {
     background-image: url("https://files.catbox.moe/960vx5.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#000;
     color:#fff;
     font-family: "Pancetta Serif Pro Light";
     font-size:25px;
@@ -165,12 +168,21 @@ change anything but colours. */
     
     }
 
-    #container {
+    #bigboy {
+        height:440px;
+    width: 460px;
+    position:fixed;
+    top:52%;
+    margin-top:-275px;
+    left:33%;
+    }
+
+    .container {
     
     height:440px;
     width: 460px;
     position:fixed;
-    top:52%;
+    top:59%;
     margin-top:-275px;
     left:33%;
     
@@ -210,7 +222,7 @@ overflow-x: hidden;
 
   
 /* TABLES */
-#ttable {
+#ttable { padding:0px;
               width: 460px;
               height:440px;
               
@@ -227,17 +239,18 @@ overflow-x: hidden;
             }
 
             .tablebox {
-                padding:15px;
+                padding:10px;
                 background-image:url("https://files.catbox.moe/osaiar.png");
                 background-size:stretch;
-    position: relative;
-   display: block;
-   flex-direction: column; 
-   border-collapse: collapse;
+                position: relative;
+                display: block;
+                flex-direction: column; 
+                border-collapse: collapse;
+                overflow-y:scroll;
+                overflow-x:hidden;
+                z-index: 2; 
 
-   z-index: 2;   
-
-}
+                }
 /* END TABLES */
 
 
@@ -316,18 +329,20 @@ right: 0;
  width: 100%;
  height: 10px;
 margin-left: 5px;
+}
 
 /** SCROLLBAR **/
-}
+
 ::-webkit-scrollbar {
-width: 10px; /** width of total scrollbar **/
-background: #fff; /** background of scrollbar **/
-border: 1px solid #000; /** border around whole scrollbar **/
+width: 20px; 
+background: linear-gradient(90deg, rgba(114,113,114,1) 0%, rgba(57,60,61,1) 100%);
+border-top: 1px solid #6c7274; 
+border-left: 1px solid #6c7274; 
 }
 
 ::-webkit-scrollbar-thumb {
-background: #ccc; /** color of the moving part of the scrollbar (thumb) **/
-border: 1px solid #000; /** border around moving part of scrollbar (overlaps with border of total scrollbar) **/
+background: #727172; 
+
 }
 /** END SCROLLBAR **/
 
@@ -336,7 +351,7 @@ border: 1px solid #000; /** border around moving part of scrollbar (overlaps wit
 at the <body> tag. this is the content
 of your website. this is the part you
 will edit the most. -->
-
+<div id="bigboy">
 <div class="sidebarleft">
     <a href="/" onmouseover="mouseoversound.playclip()" onclick="clicksound.playclip()">
         <img src="https://files.catbox.moe/3f4tfm.png" style="height:70px; margin-bottom:120px;">
@@ -348,12 +363,12 @@ will edit the most. -->
  
 <div class="title"><img src="https://files.catbox.moe/gok3yw.png" style="width:600px;"></div><br>
 <!-- MAIN BOX START -->
-    <div id="container">
+    <div class="container">
         
             <table style="border:none">
-                <tbody>
+             
                  <tr>
-                  <td style="width:160px;"> <!-- LEFT BOXES-->
+                  <td > <!-- LEFT BOXES-->
                     
                    
                     <img src="https://files.catbox.moe/dmwtjn.png" style="height:270px;">
@@ -362,19 +377,55 @@ will edit the most. -->
                   </td> <!-- CENTER BOXES -->
                   <td colspan="2">
                  
-                        <div class="tablebox" style="overflow: hidden; width:300px; height:242px; ">
+                        <div class="tablebox" style=" width:330px; height:145px; margin-bottom:6px;">
                 
                             Chocolate caramels cake carrot cake chupa chups cookie. Liquorice apple pie jelly-o cake icing. Cookie apple pie cheesecake jujubes macaroon cheesecake halvah.
 
                             Jelly beans candy tootsie roll bear claw gummies icing cupcake chocolate chocolate. 
                        
-                          </div>  <br>
+                          </div> 
+
+                          <div class="tablebox" style=" width:330px; height:76px; ">
+                
+                            Chocolate caramels cake carrot cake chupa chups cookie. Liquorice apple pie jelly-o cake icing. Cookie apple pie cheesecake jujubes macaroon cheesecake halvah.
+
+                            Jelly beans candy tootsie roll bear claw gummies icing cupcake chocolate chocolate. 
+                       
+                          </div>  
                          
                         </td>
              
                   
                  </tr>
-                </tbody>
+              
+            </table>
+
+            <table style="border:none">
+             
+                 <tr>
+                  <td style="width:160px;"> <!-- LEFT BOXES-->
+                    <div class="tablebox" style=" width:160px; height:148px; margin-right:5px;">
+                text
+                       
+                      </div> 
+
+                   
+                 
+                  </td> <!-- CENTER BOXES -->
+                  <td colspan="2">
+                 
+                        <div class="tablebox" style=" width:250px; height:148px; background-image:url(https://files.catbox.moe/pxxah7.png); background-size:cover;">
+                
+                           text
+                       
+                          </div> 
+
+                         
+                        </td>
+             
+                  
+                 </tr>
+              
             </table>
         </div>
 <!-- MAIN BOX END -->
@@ -382,6 +433,7 @@ will edit the most. -->
 <div class="sidebarright">
     <a href="link" onmouseover="mouseoversound.playclip()" onclick="clicksound.playclip()" ><img src="https://files.catbox.moe/vkvqxf.png" style="height:70px; margin-bottom:120px;"></a>
 
+</div>
 </div>
  
 <div id="credit"><a href="https://ncymrn.neocities.org/">★</a></div>
