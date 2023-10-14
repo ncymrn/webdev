@@ -1,0 +1,290 @@
+[
+    {
+        "id": "book1",
+        "class": "item 2021 dr mine mod contrib",
+        "style": "background-image: url('https://i.imgur.com/qT8zaKs.png')"
+    },
+    {
+        "id": "book2",
+        "class": "item 2022 dr",
+        "style": "background-image: url('https://i.imgur.com/y1nr8OU.png')"
+    },
+    {
+        "id": "book3",
+        "class": "item 2021 mcr",
+        "style": "background-image: url('https://i.imgur.com/dCY1nM3.png')"
+    },
+    {
+        "id": "book4",
+        "class": "item 2021 mcr",
+        "style": "background-image: url('https://i.imgur.com/hl2Mifk.png')"
+    },
+    {
+        "id": "book5",
+        "class": "item 2022 dr",
+        "style": "background-image: url('https://i.imgur.com/RSpWYIV.png')"
+    },
+    {
+        "id": "book6",
+        "class": "item 2021 mcr",
+        "style": "background-image: url('https://i.imgur.com/ONzMK6K.png')"
+    },
+    {
+        "id": "book7",
+        "class": "item 2021 nonfandom",
+        "style": "background-image: url('https://i.imgur.com/CAn9EGU.png')"
+    },
+    {
+        "id": "book8",
+        "class": "item 2021 dr",
+        "style": "background-image: url('https://i.imgur.com/u4GgZlY.png')"
+    },
+    {
+        "id": "book9",
+        "class": "item 2021 dr",
+        "style": "background-image: url('https://i.imgur.com/exbUCJD.png')"
+    },
+    {
+        "id": "book10",
+        "class": "item 2021 dr",
+        "style": "background-image: url('https://i.imgur.com/5i2kZA9.png')"
+    },
+    {
+        "id": "book11",
+        "class": "item 2022 hxh",
+        "style": "background-image: url('https://i.imgur.com/zzw8GJO.png')"
+    },
+    {
+        "id": "book12",
+        "class": "item 2022 hxh",
+        "style": "background-image: url('https://i.imgur.com/a5HwysZ.png')"
+    },
+    {
+        "id": "book13",
+        "class": "item 2020 dr",
+        "style": "background-image: url('https://i.imgur.com/8yaJhjT.png')"
+    },
+    {
+        "id": "book14",
+        "class": "item 2018 dr",
+        "style": "background-image: url('https://i.imgur.com/SLaXd3X.jpg')"
+    },
+    {
+        "id": "book15",
+        "class": "item 2021 misc",
+        "style": "background-image: url('https://i.imgur.com/1v6eUg5.png')"
+    },
+    {
+        "id": "book16",
+        "class": "item 2021 bratz",
+        "style": "background-image: url('https://i.imgur.com/gUXvUnR.png')"
+    },
+    {
+        "id": "book17",
+        "class": "item 2021 dr",
+        "style": "background-image: url('https://i.imgur.com/kHIi02X.png')"
+    },
+    {
+        "id": "book18",
+        "class": "item 2021 sp",
+        "style": "background-image: url('https://i.imgur.com/5KiSB7R.png')"
+    },
+    {
+        "id": "book19",
+        "class": "item 2020 dr",
+        "style": "background-image: url('https://i.imgur.com/pYAOhLy.png')"
+    },
+    {
+        "id": "book20",
+        "class": "item 2020 dr",
+        "style": "background-image: url('https://i.imgur.com/WSijEGH.png')"
+    },
+    {
+        "id": "book21",
+        "class": "item 2020 dr",
+        "style": "background-image: url('https://i.imgur.com/pk6WMNm.png')"
+    },
+    {
+        "id": "book22",
+        "class": "item mine 2020 dr contrib",
+        "style": "background-image: url('https://i.imgur.com/t0wsC2Z.png')"
+    },
+    {
+        "id": "book23",
+        "class": "item 2020 misc",
+        "style": "background-image: url('https://i.imgur.com/ZLB5LxU.png')"
+    },
+    {
+        "id": "book24",
+        "class": "item 2020 dr",
+        "style": "background-image: url('https://i.imgur.com/C6wwDBW.png')"
+    },
+    {
+        "id": "book25",
+        "class": "item 2020 original",
+        "style": "background-image: url('https://i.imgur.com/7X8sb49.png')"
+    },
+    {
+        "id": "book26",
+        "class": "item 2020 dr",
+        "style": "background-image: url('https://i.imgur.com/efsVFgN.png')"
+    },
+    {
+        "id": "book27",
+        "class": "item 2020 tmm",
+        "style": "background-image: url('https://i.imgur.com/rKi1aIK.png')"
+    },
+    {
+        "id": "book28",
+        "class": "item 2020 original",
+        "style": "background-image: url('https://i.imgur.com/1Z8HIKM.png')"
+    },
+    {
+        "id": "book29",
+        "class": "item 2022 tmm",
+        "style": "background-image: url('https://i.imgur.com/q8xRq0o.png')"
+    },
+    {
+        "id": "book30",
+        "class": "item 2021 dr",
+        "style": "background-image: url('https://i.imgur.com/SVsLbDG.png')"
+    },
+
+      {
+        "id": "book31",
+        "class": "item 2022 persona",
+        "style": "background-image: url('https://i.imgur.com/21u00VC.jpg')"
+    },
+
+  {
+        "id": "book32",
+        "class": "item 2019 dr",
+        "style": "background-image: url('https://i.imgur.com/t9vear0.jpg')"
+    },
+
+    {
+        "id": "book33",
+        "class": "item 2023 original",
+        "style": "background-image: url('https://i.imgur.com/lDCj5z3.png')"
+    },
+
+   {
+        "id": "book34",
+        "class": "item 2021 misc",
+        "style": "background-image: url('https://i.imgur.com/crhERCP.png')"
+    },
+
+   {
+        "id": "book35",
+        "class": "item 2022 mcr",
+        "style": "background-image: url('https://i.imgur.com/svTCTJf.png')"
+   },
+
+    {
+        "id": "book36",
+        "class": "item 2019 dr",
+        "style": "background-image: url('https://i.imgur.com/eBhmswq.png')"
+    },
+
+  {
+        "id": "book37",
+        "class": "item 2022 dr",
+        "style": "background-image: url('https://i.imgur.com/gIOB6mB.png')"
+    },
+
+  {
+        "id": "book38",
+        "class": "item 2022 hxh",
+        "style": "background-image: url('https://i.imgur.com/yH2gDyo.png')"
+    },
+
+  {
+        "id": "book39",
+        "class": "item 2021 dr",
+        "style": "background-image: url('https://i.imgur.com/13QrVe1.png')"
+    },
+
+  {
+        "id": "book40",
+        "class": "item 2022 sp",
+        "style": "background-image: url('https://i.imgur.com/s3XRNvV.png')"
+    },
+
+  {
+        "id": "book40",
+        "class": "item 2022 misc",
+        "style": "background-image: url('https://i.imgur.com/w41rsG1.png')"
+    },
+
+   {
+        "id": "book41",
+        "class": "item 2021 misc",
+        "style": "background-image: url('https://i.imgur.com/N5Eu97Z.png')"
+    },
+
+    {
+        "id": "book42",
+        "class": "item 2021 dr",
+        "style": "background-image: url('https://i.imgur.com/qee7A3y.png')"
+    },
+
+  {
+        "id": "book43",
+        "class": "item 2021 dr",
+        "style": "background-image: url('https://i.imgur.com/GD5AqU0.png')"
+    },
+
+    {
+        "id": "book43",
+        "class": "item 2021 misc",
+        "style": "background-image: url('https://i.imgur.com/QPaqLQZ.png')"
+    },
+
+     {
+        "id": "book44",
+        "class": "item 2019 misc",
+        "style": "background-image: url('https://i.imgur.com/fCIXFvk.png')"
+    },
+
+  {
+        "id": "book45",
+        "class": "item 2020 original",
+        "style": "background-image: url('https://i.imgur.com/qRfM7Lj.png')"
+    },
+
+    {
+        "id": "book46",
+        "class": "item 2020 original",
+        "style": "background-image: url('https://i.imgur.com/5AAeOWz.png')"
+    },
+
+      {
+        "id": "book47",
+        "class": "item mine 2018 sp contrib",
+        "style": "background-image: url('https://i.imgur.com/L2zYXHm.png')"
+    },
+
+        {
+        "id": "book48",
+        "class": "item mine 2021 dr mod",
+        "style": "background-image: url('https://i.imgur.com/Zlo9Efd.png')"
+    },
+
+          {
+        "id": "book48",
+        "class": "item 2021 original",
+        "style": "background-image: url('https://i.imgur.com/zFI0IiP.png')"
+    },
+
+            {
+        "id": "book48",
+        "class": "item 2017 tmm",
+        "style": "background-image: url('https://i.imgur.com/Uy00euU.png')"
+    },
+
+              {
+        "id": "book48",
+        "class": "item 2019 bratz",
+        "style": "background-image: url('https://i.imgur.com/dnvUKjL.jpg')"
+    }
+]
