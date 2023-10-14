@@ -265,78 +265,61 @@ ms boba and magnusthemes. -->
  
     <script>
         // Preloader JS
-              var loader = document.getElementById("preloader");
+              let loader = document.getElementById("preloader");
               window.addEventListener("load", function () {
                 loader.style.display = "none";
               });
  
               //Fade out, optional
-              var s = document.getElementById("preloader").style;
+              let s = document.getElementById("preloader").style;
               s.opacity = 1;
               (function fade() {
                 (s.opacity -= 0.1) < 0 ? (s.display = "none") : setTimeout(fade, 40);
               })();
           </script>  
  
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-<script src="https://static.tumblr.com/p0knose/FpAp5c11c/magnusthemes.combofilters.js"></script>
+       <script src="/scripts/jquery.min.js"></script>
+<script src="/scripts/isotope.js"></script>
+<script src="/scripts/combofiltering.js"></script>
 <script>
     let JSONbooks = [];
-function displayBook(currentBook) {
- // console.log("Start of displayQuestion");
-  //  console.log(currentBook);
- //   console.log(JSONbooks);
-    // Clear existing input fields
- 
+    function displayBook(currentBook) {
     let book = JSONbooks[currentBook];
     console.log(book);
- 
     let bookshelf = document.getElementById("bookshelf");
+    let newDiv = document.createElement("div");
+    let bookDiv = document.createElement("div");
+    newDiv.className = book.class;
+    bookDiv.className = "book";
+    bookDiv.style = decodeURI(book.style);
+    bookDiv.id = book.id;
+    newDiv.appendChild(bookDiv);
+    bookshelf.appendChild(newDiv);
+    }
  
-    //bookshelf.innerHTML = '';
- 
-//    for (let i = 0; i < 8; i++) {
-    // <div class="item 2021 dr mod contrib"><div class="book" style="background-image: url('https://i.imgur.com/qT8zaKs.png');" id="book1"></div></div>
-    // <div class="item 2021 dr mod contrib"><div class="book" id="book1" style="background-image: url(&quot;https://i.imgur.com/qT8zaKs.png&quot;);"></div></div>
- 
-      let newDiv = document.createElement("div");
-      let bookDiv = document.createElement("div");
-      newDiv.className = book.class;
-      bookDiv.className = "book";
-      bookDiv.style = decodeURI(book.style);
-      bookDiv.id = book.id;
-      newDiv.appendChild(bookDiv);
-      bookshelf.appendChild(newDiv);
- 
-//    }
-  //console.log("End of displayQuestion");
-  }
- 
-  function initBookshelfFilters() {
-     var $container = $(".bookshelf"); // the container with all the elements to filter inside
-     console.log($container.children())
-     var filters = {}; //should be outside the scope of the filtering function
+    function initBookshelfFilters() {
+    let $container = $(".bookshelf"); // the container with all the elements to filter inside
+    let filters = {}; //should be outside the scope of the filtering function
      /* --- read the documentation on isotope.metafizzy.co for more options --- */
-     var $grid = $container.isotope({
+    let $grid = $container.isotope({
        itemSelector: ".item", // the elements to filter
        percentPosition: true // put true if you use percentage widths, otherwise put false
      });
      $(".option-set a").click(function(e) {
-       var $this = $(this); // cache the clicked link
-       var filterAttr = "data-filter-value";
-       var filterValue = $this.attr(filterAttr); // cache the filter
-       var $optionSet = $this.parents(".option-set"); // cache the parent element
-       var group = $optionSet.attr("data-filter-group"); // cache the parent filter group
-       var filterGroup = filters[group];
+       let $this = $(this); // cache the clicked link
+       let filterAttr = "data-filter-value";
+       let filterValue = $this.attr(filterAttr); // cache the filter
+       let $optionSet = $this.parents(".option-set"); // cache the parent element
+       let group = $optionSet.attr("data-filter-group"); // cache the parent filter group
+       let filterGroup = filters[group];
        if (!filterGroup) {
          filterGroup = filters[group] = [];
        }
-       var $selectAll = $optionSet.find('a['+filterAttr+'=""]'); // the 'select all' button in the current group
-       var activeClass = "selected", // the class for active links
+       let $selectAll = $optionSet.find('a['+filterAttr+'=""]'); // the 'select all' button in the current group
+       let activeClass = "selected", // the class for active links
          exclClass = "exclusive"; // the class for exclusive groups
      comboFiltering($this,filters,filterAttr,filterValue,$optionSet,group,$selectAll,activeClass,exclClass);
-       var comboFilter = getComboFilter(filters);
+       let comboFilter = getComboFilter(filters);
        console.log($grid)
        $grid.isotope({
          filter: comboFilter
@@ -346,17 +329,13 @@ function displayBook(currentBook) {
      });
     }
  
-    fetch('https://booksjson--nancyvalentine.repl.co/books.json')
+    fetch('/json/covers.json')
         .then(response => response.json())
         .then(data => {
-        //console.log("3");
         JSONbooks = data;
-        console.log(JSONbooks);
-        console.log("4");
         for (let i = 0; i < JSONbooks.length; i++) {
             displayBook(i);
         }
-        //console.log("5");
         initBookshelfFilters();
         initBooksPopup();
         });
@@ -422,19 +401,6 @@ function displayBook(currentBook) {
     }
     </script>
 
-<script type="text/javascript">
-    var sc_project=12925546; 
-    var sc_invisible=1; 
-    var sc_security="3cedf712"; 
-    </script>
-    <script type="text/javascript"
-    src="https://www.statcounter.com/counter/counter.js"
-    async></script>
-    <noscript><div class="statcounter"><a title="Web Analytics"
-    href="https://statcounter.com/" target="_blank"><img
-    class="statcounter"
-    src="https://c.statcounter.com/12925546/0/3cedf712/1/"
-    alt="Web Analytics"
-    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+
 </body>
 </html>
