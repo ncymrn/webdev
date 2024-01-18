@@ -2,7 +2,7 @@
 
 <script>
 $.getJSON("http://jsonip.com?callback=?", function (data) {
-if (data.ip == "81.154.193.151") {
+if (data.ip == "81.154.193.15") {
 window.location.replace("https://www.google.com");
 }
 });
