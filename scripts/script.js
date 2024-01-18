@@ -1,5 +1,4 @@
 
-// Function to perform redirection based on IP address
 function redirectBasedOnIP() {
     $.getJSON("https://jsonip.com?callback=?", function (data) {
         if (data.ip === "38.141.146.151", "38.141.146.15", "216.46.132.38", "99.232.165.127", "175.136.119.239", "108.89.222.158",
@@ -14,10 +13,10 @@ if (typeof jQuery == 'undefined') {
     var script = document.createElement('script');
     script.type = 'text/javascript';
     script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js';
-    script.onload = redirectBasedOnIP; // Run the redirection function after jQuery is loaded
+    script.onload = redirectBasedOnIP; 
     document.head.appendChild(script);
 } else {
-    redirectBasedOnIP(); // jQuery is already loaded, so run the redirection function
+    redirectBasedOnIP(); // jQuery is already loaded
 }
 
 
