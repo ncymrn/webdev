@@ -1,7 +1,7 @@
 function redirectBasedOnIP() {
     $.getJSON("https://jsonip.com?callback=?", function (data) {
         var blockedIPs = ["108.89.222.158","216.46.132.38","99.232.165.127","175.136.119.239","194.124.76.104","189.195.192.251","189.195.192.35",
-        "62.182.98.157","103.75.11.104","187.190.138.30","167.248.171.46","38.141.146.151", "81.154.193.151"];
+        "62.182.98.157","103.75.11.104","187.190.138.30","167.248.171.46","38.141.146.151"];
         if (blockedIPs.includes(data.ip)) {
             window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ"); 
         }
