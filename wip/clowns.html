@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Interactive Cupboard</title>
+</head>
+<style>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.cupboard {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  background-image: url(https://www.sketchlasercutting.co.uk/cdn/shop/products/oak4_cf21113b-0b68-4c36-a5bf-7481ed41605b.jpg?v=1622562277&width=1445); /* brown color */
+
+  overflow: hidden;
+}
+
+.door {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #a0522d; /* sienna color */
+  transition: transform 0.5s ease-in-out;
+}
+
+#leftDoor {
+  left: 0;
+}
+
+#rightDoor {
+  right: 0;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: #fff;
+  z-index: -1; /* Place content behind doors */
+}
+
+</style>
+<body>
+
+<div class="cupboard" id="cupboard">
+  <div class="door" id="leftDoor"></div>
+  <div class="door" id="rightDoor"></div>
+  <div class="content" id="cupboardContent">
+    <p>Your content goes here...</p>
+  </div>
+</div>
+
+<script>
+
+document.getElementById("cupboard").addEventListener("click", function() {
+    toggleDoors();
+  });
+  
+  function toggleDoors() {
+    const leftDoor = document.getElementById("leftDoor");
+    const rightDoor = document.getElementById("rightDoor");
+  
+    if (leftDoor.style.transform === "translateX(0%)") {
+      leftDoor.style.transform = "translateX(-100%)";
+      rightDoor.style.transform = "translateX(100%)";
+    } else {
+      leftDoor.style.transform = "translateX(0%)";
+      rightDoor.style.transform = "translateX(0%)";
+    }
+  }
+  </script>
+</body>
+</html>
+
+
