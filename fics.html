@@ -642,6 +642,58 @@
         }
     }
     </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var filterButtons = document.getElementsByClassName('filter-btn');
+            var comments = document.getElementsByClassName('comment');
+            var cWidget = document.getElementById('c_widget'); // Assuming the ID is 'c_widget'
+    
+            for (var i = 0; i < filterButtons.length; i++) {
+                filterButtons[i].addEventListener('click', function (event) {
+                    var filterValue = event.target.getAttribute('data-filter');
+    
+                    for (var j = 0; j < comments.length; j++) {
+                        comments[j].style.display = 'none';
+                    }
+    
+                    if (filterValue === 'all') {
+                        for (var k = 0; k < comments.length; k++) {
+                            comments[k].style.display = 'block';
+                        }
+                    } else {
+                        var filteredComments = document.querySelectorAll('[data-category="' + filterValue + '"]');
+                        for (var l = 0; l < filteredComments.length; l++) {
+                            filteredComments[l].style.display = 'block';
+                        }
+                    }
+                });
+            }
+    
+            // Move the comment rendering logic outside the loop
+            for (var m = 0; m < comments.length; m++) {
+                renderComments(comments[m]);
+            }
+        });
+    
+        function renderComments(comment) {
+            var commentBox = document.createElement('div');
+            commentBox.className = 'comment-box';
+    
+            var commentText = document.createElement('p');
+            commentText.textContent = comment.dataset.text;
+    
+            var commentCategory = document.createElement('p');
+            commentCategory.textContent = 'Category: ' + comment.dataset.category;
+    
+            commentBox.appendChild(commentText);
+            commentBox.appendChild(commentCategory);
+    
+            // Append commentBox to the cWidget div
+            cWidget.appendChild(commentBox);
+        }
+    </script>
+    
 
 
 </body>
