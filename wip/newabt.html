@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wardrobe {
+            position: relative;
+            width: 600px;
+            height: 500px;
+            background-color: #5c3b11;
+            border: 15px solid #b0712d;
+            box-shadow: inset -5px 5px 25px rgba(0,0,0,0.5);
+            transform-style: preserve-3d;
+            transform: perspective(2500px);
+            cursor: pointer;
+        }
+
+        .wardrobe:hover .door {
+            transform: rotateY(-160deg);
+        }
+
+        .wardrobe:hover .door:before {
+            display: none;
+        }
+
+        .wardrobe:hover .second-door {
+            transform: rotateY(160deg);
+        }
+
+        .wardrobe:hover .second-door:before {
+            display: none;
+        }
+
+        .wardrobe:hover .inside {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .inside {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .inside-content {
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .inside-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+
+        .front {
+            position: relative;
+            z-index: 2;
+        }
+
+        .door, .second-door {
+            position: absolute;
+            width: 300px;
+            height: 500px;
+            background-color: #8a5924;
+            top: 0;
+            transition: .5s;
+            z-index: 5;
+        }
+
+        .door {
+            transform-origin: left;
+            box-shadow: inset 1px 0 10px rgba(0,0,0,0.3);
+            left: 0;
+        }
+
+        .door:before, .second-door:before {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 20px;
+            background-color: #333;
+            border-radius: 5px;
+            top: 240px;
+        }
+
+        .door:before {
+            left: 295px;
+        }
+
+        .second-door {
+            left: 300px;
+            transform-origin: right;
+            box-shadow: inset 1px 0 rgba(0,0,0,0.3), inset -1px 0 10px rgba(0,0,0,0.3);
+        }
+
+        .second-door:before {
+            left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wardrobe">
+        <div class="front">
+            <div class="door">
+                <div class="inside-content">
+                    <p>This is some text that appears on hover.</p>
+                    <img class="inside-image" src="https://via.placeholder.com/300" alt="Image" />
+                </div>
+            </div>
+            <div class="second-door"></div>
+        </div>
+        <div class="inside">
+           text?!
+        </div>
+    </div>
+
+</body>
+</html>
+
