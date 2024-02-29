@@ -6,7 +6,10 @@
         "year": 2021,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "imageURL": "/reno/denpa.png",
-        "gifURL": "https://i.imgur.com/npoeodU.gif"
+        "closeButton": {
+            "id": "closeBook1",
+            "text": "close"
+          }
       }
     ]
   }

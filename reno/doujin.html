@@ -369,8 +369,8 @@ ms boba and magnusthemes. -->
                     <h2>${book.title}</h2>
                     <p>${book.year}</p>
                     <p>Description: ${book.description}</p>
-                    <img src="${book.gifURL}"><br>
-                    <button id="closeBook1" class="close-button">close</button>
+                    <br>
+                    <button id="${book.closeButton.id}" class="close-button">${book.closeButton.text}</button>
                 `;
             })
             .catch(error => console.error('Error loading popup.json:', error));
