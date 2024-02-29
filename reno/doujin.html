@@ -1,0 +1,406 @@
+<!-- nancy's zine collection
+
+coded by me, you're welcome to use
+but be aware it's a little messy
+and you'll need knowledge of json
+files. contact me if you have any
+questions! 
+
+if the javascript breaks you're on 
+your own.
+
+special thanks to my lecturer ian, 
+ms boba and magnusthemes. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: #AFD0D6;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        /* CONTAINER */ 
+
+        .bookshelf {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 100%;
+            margin-left: 230px;
+            padding-left: 60px;
+        }
+
+        /* CONTAINER END */ 
+ 
+        /* BOOKS */ 
+        .book {
+            width: 120px;
+            height: 180px;
+            margin: 5px;
+            background-color: #A7B0CA;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+ 
+        .book:hover {
+            transform: scale(1.1);
+        }
+
+        /* END BOOKS */
+
+        /* POPUPS */
+ 
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+            align-items: center;
+            justify-content: center;
+        }
+ 
+        .popup-container {
+            background-color: #A7B0CA;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 800px;
+            animation: fadein 0.5s;
+            display: flex;
+        }
+ 
+        .book-image-popup {
+            flex: 1;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+ 
+        .book-info {
+            flex: 1;
+            padding: 10px;
+        }
+ 
+        .book-info h2 {
+            font-size: 24px;
+            margin-top: 0;
+        }
+ 
+        .popup button {
+            background-color: #AFD0D6; /*filter box background color*/
+        border: 1px solid #eee; /*filter box border color*/
+        border-radius: 5px;
+        width: 200px;
+        height: relative;
+        text-align: center;
+        padding: 10px;
+        display: block;
+        margin-top: 20px;
+        }
+ 
+        .popup button:hover {
+            background-color: #7EB2DD;
+        }
+ 
+        @keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        /* POPUPS END */
+ 
+        /* SIDEBAR */
+        #side {
+        position: fixed;
+        margin-left: 50px;
+        }
+ 
+        .ffilters {
+        background-color: white; /*filter box background color*/
+        border: 1px solid #eee; /*filter box border color*/
+        border-radius: 5px;
+        width: 200px;
+        height: relative;
+        text-align: center;
+        padding: 10px;
+        display: block;
+        margin-top: 20px;
+        }
+ 
+        .ftitle {
+        font-size: 14px;
+        background-color: #A7B0CA; /*filter box title bg color*/
+        color: white; /*filter box title color*/
+        padding: 10px;
+        width: 200px;
+        height: relative;
+        font-weight: bold;
+        margin-top: -10px;
+        margin-left: -10px;
+        border-radius: 5px 5px 0px 0px;
+        }
+
+        .fffilters {
+        background-color: #fcfcfc; /*filter button bg color*/
+        color: #474646; /*filter button color*/
+        cursor: help;
+        display: inline-block;
+        margin-left: 5px;
+        margin-top: 10px;
+        padding: 6px;
+        font-size: 13px;
+        text-align: center;
+        border: 1px solid #eeeeee; /*filter button border color*/
+        border-radius: 5px;
+        }
+ 
+        .selected {
+        background-color: #A7B0CA; /*selected filter bg color*/
+        color: white; /*selected filter color*/
+        }
+ 
+        /* END SIDEBAR */
+
+        /* PRELOADER - just in case shit takes forever */
+ 
+          #preloader {
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            display: flex;
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            background: #A7B0CA
+                url("https://samherbert.net/svg-loaders/svg-loaders/spinning-circles.svg")
+                no-repeat center;
+            z-index: 9999;
+        }
+
+        /* END PRELOADER */
+
+        /* MOBILE STYLING */
+        @media (max-width: 500px) {
+            .side {
+                flex: none;
+                padding:20px;
+ 
+                order: 1;
+            }
+ 
+            .bookshelf {
+                flex: none;
+                order: 2;
+ 
+            }
+            /* END MOBILE STYLING */
+        }
+ 
+    </style>
+    <title>Bookshelf</title>
+</head>
+<body>
+ 
+    <!-- Preloader HTML. Insert this this div before your main content. -->
+    <div id="preloader"></div>
+ 
+ 
+ 
+    <div id="side">
+        <div class="ffilters">
+            <div class="ftitle"> YEAR</div> 
+ 
+            <u1 class="filter option-set exclusive" data-filter-group="group1">
+                <a href="#" data-filter-value="" class="fffilters selected">all</a>
+                <a href="#" data-filter-value=".2023" class="fffilters">2023</a>
+                <a href="#" data-filter-value=".2022" class="fffilters">2022</a>
+                <a href="#" data-filter-value=".2021" class="fffilters">2021</a>
+                <a href="#" data-filter-value=".2020" class="fffilters">2020</a>
+                <a href="#" data-filter-value=".2019" class="fffilters">2019</a>
+                <a href="#" data-filter-value=".2018" class="fffilters">2018</a>
+                <a href="#" data-filter-value=".2017" class="fffilters">2017</a>
+ 
+           </u1>
+ 
+ 
+         <BR><BR>
+            <div class="ftitle"> FANDOM</div> 
+              <u1 class="filter option-set exclusive" data-filter-group="group3">
+                <a href="#" data-filter-value="" class="selected fffilters">all</a>
+              <a href="#" data-filter-value=".dr" class="fffilters">danganronpa</a>
+                <a href="#" data-filter-value=".mcr" class="fffilters">my chemical romance</a>
+                <a href="#" data-filter-value=".hxh" class="fffilters">hunter x hunter</a>
+                <a href="#" data-filter-value=".persona" class="fffilters">persona</a>
+                <a href="#" data-filter-value=".tmm" class="fffilters">tokyo mew mew</a>
+                <a href="#" data-filter-value=".bratz" class="fffilters">bratz</a>
+                <a href="#" data-filter-value=".sp" class="fffilters">south park</a>
+                <a href="#" data-filter-value=".original" class="fffilters">original</a>
+                <a href="#" data-filter-value=".misc" class="fffilters">misc</a>
+              </u1>
+        <br><BR>
+        <div class="ftitle"> TRANSLATION</div> 
+              <u1 class="filter option-set exclusive" data-filter-group="group2">
+                <a href="#" data-filter-value=".mine" class="fffilters">all</a>
+                <a href="#" data-filter-value=".mod" class="fffilters">mod</a>
+                <a href="#" data-filter-value=".contrib" class="fffilters">contributor</a>
+            </u1>
+ </div></div>        
+ 
+ 
+    <script>
+        // Preloader JS
+              let loader = document.getElementById("preloader");
+              window.addEventListener("load", function () {
+                loader.style.display = "none";
+              });
+ 
+              //Fade out, optional
+              let s = document.getElementById("preloader").style;
+              s.opacity = 1;
+              (function fade() {
+                (s.opacity -= 0.1) < 0 ? (s.display = "none") : setTimeout(fade, 40);
+              })();
+          </script>  
+ 
+       <script src="/scripts/jquery.min.js"></script>
+<script src="/scripts/isotope.js"></script>
+<script src="/scripts/combofiltering.js"></script>
+<script>
+    let JSONbooks = [];
+    function displayBook(currentBook) {
+    let book = JSONbooks[currentBook];
+    console.log(book);
+    let bookshelf = document.getElementById("bookshelf");
+    let newDiv = document.createElement("div");
+    let bookDiv = document.createElement("div");
+    newDiv.className = book.class;
+    bookDiv.className = "book";
+    bookDiv.style = decodeURI(book.style);
+    bookDiv.id = book.id;
+    newDiv.appendChild(bookDiv);
+    bookshelf.appendChild(newDiv);
+    }
+ 
+    function initBookshelfFilters() {
+    let $container = $(".bookshelf"); // the container with all the elements to filter inside
+    let filters = {}; //should be outside the scope of the filtering function
+     /* --- read the documentation on isotope.metafizzy.co for more options --- */
+    let $grid = $container.isotope({
+       itemSelector: ".item", // the elements to filter
+       percentPosition: true // put true if you use percentage widths, otherwise put false
+     });
+     $(".option-set a").click(function(e) {
+       let $this = $(this); // cache the clicked link
+       let filterAttr = "data-filter-value";
+       let filterValue = $this.attr(filterAttr); // cache the filter
+       let $optionSet = $this.parents(".option-set"); // cache the parent element
+       let group = $optionSet.attr("data-filter-group"); // cache the parent filter group
+       let filterGroup = filters[group];
+       if (!filterGroup) {
+         filterGroup = filters[group] = [];
+       }
+       let $selectAll = $optionSet.find('a['+filterAttr+'=""]'); // the 'select all' button in the current group
+       let activeClass = "selected", // the class for active links
+         exclClass = "exclusive"; // the class for exclusive groups
+     comboFiltering($this,filters,filterAttr,filterValue,$optionSet,group,$selectAll,activeClass,exclClass);
+       let comboFilter = getComboFilter(filters);
+       console.log($grid)
+       $grid.isotope({
+         filter: comboFilter
+       });
+       $this.toggleClass(activeClass);
+       e.preventDefault();
+     });
+    }
+ 
+    fetch('/reno/doujin.json')
+        .then(response => response.json())
+        .then(data => {
+        JSONbooks = data;
+        for (let i = 0; i < JSONbooks.length; i++) {
+            displayBook(i);
+        }
+        initBookshelfFilters();
+        initBooksPopup();
+        });
+    </script>
+ 
+    <br>
+ 
+    <!-- END FILTER SCRIPT -->
+ 
+    <div id = "bookshelf" class="bookshelf">
+ 
+ 
+    <br><br>
+ 
+ 
+    <div class="popup" id="book1Popup">
+        <div class="popup-container">
+            <div class="book-image-popup" style="background-image: url('https://i.imgur.com/qT8zaKs.png');"></div>
+            <div class="book-info">
+                <h2>emptiness joy: an izuru kamukura zine</h2>
+                <p>2021</p>
+              
+                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <img src="https://i.imgur.com/npoeodU.gif"><br>
+                <button id="closeBook1" class="close-button">close</button>
+                <br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="popup" id="book2Popup">
+        <div class="popup-container">
+            <div class="book-image-popup" style="background-image: url('https://i.imgur.com/y1nr8OU.png');"></div>
+            <div class="book-info">
+                <h2>Book 1 - Title</h2>
+                <p>Author: John Doe</p>
+                <p>Published: 2020</p>
+                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <img src="https://i.imgur.com/npoeodU.gif"><br>
+                <button id="closeBook1" class="close-button">Close</button>
+ 
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Repeat the popup code for other books -->
+ 
+    <script>
+        function initBooksPopup() {
+        const books = document.querySelectorAll('.book');
+        const closeButtons = document.querySelectorAll('.close-button');
+        const popups = document.querySelectorAll('.popup');
+ 
+        books.forEach((book, index) => {
+            book.addEventListener('click', () => {
+                popups[index].style.display = 'flex';
+            });
+ 
+            closeButtons[index].addEventListener('click', () => {
+                popups[index].style.display = 'none';
+            });
+        });
+    }
+    </script>
+
+</body>
+</html>
