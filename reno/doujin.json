@@ -2,7 +2,10 @@
     {
         "class": "item 2021 dr mod contrib",
         "id": "book1",
-        "imageURL": "/reno/denpa.png"
+        "imageURL": "/reno/denpa.png",
+        "closeButton": {
+            "id": "closeBook1",
+            "text": "close"}
     }
       
 ]
