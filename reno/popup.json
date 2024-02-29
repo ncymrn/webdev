@@ -2,10 +2,10 @@
     "books": [
       {
         "id": "book1",
-        "title": "emptiness joy: an izuru kamukura zine",
+        "title": "[Digital Cowboy] Denpa Shonen",
         "year": 2021,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "imageURL": "https://i.imgur.com/qT8zaKs.png",
+        "imageURL": "/reno/denpa.png",
         "gifURL": "https://i.imgur.com/npoeodU.gif"
       }
     ]
