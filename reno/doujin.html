@@ -1,17 +1,3 @@
-<!-- nancy's zine collection
-
-coded by me, you're welcome to use
-but be aware it's a little messy
-and you'll need knowledge of json
-files. contact me if you have any
-questions! 
-
-if the javascript breaks you're on 
-your own.
-
-special thanks to my lecturer ian, 
-ms boba and magnusthemes. -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,14 +90,14 @@ ms boba and magnusthemes. -->
  
         .popup button {
             background-color: #AFD0D6; /*filter box background color*/
-        border: 1px solid #eee; /*filter box border color*/
-        border-radius: 5px;
-        width: 200px;
-        height: relative;
-        text-align: center;
-        padding: 10px;
-        display: block;
-        margin-top: 20px;
+            border: 1px solid #eee; /*filter box border color*/
+            border-radius: 5px;
+            width: 200px;
+            height: relative;
+            text-align: center;
+            padding: 10px;
+            display: block;
+            margin-top: 20px;
         }
  
         .popup button:hover {
@@ -127,52 +113,52 @@ ms boba and magnusthemes. -->
  
         /* SIDEBAR */
         #side {
-        position: fixed;
-        margin-left: 50px;
+            position: fixed;
+            margin-left: 50px;
         }
  
         .ffilters {
-        background-color: white; /*filter box background color*/
-        border: 1px solid #eee; /*filter box border color*/
-        border-radius: 5px;
-        width: 200px;
-        height: relative;
-        text-align: center;
-        padding: 10px;
-        display: block;
-        margin-top: 20px;
+            background-color: white; /*filter box background color*/
+            border: 1px solid #eee; /*filter box border color*/
+            border-radius: 5px;
+            width: 200px;
+            height: relative;
+            text-align: center;
+            padding: 10px;
+            display: block;
+            margin-top: 20px;
         }
  
         .ftitle {
-        font-size: 14px;
-        background-color: #A7B0CA; /*filter box title bg color*/
-        color: white; /*filter box title color*/
-        padding: 10px;
-        width: 200px;
-        height: relative;
-        font-weight: bold;
-        margin-top: -10px;
-        margin-left: -10px;
-        border-radius: 5px 5px 0px 0px;
+            font-size: 14px;
+            background-color: #A7B0CA; /*filter box title bg color*/
+            color: white; /*filter box title color*/
+            padding: 10px;
+            width: 200px;
+            height: relative;
+            font-weight: bold;
+            margin-top: -10px;
+            margin-left: -10px;
+            border-radius: 5px 5px 0px 0px;
         }
 
         .fffilters {
-        background-color: #fcfcfc; /*filter button bg color*/
-        color: #474646; /*filter button color*/
-        cursor: help;
-        display: inline-block;
-        margin-left: 5px;
-        margin-top: 10px;
-        padding: 6px;
-        font-size: 13px;
-        text-align: center;
-        border: 1px solid #eeeeee; /*filter button border color*/
-        border-radius: 5px;
+            background-color: #fcfcfc; /*filter button bg color*/
+            color: #474646; /*filter button color*/
+            cursor: help;
+            display: inline-block;
+            margin-left: 5px;
+            margin-top: 10px;
+            padding: 6px;
+            font-size: 13px;
+            text-align: center;
+            border: 1px solid #eeeeee; /*filter button border color*/
+            border-radius: 5px;
         }
  
         .selected {
-        background-color: #A7B0CA; /*selected filter bg color*/
-        color: white; /*selected filter color*/
+            background-color: #A7B0CA; /*selected filter bg color*/
+            color: white; /*selected filter color*/
         }
  
         /* END SIDEBAR */
@@ -198,17 +184,15 @@ ms boba and magnusthemes. -->
 
         /* MOBILE STYLING */
         @media (max-width: 500px) {
-            .side {
+            #side {
                 flex: none;
                 padding:20px;
- 
                 order: 1;
             }
  
             .bookshelf {
                 flex: none;
                 order: 2;
- 
             }
             /* END MOBILE STYLING */
         }
@@ -227,7 +211,7 @@ ms boba and magnusthemes. -->
         <div class="ffilters">
             <div class="ftitle"> YEAR</div> 
  
-            <u1 class="filter option-set exclusive" data-filter-group="group1">
+            <ul class="filter option-set exclusive" data-filter-group="group1">
                 <a href="#" data-filter-value="" class="fffilters selected">all</a>
                 <a href="#" data-filter-value=".2023" class="fffilters">2023</a>
                 <a href="#" data-filter-value=".2022" class="fffilters">2022</a>
@@ -236,15 +220,13 @@ ms boba and magnusthemes. -->
                 <a href="#" data-filter-value=".2019" class="fffilters">2019</a>
                 <a href="#" data-filter-value=".2018" class="fffilters">2018</a>
                 <a href="#" data-filter-value=".2017" class="fffilters">2017</a>
+            </ul>
  
-           </u1>
- 
- 
-         <BR><BR>
+            <br><br>
             <div class="ftitle"> FANDOM</div> 
-              <u1 class="filter option-set exclusive" data-filter-group="group3">
+            <ul class="filter option-set exclusive" data-filter-group="group3">
                 <a href="#" data-filter-value="" class="selected fffilters">all</a>
-              <a href="#" data-filter-value=".dr" class="fffilters">danganronpa</a>
+                <a href="#" data-filter-value=".dr" class="fffilters">danganronpa</a>
                 <a href="#" data-filter-value=".mcr" class="fffilters">my chemical romance</a>
                 <a href="#" data-filter-value=".hxh" class="fffilters">hunter x hunter</a>
                 <a href="#" data-filter-value=".persona" class="fffilters">persona</a>
@@ -253,130 +235,88 @@ ms boba and magnusthemes. -->
                 <a href="#" data-filter-value=".sp" class="fffilters">south park</a>
                 <a href="#" data-filter-value=".original" class="fffilters">original</a>
                 <a href="#" data-filter-value=".misc" class="fffilters">misc</a>
-              </u1>
-        <br><BR>
-        <div class="ftitle"> TRANSLATION</div> 
-              <u1 class="filter option-set exclusive" data-filter-group="group2">
+            </ul>
+            <br><br>
+            <div class="ftitle"> TRANSLATION</div> 
+            <ul class="filter option-set exclusive" data-filter-group="group2">
                 <a href="#" data-filter-value=".mine" class="fffilters">all</a>
                 <a href="#" data-filter-value=".mod" class="fffilters">mod</a>
                 <a href="#" data-filter-value=".contrib" class="fffilters">contributor</a>
-            </u1>
- </div></div>        
+            </ul>
+        </div>
+    </div>        
  
  
     <script>
         // Preloader JS
-              let loader = document.getElementById("preloader");
-              window.addEventListener("load", function () {
-                loader.style.display = "none";
-              });
- 
-              //Fade out, optional
-              let s = document.getElementById("preloader").style;
-              s.opacity = 1;
-              (function fade() {
-                (s.opacity -= 0.1) < 0 ? (s.display = "none") : setTimeout(fade, 40);
-              })();
-          </script>  
- 
-       <script src="/scripts/jquery.min.js"></script>
-<script src="/scripts/isotope.js"></script>
-<script src="/scripts/combofiltering.js"></script>
-<script>
-    /* let JSONbooks = [];
-    function displayBook(currentBook) {
-    let book = JSONbooks[currentBook];
-    console.log(book);
-    let bookshelf = document.getElementById("bookshelf");
-    let newDiv = document.createElement("div");
-    let bookDiv = document.createElement("div");
-    newDiv.className = book.class;
-    bookDiv.className = "book";
-    bookDiv.style = decodeURI(book.style);
-    bookDiv.id = book.id;
-    newDiv.appendChild(bookDiv);
-    bookshelf.appendChild(newDiv);
-    } */
- 
-    function initBookshelfFilters() {
-    let $container = $(".bookshelf"); // the container with all the elements to filter inside
-    let filters = {}; //should be outside the scope of the filtering function
-     /* --- read the documentation on isotope.metafizzy.co for more options --- */
-    let $grid = $container.isotope({
-       itemSelector: ".item", // the elements to filter
-       percentPosition: true // put true if you use percentage widths, otherwise put false
-     });
-     $(".option-set a").click(function(e) {
-       let $this = $(this); // cache the clicked link
-       let filterAttr = "data-filter-value";
-       let filterValue = $this.attr(filterAttr); // cache the filter
-       let $optionSet = $this.parents(".option-set"); // cache the parent element
-       let group = $optionSet.attr("data-filter-group"); // cache the parent filter group
-       let filterGroup = filters[group];
-       if (!filterGroup) {
-         filterGroup = filters[group] = [];
-       }
-       let $selectAll = $optionSet.find('a['+filterAttr+'=""]'); // the 'select all' button in the current group
-       let activeClass = "selected", // the class for active links
-         exclClass = "exclusive"; // the class for exclusive groups
-     comboFiltering($this,filters,filterAttr,filterValue,$optionSet,group,$selectAll,activeClass,exclClass);
-       let comboFilter = getComboFilter(filters);
-       console.log($grid)
-       $grid.isotope({
-         filter: comboFilter
-       });
-       $this.toggleClass(activeClass);
-       e.preventDefault();
-     });
-    }
- 
-    fetch('/reno/doujin.json')
-        .then(response => response.json())
-        .then(data => {
-        JSONbooks = data;
-        for (let i = 0; i < JSONbooks.length; i++) {
-            displayBook(i);
-        }
-        initBookshelfFilters();
-        initBooksPopup();
+        let loader = document.getElementById("preloader");
+        window.addEventListener("load", function () {
+            loader.style.display = "none";
         });
-    </script>
- 
-    <br>
- 
-    <!-- END FILTER SCRIPT -->
- 
-    <div id = "bookshelf" class="bookshelf">
- 
-        <script>
-            fetch('/reno/doujin.json')
-                .then(response => response.json())
-                .then(data => {
-                    const itemsContainer = document.getElementById('bookshelf');
-                    data.items.forEach(item => {
-                        const div = document.createElement('div');
-                        div.className = item.class;
-                        const bookDiv = document.createElement('div');
-                        bookDiv.classList.add('book');
-                        bookDiv.style.backgroundImage = `url('${item.imageURL}')`;
-                        bookDiv.id = item.id;
-                        div.appendChild(bookDiv);
-                        itemsContainer.appendChild(div);
-                    });
-                })
-                .catch(error => console.error('Error loading items.json:', error));
-        </script>
-    <br><br>
- 
- 
-    <div class="popup" id="book1Popup">
-        <div class="popup-container">
-            <div class="book-image-popup" id="book1Image"></div>
-            <div class="book-info" id="book1Info"></div>
-        </div>
-    </div>
 
+        //Fade out, optional
+        let s = document.getElementById("preloader").style;
+        s.opacity = 1;
+        (function fade() {
+            (s.opacity -= 0.1) < 0 ? (s.display = "none") : setTimeout(fade, 40);
+        })();
+    </script>  
+ 
+    <!-- You may need to update the paths for these scripts -->
+    <script src="/scripts/jquery.min.js"></script>
+    <script src="/scripts/isotope.js"></script>
+    <script src="/scripts/combofiltering.js"></script>
     <script>
+        function initBookshelfFilters() {
+            let $container = $(".bookshelf");
+            let filters = {};
+            let $grid = $container.isotope({
+                itemSelector: ".item",
+                percentPosition: true
+            });
+            $(".option-set a").click(function(e) {
+                let $this = $(this);
+                let filterAttr = "data-filter-value";
+                let filterValue = $this.attr(filterAttr);
+                let $optionSet = $this.parents(".option-set");
+                let group = $optionSet.attr("data-filter-group");
+                let filterGroup = filters[group];
+                if (!filterGroup) {
+                    filterGroup = filters[group] = [];
+                }
+                let $selectAll = $optionSet.find('a['+filterAttr+'=""]');
+                let activeClass = "selected";
+                let exclClass = "exclusive";
+                comboFiltering($this,filters,filterAttr,filterValue,$optionSet,group,$selectAll,activeClass,exclClass);
+                let comboFilter = getComboFilter(filters);
+                $grid.isotope({
+                    filter: comboFilter
+                });
+                $this.toggleClass(activeClass);
+                e.preventDefault();
+            });
+        }
+
+        // You need to handle the paths and errors for these fetch calls
+        fetch('/reno/doujin.json')
+            .then(response => response.json())
+            .then(data => {
+                const itemsContainer = document.getElementById('bookshelf');
+                data.items.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = item.class;
+                    const bookDiv = document.createElement('div');
+                    bookDiv.classList.add('book');
+                    bookDiv.style.backgroundImage = `url('${item.imageURL}')`;
+                    bookDiv.id = item.id;
+                    div.appendChild(bookDiv);
+                    itemsContainer.appendChild(div);
+                });
+                initBookshelfFilters();
+            })
+            .catch(error => console.error('Error loading doujin.json:', error));
+
+        // You need to fetch popup data for each book and handle errors
         fetch('/reno/popup.json')
             .then(response => response.json())
             .then(data => {
@@ -393,40 +333,37 @@ ms boba and magnusthemes. -->
             .catch(error => console.error('Error loading popup.json:', error));
     </script>
  
-   <!-- <div class="popup" id="book2Popup">
+    <br>
+ 
+    <!-- END FILTER SCRIPT -->
+ 
+    <div id="bookshelf" class="bookshelf"></div>
+ 
+    <br><br>
+ 
+    <div class="popup" id="book1Popup">
         <div class="popup-container">
-            <div class="book-image-popup" style="background-image: url('https://i.imgur.com/y1nr8OU.png');"></div>
-            <div class="book-info">
-                <h2>Book 1 - Title</h2>
-                <p>Author: John Doe</p>
-                <p>Published: 2020</p>
-                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <img src="https://i.imgur.com/npoeodU.gif"><br>
-                <button id="closeBook1" class="close-button">Close</button>
- 
-            </div>
+            <div class="book-image-popup" id="book1Image"></div>
+            <div class="book-info" id="book1Info"></div>
         </div>
-    </div> -->
- 
-    <!-- Repeat the popup code for other books -->
- 
+    </div>
+
     <script>
         function initBooksPopup() {
-        const books = document.querySelectorAll('.book');
-        const closeButtons = document.querySelectorAll('.close-button');
-        const popups = document.querySelectorAll('.popup');
- 
-        books.forEach((book, index) => {
-            book.addEventListener('click', () => {
-                popups[index].style.display = 'flex';
-            });
- 
-            closeButtons[index].addEventListener('click', () => {
-                popups[index].style.display = 'none';
-            });
-        });
-    }
-    </script>
+            const books = document.querySelectorAll('.book');
+            const closeButtons = document.querySelectorAll('.close-button');
+            const popups = document.querySelectorAll('.popup');
 
+            books.forEach((book, index) => {
+                book.addEventListener('click', () => {
+                    popups[index].style.display = 'flex';
+                });
+
+                closeButtons[index].addEventListener('click', () => {
+                    popups[index].style.display = 'none';
+                });
+            });
+        }
+    </script>
 </body>
 </html>
