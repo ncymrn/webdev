@@ -292,7 +292,7 @@ ms boba and magnusthemes. -->
     let bookDiv = document.createElement("div");
     newDiv.className = book.class;
     bookDiv.className = "book";
-    bookDiv.style = decodeURI(book.style);
+    bookDiv.style = decodeURI(book.imageURL);
     bookDiv.id = book.id;
     newDiv.appendChild(bookDiv);
     bookshelf.appendChild(newDiv);
@@ -351,7 +351,7 @@ ms boba and magnusthemes. -->
  
     <br><br>
  
- 
+ <!-- popups -->
     <div class="popup" id="book1Popup">
         <div class="popup-container">
             <div class="book-image-popup" id="book1Image"></div>
@@ -375,6 +375,8 @@ ms boba and magnusthemes. -->
             })
             .catch(error => console.error('Error loading popup.json:', error));
     </script>
+
+
  
    <!-- <div class="popup" id="book2Popup">
         <div class="popup-container">
@@ -391,7 +393,6 @@ ms boba and magnusthemes. -->
         </div>
     </div> -->
  
-    <!-- Repeat the popup code for other books -->
  
     <script>
         function initBooksPopup() {
@@ -410,6 +411,8 @@ ms boba and magnusthemes. -->
         });
     }
     </script>
+
+        <!-- end popups -->
 
 </body>
 </html>
