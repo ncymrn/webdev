@@ -1,0 +1,13 @@
+{
+    "books": [
+      {
+        "id": "book1",
+        "title": "emptiness joy: an izuru kamukura zine",
+        "year": 2021,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "imageURL": "https://i.imgur.com/qT8zaKs.png",
+        "gifURL": "https://i.imgur.com/npoeodU.gif"
+      }
+    ]
+  }
+  

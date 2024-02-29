@@ -354,18 +354,27 @@ ms boba and magnusthemes. -->
  
     <div class="popup" id="book1Popup">
         <div class="popup-container">
-            <div class="book-image-popup" style="background-image: url('https://i.imgur.com/qT8zaKs.png');"></div>
-            <div class="book-info">
-                <h2>emptiness joy: an izuru kamukura zine</h2>
-                <p>2021</p>
-              
-                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <img src="https://i.imgur.com/npoeodU.gif"><br>
-                <button id="closeBook1" class="close-button">close</button>
-                <br><br><br><br><br><br><br><br><br>
-            </div>
+            <div class="book-image-popup" id="book1Image"></div>
+            <div class="book-info" id="book1Info"></div>
         </div>
     </div>
+
+    <script>
+        fetch('/reno/popup.json')
+            .then(response => response.json())
+            .then(data => {
+                const book = data.books[0];
+                document.getElementById('book1Image').style.backgroundImage = `url('${book.imageURL}')`;
+                document.getElementById('book1Info').innerHTML = `
+                    <h2>${book.title}</h2>
+                    <p>${book.year}</p>
+                    <p>Description: ${book.description}</p>
+                    <img src="${book.gifURL}"><br>
+                    <button id="closeBook1" class="close-button">close</button>
+                `;
+            })
+            .catch(error => console.error('Error loading popup.json:', error));
+    </script>
  
     <div class="popup" id="book2Popup">
         <div class="popup-container">
