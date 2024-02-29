@@ -2,10 +2,15 @@
     {
         "class": "item 1999 takahisa jp",
         "id": "book1",
-        "style": "background-image: url('https://files.catbox.moe/4h981t.png')",
-        "closeButton": {
-            "id": "closeBook1",
-            "text": "close"}
+        "style": "background-image: url('https://files.catbox.moe/4h981t.png')"
+        
+    },
+
+    {
+        "class": "item 2000 takahisa eng",
+        "id": "book2",
+        "style": "background-image: url('')"
+        
     }
       
 ]

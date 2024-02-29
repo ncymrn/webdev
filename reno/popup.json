@@ -10,6 +10,18 @@
             "id": "closeBook1",
             "text": "close"
           }
+      },
+
+      {
+        "id": "book2",
+        "title": "text",
+        "year": 1999,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "imageURL": "/reno/denpa.png",
+        "closeButton": {
+            "id": "closeBook2",
+            "text": "close"
+          }
       }
     ]
   }
