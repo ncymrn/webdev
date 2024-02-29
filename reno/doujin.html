@@ -62,7 +62,7 @@ ms boba and magnusthemes. -->
 
         /* POPUPS */
         .popup {
-    display: none;
+    display: none; /* This line ensures the popup is initially hidden */
     position: fixed;
     top: 0;
     left: 0;
@@ -70,10 +70,10 @@ ms boba and magnusthemes. -->
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1;
-    display: flex;
     align-items: center;
     justify-content: center;
 }
+
 
 .popup-container {
     background-color: #ffffff;
@@ -82,7 +82,7 @@ ms boba and magnusthemes. -->
     width: 80%;
     max-width: 600px;
     animation: fadein 0.5s;
-    display: none;
+    display: flex;
     overflow: hidden;
 }
 
