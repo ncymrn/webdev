@@ -292,11 +292,22 @@ ms boba and magnusthemes. -->
     let bookDiv = document.createElement("div");
     newDiv.className = book.class;
     bookDiv.className = "book";
-    bookDiv.style = decodeURI(book.imageURL);
+    bookDiv.style = decodeURI(book.style);
     bookDiv.id = book.id;
     newDiv.appendChild(bookDiv);
     bookshelf.appendChild(newDiv);
     }
+
+    fetch('/reno/doujin.json')
+        .then(response => response.json())
+        .then(data => {
+        JSONbooks = data;
+        for (let i = 0; i < JSONbooks.length; i++) {
+            displayBook(i);
+        }
+        initBookshelfFilters();
+        initBooksPopup();
+        });
  
     function initBookshelfFilters() {
     let $container = $(".bookshelf"); // the container with all the elements to filter inside
@@ -330,16 +341,7 @@ ms boba and magnusthemes. -->
      });
     }
  
-    fetch('/reno/doujin.json')
-        .then(response => response.json())
-        .then(data => {
-        JSONbooks = data;
-        for (let i = 0; i < JSONbooks.length; i++) {
-            displayBook(i);
-        }
-        initBookshelfFilters();
-        initBooksPopup();
-        });
+    
     </script>
  
     <br>
