@@ -283,7 +283,7 @@ ms boba and magnusthemes. -->
 <script src="/scripts/isotope.js"></script>
 <script src="/scripts/combofiltering.js"></script>
 <script>
-    let JSONbooks = [];
+    /* let JSONbooks = [];
     function displayBook(currentBook) {
     let book = JSONbooks[currentBook];
     console.log(book);
@@ -296,7 +296,7 @@ ms boba and magnusthemes. -->
     bookDiv.id = book.id;
     newDiv.appendChild(bookDiv);
     bookshelf.appendChild(newDiv);
-    }
+    } */
  
     function initBookshelfFilters() {
     let $container = $(".bookshelf"); // the container with all the elements to filter inside
@@ -348,7 +348,24 @@ ms boba and magnusthemes. -->
  
     <div id = "bookshelf" class="bookshelf">
  
- 
+        <script>
+            fetch('/reno/doujin.json')
+                .then(response => response.json())
+                .then(data => {
+                    const itemsContainer = document.getElementById('bookshelf');
+                    data.items.forEach(item => {
+                        const div = document.createElement('div');
+                        div.className = item.class;
+                        const bookDiv = document.createElement('div');
+                        bookDiv.classList.add('book');
+                        bookDiv.style.backgroundImage = `url('${item.imageURL}')`;
+                        bookDiv.id = item.id;
+                        div.appendChild(bookDiv);
+                        itemsContainer.appendChild(div);
+                    });
+                })
+                .catch(error => console.error('Error loading items.json:', error));
+        </script>
     <br><br>
  
  

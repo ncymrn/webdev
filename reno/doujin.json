@@ -1,8 +1,8 @@
 [
     {
+        "class": "item 2021 dr mod contrib",
         "id": "book1",
-        "class": "item 2021 dr mine mod contrib",
-        "style": "background-image: url (/reno/denpa.png)"
+        "imageURL": "/reno/denpathumb.png"
     }
-
+      
 ]
