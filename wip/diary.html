@@ -229,8 +229,6 @@ input[type="checkbox"] {
   transform: rotateY(-180deg);
   z-index: 4;
 }
-
-
 .book p {
   margin: 0 0 1rem;
   line-height: 1.4;
@@ -293,21 +291,74 @@ input[type="checkbox"] {
   z-index: 4;
 }
 
+#page4 {
+  z-index: 5;
+}
+
+#page5 {
+  z-index: 4;
+}
+
+#page6 {
+  z-index: 3;
+}
+
+#page7 {
+  z-index: 2;
+}
+
+#page8 {
+  z-index: 1;
+}
+
+#checkbox-page4:checked ~ .book #page4 {
+  transform: rotateY(-180deg);
+  z-index: 1;
+}
+
+#checkbox-page5:checked ~ .book #page5 {
+  transform: rotateY(-180deg);
+  z-index: 2;
+}
+
+#checkbox-page6:checked ~ .book #page6 {
+  transform: rotateY(-180deg);
+  z-index: 3;
+}
+
+#checkbox-page7:checked ~ .book #page7 {
+  transform: rotateY(-180deg);
+  z-index: 4;
+}
+
+#checkbox-page8:checked ~ .book #page8 {
+  transform: rotateY(-180deg);
+  z-index: 5;
+}
+
 .prev span {
   display: none;
 }
-#checkbox-page1:not(:checked) ~ .book #page2 .prev b {
+#checkbox-page1:not(:checked) ~ .book #page2 .prev b,
+#checkbox-page2:not(:checked) ~ .book #page3 .prev b,
+#checkbox-page3:not(:checked) ~ .book #page4 .prev b,
+#checkbox-page4:not(:checked) ~ .book #page5 .prev b,
+#checkbox-page5:not(:checked) ~ .book #page6 .prev b,
+#checkbox-page6:not(:checked) ~ .book #page7 .prev b,
+#checkbox-page7:not(:checked) ~ .book #page8 .prev b {
   display: none;
 }
-#checkbox-page1:not(:checked) ~ .book #page2 .prev span {
+
+#checkbox-page1:not(:checked) ~ .book #page2 .prev span,
+#checkbox-page2:not(:checked) ~ .book #page3 .prev span,
+#checkbox-page3:not(:checked) ~ .book #page4 .prev span,
+#checkbox-page4:not(:checked) ~ .book #page5 .prev span,
+#checkbox-page5:not(:checked) ~ .book #page6 .prev span,
+#checkbox-page6:not(:checked) ~ .book #page7 .prev span,
+#checkbox-page7:not(:checked) ~ .book #page8 .prev span {
   display: inline;
 }
-#checkbox-page2:not(:checked) ~ .book #page3 .prev b {
-  display: none;
-}
-#checkbox-page2:not(:checked) ~ .book #page3 .prev span {
-  display: inline;
-}
+
 .side-img {
   float: left;
   margin: 0 1rem 1rem 0;
@@ -640,28 +691,46 @@ input[type="checkbox"] {
 		</div>
 	  </div>
 
-	  <!--
 	  <div class="page" id="page5">
-		<div class="front-page">
-		  <div class="story">
-			right
-            </div>
-		  <p class="num">9</p>
-		  <label class="next" for="checkbox-page4">→</label>
-		  <div class="curl curlright"></div>
-		</div>
-	
-		<div class="back-page">
-		  <div class="story">
-			left
-		</div>
-		  <p class="num">10</p>
-		  <label class="prev" for="checkbox-page6"><b>←</b> <span> TOC</span></label>
-		  <div class="curl"></div>
-		</div>
-	  </div>
-	  -->
-
+      <div class="front-page">
+          <div class="story">
+              Right side content
+          </div>
+          <p class="num">9</p>
+          <label class="next" for="checkbox-page5">→</label>
+          <div class="curl curlright"></div>
+      </div>
+  
+      <div class="back-page">
+          <div class="story">
+              Left side content
+          </div>
+          <p class="num">10</p>
+          <label class="prev" for="checkbox-page4"><b>←</b> <span> TOC</span></label>
+          <div class="curl"></div>
+      </div>
+  </div>
+  
+  <div class="page" id="page6">
+      <div class="front-page">
+          <div class="story">
+              Right side content
+          </div>
+          <p class="num">11</p>
+          <label class="next" for="checkbox-page6">→</label>
+          <div class="curl curlright"></div>
+      </div>
+  
+      <div class="back-page">
+          <div class="story">
+              Left side content
+          </div>
+          <p class="num">12</p>
+          <label class="prev" for="checkbox-page5"><b>←</b> <span> TOC</span></label>
+          <div class="curl"></div>
+      </div>
+  </div>
+  
 
 	  <div class="back-cover">
 		text tralalala
