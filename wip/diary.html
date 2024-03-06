@@ -198,6 +198,15 @@ input[type="checkbox"] {
 #page3 {
   z-index: 1;
 }
+
+#page4 {
+            z-index: 2;
+        }
+
+        #page5 {
+            z-index: 1;
+        }
+        
 #checkbox-page0:checked ~ .book {
   transform: translateX(50%);
   transition: transform 1.5s;
@@ -229,6 +238,18 @@ input[type="checkbox"] {
   transform: rotateY(-180deg);
   z-index: 4;
 }
+
+#checkbox-page4:checked~.book #page4 {
+            transform: rotateY(-180deg);
+            z-index: 5;
+        }
+
+        #checkbox-page5:checked~.book #page5 {
+            transform: rotateY(-180deg);
+            z-index: 6;
+        }
+
+
 .book p {
   margin: 0 0 1rem;
   line-height: 1.4;
